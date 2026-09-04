@@ -351,6 +351,9 @@ function OfferChoice() {
               <span className="font-display text-[2.6rem] leading-none text-gold">
                 {FULL_BUNDLE_PRICE}
               </span>
+              <span className="mb-1.5 rounded-md bg-cta px-2 py-0.5 text-[0.75rem] font-semibold text-cta-foreground">
+                {FULL_BUNDLE_DISCOUNT}
+              </span>
             </div>
             <p className="mt-2 text-[0.8rem] text-background/65">
               Método {METHOD_PRICE} + Caja de Herramientas {TOOLBOX_PRICE}. Pago único.
