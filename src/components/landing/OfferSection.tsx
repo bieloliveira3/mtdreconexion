@@ -65,36 +65,6 @@ export function OfferSection() {
   );
 }
 
-function pad(n: number) {
-  return String(Math.max(0, n)).padStart(2, "0");
-}
-
-function OfferCountdown() {
-  const [left, setLeft] = useState<number | null>(null);
-
-  useEffect(() => {
-    const deadline = Date.now() + COUNTDOWN_DURATION * 60 * 1000;
-    const tick = () => setLeft(Math.max(0, deadline - Date.now()));
-    tick();
-    const id = window.setInterval(tick, 1000);
-    return () => window.clearInterval(id);
-  }, []);
-
-  const s = Math.floor((left ?? COUNTDOWN_DURATION * 60 * 1000) / 1000);
-  const h = Math.floor(s / 3600);
-  const m = Math.floor((s % 3600) / 60);
-  const sec = s % 60;
-
-  return (
-    <span
-      className="font-mono text-[1.15rem] tracking-[0.15em] text-gold tabular-nums"
-      aria-live="off"
-    >
-      {pad(h)} : {pad(m)} : {pad(sec)}
-    </span>
-  );
-}
-
 const pages = [
   { src: page1.url, alt: "Portada del eBook Método Reconexión" },
   { src: page2.url, alt: "Capítulo 11: Cuando solo uno quiere" },
