@@ -293,7 +293,7 @@ function OfferChoice() {
                 <CTA
                   event="click_offer"
                   href={FULL_BUNDLE_CHECKOUT_URL}
-                  className="w-full ring-1 ring-gold/40"
+                  className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface"
                 >
                   QUIERO LA RECONEXIÓN COMPLETA →
                 </CTA>
