@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { BookMockup, CTA, Section } from "./shared";
 import {
   EBOOK_VIDEO_POSTER_URL,
