@@ -38,6 +38,9 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-dark: var(--primary-dark);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-cta-dark: var(--cta-dark);
   --color-gold: var(--gold);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -67,6 +70,9 @@
   --primary: oklch(0.4944 0.0814 29.52);
   --primary-foreground: oklch(0.9711 0.0074 80.72);
   --primary-dark: oklch(0.3643 0.0531 26.81);
+  --cta: oklch(0.55 0.12 145);
+  --cta-foreground: oklch(0.9711 0.0074 80.72);
+  --cta-dark: oklch(0.42 0.10 145);
   --gold: oklch(0.6991 0.0721 81.44);
   --secondary: oklch(0.934 0.0142 74.42);
   --secondary-foreground: oklch(0.3643 0.0531 26.81);

@@ -29,7 +29,7 @@ export function MobileStickyCTA() {
             track("click_cta");
             track("checkout_click");
           }}
-          className="ml-auto shrink-0 rounded-xl bg-primary px-5 py-3 text-[0.82rem] font-semibold text-primary-foreground"
+          className="ml-auto shrink-0 rounded-xl bg-cta px-5 py-3 text-[0.82rem] font-semibold text-cta-foreground transition-colors hover:bg-cta-dark"
         >
           QUIERO RECONEXIÓN →
         </a>
