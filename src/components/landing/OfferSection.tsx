@@ -54,10 +54,7 @@ export function OfferSection() {
           </p>
 
           <div className="mt-6">
-            <CTA
-              event="click_offer"
-              className="w-full bg-gold text-primary-dark hover:bg-background hover:text-primary-dark"
-            >
+            <CTA event="click_offer" className="w-full">
               QUIERO EL MÉTODO RECONEXIÓN →
             </CTA>
           </div>
