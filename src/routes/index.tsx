@@ -6,6 +6,7 @@ import { Hero } from "@/components/landing/Hero";
 import { ProblemSection } from "@/components/landing/ProblemSection";
 import { MethodSection } from "@/components/landing/MethodSection";
 import { InsideBookSection } from "@/components/landing/InsideBookSection";
+import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { NinetyDaySection } from "@/components/landing/NinetyDaySection";
 import { OnePersonSection } from "@/components/landing/OnePersonSection";
 import { OfferSection } from "@/components/landing/OfferSection";
