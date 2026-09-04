@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import {
   FULL_BUNDLE_CHECKOUT_URL,
+  FULL_BUNDLE_DISCOUNT,
   FULL_BUNDLE_OLD_PRICE,
   FULL_BUNDLE_PRICE,
   METHOD_CHECKOUT_URL,
+  METHOD_DISCOUNT,
   METHOD_PRICE,
   OLD_PRICE,
 } from "@/config/site";
@@ -14,11 +16,12 @@ type Offer = "method" | "full";
 
 const offers: Record<
   Offer,
-  { price: string; oldPrice: string; label: string; desc: string; cta: string; href: string }
+  { price: string; oldPrice: string; discount: string; label: string; desc: string; cta: string; href: string }
 > = {
   method: {
     price: METHOD_PRICE,
     oldPrice: OLD_PRICE,
+    discount: METHOD_DISCOUNT,
     label: "MÉTODO",
     desc: "Método Reconexión",
     cta: "QUIERO EL MÉTODO →",
@@ -27,6 +30,7 @@ const offers: Record<
   full: {
     price: FULL_BUNDLE_PRICE,
     oldPrice: FULL_BUNDLE_OLD_PRICE,
+    discount: FULL_BUNDLE_DISCOUNT,
     label: "COMPLETA",
     desc: "Método + Caja de Herramientas",
     cta: "QUIERO LA RECONEXIÓN COMPLETA →",
@@ -97,6 +101,9 @@ export function MobileStickyCTA() {
             <span className="font-display text-[1.25rem] leading-none text-primary">
               {current.price}
             </span>
+            <span className="rounded-md bg-cta px-1.5 py-0.5 text-[0.65rem] font-semibold text-cta-foreground">
+              {current.discount}
+            </span>
           </div>
           <p className="truncate text-[0.75rem] text-muted-foreground">
             {current.desc}
@@ -126,6 +133,9 @@ export function MobileStickyCTA() {
               </span>
               <span className="font-display text-[1.1rem] leading-none text-primary">
                 {current.price}
+              </span>
+              <span className="rounded-md bg-cta px-1.5 py-0.5 text-[0.6rem] font-semibold text-cta-foreground">
+                {current.discount}
               </span>
             </div>
             <p className="truncate text-[0.65rem] text-muted-foreground">
