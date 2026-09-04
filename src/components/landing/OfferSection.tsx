@@ -18,6 +18,7 @@ import {
   GUARANTEE_ENABLED,
   GUARANTEE_TEXT,
   METHOD_CHECKOUT_URL,
+  METHOD_DISCOUNT,
   METHOD_PRICE,
   OLD_PRICE,
   PRODUCT_NAME,
@@ -285,6 +286,9 @@ function OfferChoice() {
               <span className="text-background/55 line-through">{OLD_PRICE}</span>
               <span className="font-display text-[2.3rem] leading-none text-gold">
                 {METHOD_PRICE}
+              </span>
+              <span className="mb-1.5 rounded-md bg-cta px-2 py-0.5 text-[0.75rem] font-semibold text-cta-foreground">
+                {METHOD_DISCOUNT}
               </span>
             </div>
             <p className="mt-2 text-[0.8rem] text-background/60">
