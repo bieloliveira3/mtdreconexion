@@ -5,6 +5,9 @@ import page2 from "@/assets/ebook-page-2.jpg.asset.json";
 import page3 from "@/assets/ebook-page-3.jpg.asset.json";
 import ebookMockup from "@/assets/ebook-mockup-editorial.jpg.asset.json";
 import reconexionCompletaPack from "@/assets/reconexion-completa-pack.jpg.asset.json";
+import toolboxCover from "@/assets/caja-herramientas-cover.jpg.asset.json";
+import toolboxPage1 from "@/assets/caja-herramientas-page-1.jpg.asset.json";
+import toolboxPage2 from "@/assets/caja-herramientas-page-2.jpg.asset.json";
 import {
   COUNTDOWN_DURATION,
   COUNTDOWN_ENABLED,
@@ -221,6 +224,47 @@ function PagesMarquee() {
   );
 }
 
+const toolboxPages = [
+  { src: toolboxCover.url, alt: "Portada de la Caja de Herramientas de Reconexión" },
+  { src: toolboxPage1.url, alt: "Cómo usar esta caja de herramientas" },
+  { src: toolboxPage2.url, alt: "Guiones y situaciones prácticas para reconectar" },
+];
+
+function ToolboxMarquee() {
+  return (
+    <div
+      className="relative mt-6 overflow-hidden"
+      role="region"
+      aria-label="Páginas de la Caja de Herramientas"
+    >
+      <div
+        className="flex w-max [animation:mr-marquee_14s_linear_infinite]"
+        style={{ willChange: "transform", transform: "translateZ(0)" }}
+      >
+        {[0, 1].map((copy) => (
+          <div key={copy} className="flex shrink-0 gap-4 pr-4">
+            {toolboxPages.map((p, i) => (
+              <img
+                key={i}
+                src={p.src}
+                alt={copy === 0 ? p.alt : ""}
+                aria-hidden={copy === 1}
+                loading="eager"
+                decoding="async"
+                draggable={false}
+                className="h-[200px] w-auto shrink-0 rounded-xl border border-background/15 object-contain shadow-soft sm:h-[260px]"
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-primary-dark to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-primary-dark to-transparent" />
+    </div>
+  );
+}
+
 
 function OfferChoice() {
   return (
@@ -289,6 +333,8 @@ function OfferChoice() {
           <p className="mt-2 text-[0.9rem] leading-relaxed text-background/70">
             Método Reconexión + Caja de Herramientas
           </p>
+          <p className="eyebrow mt-6 text-gold">Dentro de la Caja de Herramientas</p>
+          <ToolboxMarquee />
           <ul className="mt-6 grid gap-2 text-[0.92rem] text-background/85">
             <li>✓ Todo el Método Reconexión</li>
             <li>✓ Caja de Herramientas de Reconexión</li>
