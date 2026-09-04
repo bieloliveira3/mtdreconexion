@@ -27,11 +27,11 @@ export function GalleryCarousel({ images }: { images: CarouselImage[] }) {
   }, [resetAutoplay]);
 
   const onTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+    touchStartX.current = e.touches[0]!.clientX;
   };
   const onTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current == null) return;
-    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dx = e.changedTouches[0]!.clientX - touchStartX.current;
     if (Math.abs(dx) > 40) {
       go(dx < 0 ? 1 : -1);
       resetAutoplay();
