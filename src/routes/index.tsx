@@ -73,6 +73,7 @@ function Landing() {
       <main>
         <Hero />
         <ProblemSection />
+        <GalleryCarousel images={carouselImages} />
         <MethodSection />
         <InsideBookSection />
         <TestimonialsSection />
