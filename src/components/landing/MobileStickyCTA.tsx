@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import {
   FULL_BUNDLE_CHECKOUT_URL,
+  FULL_BUNDLE_OLD_PRICE,
   FULL_BUNDLE_PRICE,
   METHOD_CHECKOUT_URL,
   METHOD_PRICE,
+  OLD_PRICE,
 } from "@/config/site";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
@@ -12,10 +14,11 @@ type Offer = "method" | "full";
 
 const offers: Record<
   Offer,
-  { price: string; label: string; desc: string; cta: string; href: string }
+  { price: string; oldPrice: string; label: string; desc: string; cta: string; href: string }
 > = {
   method: {
     price: METHOD_PRICE,
+    oldPrice: OLD_PRICE,
     label: "MÉTODO",
     desc: "Método Reconexión",
     cta: "QUIERO EL MÉTODO →",
@@ -23,6 +26,7 @@ const offers: Record<
   },
   full: {
     price: FULL_BUNDLE_PRICE,
+    oldPrice: FULL_BUNDLE_OLD_PRICE,
     label: "COMPLETA",
     desc: "Método + Caja de Herramientas",
     cta: "QUIERO LA RECONEXIÓN COMPLETA →",
@@ -86,9 +90,14 @@ export function MobileStickyCTA() {
         {Selector}
 
         <div className="flex min-w-0 flex-col justify-center">
-          <p className="font-display text-[1.25rem] leading-none text-primary">
-            {current.price}
-          </p>
+          <div className="flex items-baseline gap-2">
+            <span className="text-[0.85rem] text-muted-foreground line-through">
+              {current.oldPrice}
+            </span>
+            <span className="font-display text-[1.25rem] leading-none text-primary">
+              {current.price}
+            </span>
+          </div>
           <p className="truncate text-[0.75rem] text-muted-foreground">
             {current.desc}
           </p>
@@ -111,9 +120,14 @@ export function MobileStickyCTA() {
         <div className="flex items-center justify-between gap-3">
           {Selector}
           <div className="min-w-0 text-right">
-            <p className="font-display text-[1.1rem] leading-none text-primary">
-              {current.price}
-            </p>
+            <div className="flex items-baseline justify-end gap-1.5">
+              <span className="text-[0.7rem] text-muted-foreground line-through">
+                {current.oldPrice}
+              </span>
+              <span className="font-display text-[1.1rem] leading-none text-primary">
+                {current.price}
+              </span>
+            </div>
             <p className="truncate text-[0.65rem] text-muted-foreground">
               {current.desc}
             </p>
