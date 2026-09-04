@@ -103,6 +103,9 @@ export function OfferSection() {
           Esto es lo que recibirás al instante
         </h3>
         <PagesMarquee />
+
+        <p className="eyebrow mt-12 text-gold">Dentro de la Caja de Herramientas</p>
+        <ToolboxMarquee />
       </div>
 
       <div className="mt-16 grid items-center gap-10 rounded-2xl border border-background/10 bg-background/[0.03] p-6 sm:p-10 lg:grid-cols-[1fr_1fr]">
@@ -333,8 +336,6 @@ function OfferChoice() {
           <p className="mt-2 text-[0.9rem] leading-relaxed text-background/70">
             Método Reconexión + Caja de Herramientas
           </p>
-          <p className="eyebrow mt-6 text-gold">Dentro de la Caja de Herramientas</p>
-          <ToolboxMarquee />
           <ul className="mt-6 grid gap-2 text-[0.92rem] text-background/85">
             <li>✓ Todo el Método Reconexión</li>
             <li>✓ Caja de Herramientas de Reconexión</li>
