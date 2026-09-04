@@ -66,6 +66,7 @@ function Landing() {
         <ProblemSection />
         <MethodSection />
         <InsideBookSection />
+        <TestimonialsSection />
         <NinetyDaySection />
         <OnePersonSection />
         <OfferSection />
