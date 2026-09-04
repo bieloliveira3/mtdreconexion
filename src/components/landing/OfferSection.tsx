@@ -208,7 +208,7 @@ function PagesMarquee() {
       aria-label="Páginas del eBook"
     >
       <div
-        className="flex w-max [animation:mr-marquee_14s_linear_infinite] hover:[animation-play-state:paused]"
+        className="flex w-max [animation:mr-marquee_14s_linear_infinite]"
         style={{ willChange: "transform", transform: "translateZ(0)" }}
       >
         {[0, 1].map((copy) => (
