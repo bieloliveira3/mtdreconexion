@@ -7,7 +7,7 @@ export const PRODUCT_SUBTITLE =
   "La guía práctica para reparar, reconstruir y reencender tu relación de pareja";
 
 export const PRICE = "US$ 6,99";
-export const OLD_PRICE = "US$ 24,99";
+export const OLD_PRICE = "US$ 14,99";
 export const CHECKOUT_URL = "https://pay.hotmart.com/Q107464781E";
 
 export const COUNTDOWN_ENABLED = true;
