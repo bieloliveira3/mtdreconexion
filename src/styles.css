@@ -38,6 +38,9 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-dark: var(--primary-dark);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-cta-dark: var(--cta-dark);
   --color-gold: var(--gold);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
