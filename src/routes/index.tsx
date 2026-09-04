@@ -4,7 +4,16 @@ import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { ProblemSection } from "@/components/landing/ProblemSection";
+import { GalleryCarousel } from "@/components/landing/GalleryCarousel";
 import { MethodSection } from "@/components/landing/MethodSection";
+import heroCover from "@/assets/hero-cover-new.jpg.asset.json";
+import heroCouple from "@/assets/hero-couple.jpg";
+
+const carouselImages = [
+  { src: heroCover.url, alt: "Del conflicto a la reconexión" },
+  { src: heroCouple, alt: "Pareja reconectando" },
+  { src: heroCover.url, alt: "El camino hacia la reconexión" },
+];
 import { InsideBookSection } from "@/components/landing/InsideBookSection";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { NinetyDaySection } from "@/components/landing/NinetyDaySection";
