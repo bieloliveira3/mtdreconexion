@@ -33,7 +33,7 @@ const includes = [
 
 export function OfferSection() {
   return (
-    <Section id="oferta" tone="dark" className="pb-36 sm:pb-40">
+    <Section id="oferta" tone="dark" className="pb-44 sm:pb-48">
       <div className="text-center">
         <span className="eyebrow inline-block rounded-full border border-gold/40 px-4 py-1.5 text-gold">
           Acceso digital inmediato
