@@ -346,6 +346,7 @@ function OfferChoice() {
           </p>
           <div className="mt-auto pt-7">
             <div className="flex flex-wrap items-end gap-3">
+              <span className="text-background/55 line-through">{FULL_BUNDLE_OLD_PRICE}</span>
               <span className="font-display text-[2.6rem] leading-none text-gold">
                 {FULL_BUNDLE_PRICE}
               </span>
