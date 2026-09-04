@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { CHECKOUT_URL, PRODUCT_NAME, PRODUCT_SUBTITLE } from "@/config/site";
 import { track, type AnalyticsEvent } from "@/lib/analytics";
+import bookMockup from "@/assets/book-mockup.png";
 
 export function CTA({
   children,
@@ -61,31 +62,24 @@ export function Eyebrow({ children }: { children: React.ReactNode }) {
   return <p className="eyebrow text-primary">{children}</p>;
 }
 
-/** Mockup editorial del eBook, construido en CSS (sin imágenes pesadas). */
+/** Mockup real del eBook (PNG con fondo transparente), con efecto hover. */
 export function BookMockup({ size = "lg" }: { size?: "sm" | "md" | "lg" }) {
   const w = size === "lg" ? "w-[240px] sm:w-[300px]" : size === "md" ? "w-[200px]" : "w-[150px]";
   return (
-    <div className={cn("relative select-none", w)}>
-      <div className="absolute -inset-6 rounded-full bg-gold/20 blur-3xl" aria-hidden />
-      <div className="relative aspect-[2/3] rotate-[-2deg] overflow-hidden rounded-r-xl rounded-l-sm bg-primary-dark shadow-lift transition-transform duration-500 hover:rotate-0">
-        <div className="absolute inset-y-0 left-0 w-3 bg-black/25" aria-hidden />
-        <div className="absolute inset-y-0 left-3 w-px bg-gold/40" aria-hidden />
-        <div className="flex h-full flex-col justify-between px-6 py-8 pl-9 text-background">
-          <div>
-            <p className="eyebrow text-gold">Guía práctica</p>
-            <div className="mt-1 h-px w-10 bg-gold/60" />
-          </div>
-          <div>
-            <h3 className="font-display text-[1.6rem] leading-[1.1] text-background sm:text-[2rem]">
-              {PRODUCT_NAME}
-            </h3>
-            <p className="mt-3 text-[0.62rem] leading-relaxed text-background/70 sm:text-[0.7rem]">
-              {PRODUCT_SUBTITLE}
-            </p>
-          </div>
-          <p className="eyebrow text-background/50">7 fases · 90 días</p>
-        </div>
-      </div>
+    <div className={cn("group relative select-none", w)}>
+      <div
+        aria-hidden
+        className="absolute -inset-6 rounded-full bg-gold/25 blur-3xl transition-opacity duration-500 group-hover:opacity-80"
+      />
+      <img
+        src={bookMockup}
+        alt={`Portada del eBook ${PRODUCT_NAME}: ${PRODUCT_SUBTITLE}`}
+        width={649}
+        height={1194}
+        loading={size === "lg" ? "eager" : "lazy"}
+        draggable={false}
+        className="relative w-full rotate-[-2deg] drop-shadow-[0_25px_35px_rgba(32,32,30,0.35)] transition-transform duration-500 ease-out group-hover:rotate-0 group-hover:scale-[1.03]"
+      />
     </div>
   );
 }
