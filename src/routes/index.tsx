@@ -6,13 +6,14 @@ import { Hero } from "@/components/landing/Hero";
 import { ProblemSection } from "@/components/landing/ProblemSection";
 import { GalleryCarousel } from "@/components/landing/GalleryCarousel";
 import { MethodSection } from "@/components/landing/MethodSection";
-import heroCover from "@/assets/hero-cover-new.jpg.asset.json";
-import heroCouple from "@/assets/hero-couple.jpg";
+import carousel1 from "@/assets/casal-briga.jpg.asset.json";
+import carousel2 from "@/assets/pareja-conversando.png.asset.json";
+import carousel3 from "@/assets/pareja-reconectada.png.asset.json";
 
 const carouselImages = [
-  { src: heroCover.url, alt: "Del conflicto a la reconexión" },
-  { src: heroCouple, alt: "Pareja reconectando" },
-  { src: heroCover.url, alt: "El camino hacia la reconexión" },
+  { src: carousel1.url, alt: "Pareja distante en la cama: el silencio antes de la reconexión" },
+  { src: carousel2.url, alt: "Pareja conversando con calma: escucha sin defensas" },
+  { src: carousel3.url, alt: "Pareja reconectada: de la distancia al abrazo" },
 ];
 import { InsideBookSection } from "@/components/landing/InsideBookSection";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
