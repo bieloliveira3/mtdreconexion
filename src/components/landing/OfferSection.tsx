@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { BookMockup, CTA, Section } from "./shared";
 import page1 from "@/assets/ebook-page-1.jpg.asset.json";
 import page2 from "@/assets/ebook-page-2.jpg.asset.json";
@@ -8,8 +7,6 @@ import toolboxCover from "@/assets/caja-herramientas-cover.jpg.asset.json";
 import toolboxPage1 from "@/assets/caja-herramientas-page-1.jpg.asset.json";
 import toolboxPage2 from "@/assets/caja-herramientas-page-2.jpg.asset.json";
 import {
-  COUNTDOWN_DURATION,
-  COUNTDOWN_ENABLED,
   FULL_BUNDLE_CHECKOUT_URL,
   FULL_BUNDLE_DISCOUNT,
   FULL_BUNDLE_OLD_PRICE,
@@ -45,8 +42,7 @@ export function OfferSection() {
           Empieza hoy tu proceso de Reconexión
         </h2>
         <div className="mx-auto mt-6 inline-flex flex-col items-center gap-2 rounded-2xl border border-gold/30 bg-gold/10 px-6 py-4">
-          <span className="eyebrow text-gold">Oferta por tiempo limitado</span>
-          {COUNTDOWN_ENABLED ? <OfferCountdown /> : null}
+          <span className="eyebrow text-gold">Precio especial por poco tiempo</span>
         </div>
       </div>
 
@@ -66,36 +62,6 @@ export function OfferSection() {
         incluyendo trabajos asociados a John y Julie Gottman, Sue Johnson y Marshall Rosenberg.
       </p>
     </Section>
-  );
-}
-
-function pad(n: number) {
-  return String(Math.max(0, n)).padStart(2, "0");
-}
-
-function OfferCountdown() {
-  const [left, setLeft] = useState<number | null>(null);
-
-  useEffect(() => {
-    const deadline = Date.now() + COUNTDOWN_DURATION * 60 * 1000;
-    const tick = () => setLeft(Math.max(0, deadline - Date.now()));
-    tick();
-    const id = window.setInterval(tick, 1000);
-    return () => window.clearInterval(id);
-  }, []);
-
-  const s = Math.floor((left ?? COUNTDOWN_DURATION * 60 * 1000) / 1000);
-  const h = Math.floor(s / 3600);
-  const m = Math.floor((s % 3600) / 60);
-  const sec = s % 60;
-
-  return (
-    <span
-      className="font-mono text-[1.15rem] tracking-[0.15em] text-gold tabular-nums"
-      aria-live="off"
-    >
-      {pad(h)} : {pad(m)} : {pad(sec)}
-    </span>
   );
 }
 
