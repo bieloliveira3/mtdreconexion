@@ -1,5 +1,5 @@
 import { BookMockup, CTA } from "./shared";
-import { OLD_PRICE, PRICE } from "@/config/site";
+import { OLD_PRICE, PRICE, METHOD_PRICE_COP } from "@/config/site";
 import heroCover from "@/assets/hero-cover-new.jpg.asset.json";
 
 export function Hero() {
@@ -36,6 +36,9 @@ export function Hero() {
               <span className="text-[1rem] text-background/70 line-through">{OLD_PRICE}</span>
               <span className="font-display text-[2.6rem] leading-none text-gold">{PRICE}</span>
             </div>
+            <p className="mt-1 font-display text-[1.05rem] leading-none text-gold/90">
+              {METHOD_PRICE_COP}
+            </p>
             <p className="mt-2 text-[0.85rem] text-background/75">
               Pago único • Acceso digital inmediato
             </p>
