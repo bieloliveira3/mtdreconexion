@@ -13,7 +13,7 @@ import {
   PRODUCT_SUBTITLE,
 } from "@/config/site";
 
-const DISCOUNT = "-72%";
+const DISCOUNT = "-53%";
 
 const includes = [
   "eBook digital completo",
@@ -50,7 +50,7 @@ export function OfferSection() {
             DE DESCUENTO HOY
           </span>
           <span className="text-[0.95rem] text-background/80">
-            Ahorras US$ 18,00 en tu inscripción
+            Ahorras US$ 8,00 en tu inscripción
           </span>
         </div>
       </div>
@@ -83,7 +83,7 @@ export function OfferSection() {
             Pago único. No es una suscripción.
           </p>
           <p className="mt-1 text-[0.9rem] font-medium text-gold">
-            Ahorras US$ 18,00 comparado con el precio normal
+            Ahorras US$ 8,00 comparado con el precio normal
           </p>
 
           <div className="mt-6">
