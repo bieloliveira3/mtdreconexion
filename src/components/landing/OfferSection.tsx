@@ -200,7 +200,7 @@ function OfferChoice() {
         {/* Card 1 — Método Reconexión */}
         <div className="flex flex-col rounded-2xl border border-background/15 bg-background/[0.04] p-6 sm:p-8">
           <div className="mx-auto mb-4 flex justify-center">
-            <BookMockup className="max-h-[180px] w-auto sm:max-h-[220px]" />
+            <BookMockup size="sm" />
           </div>
           <h3 className="font-display text-[1.5rem] text-background">MÉTODO RECONEXIÓN</h3>
           <ul className="mt-4 grid gap-1.5 text-[0.9rem] text-background/85">
