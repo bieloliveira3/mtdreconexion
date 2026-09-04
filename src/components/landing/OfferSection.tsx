@@ -61,6 +61,9 @@ export function OfferSection() {
           <div className="mt-8 flex flex-wrap items-end gap-3">
             <span className="text-background/60 line-through">{OLD_PRICE}</span>
             <span className="font-display text-[2.6rem] leading-none text-cta">{PRICE}</span>
+            <span className="rounded-full bg-cta px-3 py-1 text-[0.8rem] font-bold text-cta-foreground">
+              {DISCOUNT} HOY
+            </span>
           </div>
           <p className="mt-2 text-[0.85rem] text-background/70">
             Pago único. No es una suscripción.
