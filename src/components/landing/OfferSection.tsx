@@ -26,7 +26,7 @@ import {
 } from "@/config/site";
 
 
-const DISCOUNT = "-53%";
+
 
 const includes = [
   "eBook digital completo",
@@ -47,26 +47,12 @@ export function OfferSection() {
           Empieza hoy tu proceso de Reconexión
         </h2>
         <div className="mx-auto mt-6 inline-flex flex-col items-center gap-2 rounded-2xl border border-gold/30 bg-gold/10 px-6 py-4">
-          <span className="eyebrow text-gold">
-            Oferta por tiempo limitado • {DISCOUNT} de descuento
-          </span>
+          <span className="eyebrow text-gold">Oferta por tiempo limitado</span>
           {COUNTDOWN_ENABLED ? <OfferCountdown /> : null}
         </div>
       </div>
 
-      <div className="mx-auto mt-8 flex w-fit max-w-full flex-col items-center gap-2 rounded-3xl border border-dashed border-gold/45 bg-gold/10 px-8 py-5 text-center sm:flex-row sm:gap-6">
-        <span className="font-display text-[3.2rem] leading-none text-gold sm:text-[4.5rem]">
-          {DISCOUNT}
-        </span>
-        <div className="flex flex-col items-center sm:items-start">
-          <span className="text-[1.1rem] font-semibold text-background sm:text-[1.25rem]">
-            DE DESCUENTO HOY
-          </span>
-          <span className="text-[0.95rem] text-background/80">
-            Ahorras US$ 8,00 en tu inscripción
-          </span>
-        </div>
-      </div>
+
 
       <div className="mt-12 grid items-center gap-10 rounded-2xl bg-background/5 p-6 sm:p-10 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="flex justify-center">
