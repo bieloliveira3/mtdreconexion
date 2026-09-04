@@ -8,15 +8,17 @@ export function CTA({
   event = "click_cta",
   className,
   size = "lg",
+  href = CHECKOUT_URL,
 }: {
   children: React.ReactNode;
   event?: AnalyticsEvent;
   className?: string;
   size?: "sm" | "lg";
+  href?: string;
 }) {
   return (
     <a
-      href={CHECKOUT_URL}
+      href={href}
       onClick={() => {
         track(event);
         track("checkout_click");
