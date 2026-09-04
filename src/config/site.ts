@@ -14,6 +14,7 @@ export const CHECKOUT_URL = "https://pay.hotmart.com/Q107464781E";
 export const METHOD_PRICE = "US$ 6,99";
 export const TOOLBOX_PRICE = "US$ 4,99";
 export const FULL_BUNDLE_PRICE = "US$ 11,98";
+export const FULL_BUNDLE_OLD_PRICE = "US$ 21,99";
 
 export const METHOD_CHECKOUT_URL = "https://pay.hotmart.com/Q107464781E";
 export const FULL_BUNDLE_CHECKOUT_URL = "https://pay.hotmart.com/U107470501S";
