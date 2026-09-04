@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[88vh] items-center overflow-hidden px-5 py-16 sm:px-8 sm:py-20"
+      className="relative flex min-h-[84vh] items-center overflow-hidden px-5 py-16 sm:px-8 sm:py-20"
     >
       {/* Imagem de capa em tamanho apresentativo */}
       <div
@@ -16,7 +16,7 @@ export function Hero() {
       />
       {/* Overlay escuro para garantir legibilidade */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-[#1a1a1d]/92 via-[#1a1a1d]/75 to-[#1a1a1d]/55"
+        className="absolute inset-0 bg-gradient-to-r from-[#2E2422]/94 via-[#2E2422]/78 to-[#2E2422]/45"
         aria-hidden="true"
       />
 
@@ -31,16 +31,16 @@ export function Hero() {
             sin hacerse daño y empezar a reconstruir la conexión.
           </p>
 
-          <div className="mt-8 rounded-2xl border border-background/15 bg-background/10 p-6 shadow-soft backdrop-blur-md">
+          <div className="mt-8 rounded-2xl border border-gold/25 bg-[#2E2422]/55 p-6 shadow-soft backdrop-blur-md">
             <div className="flex flex-wrap items-end gap-3">
               <span className="text-[1rem] text-background/70 line-through">{OLD_PRICE}</span>
-              <span className="font-display text-[2.5rem] leading-none text-cta">{PRICE}</span>
+              <span className="font-display text-[2.6rem] leading-none text-gold">{PRICE}</span>
             </div>
             <p className="mt-2 text-[0.85rem] text-background/75">
               Pago único • Acceso digital inmediato
             </p>
             <div className="mt-5">
-              <CTA event="click_offer" className="w-full">
+              <CTA event="click_offer" className="w-full ring-1 ring-gold/35">
                 QUIERO EMPEZAR MI RECONEXIÓN →
               </CTA>
             </div>
