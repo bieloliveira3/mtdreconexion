@@ -327,10 +327,17 @@ function OfferChoice() {
           <ul className="mt-6 grid gap-2 text-[0.92rem] text-background/85">
             <li>✓ Todo el Método Reconexión</li>
             <li>✓ Caja de Herramientas de Reconexión</li>
+            <li>✓ 30 preguntas para volver a conversar</li>
+            <li>✓ 20 mensajes para iniciar una conversa difícil sin pelea</li>
+            <li>✓ Guión de pedido de disculpas</li>
+            <li>✓ Guión para expresar necesidades sin reproche</li>
+            <li>✓ Ejercicios rápidos para hacer solo/a</li>
+            <li>✓ Ejercicios para hacer en pareja</li>
+            <li>✓ Qué decir cuando tu pareja se cierra</li>
+            <li>✓ Qué hacer después de una discusión</li>
+            <li>✓ Checklist semanal de reconexión</li>
+            <li>✓ Calendario de 30 días de pequeñas acciones</li>
           </ul>
-          <p className="mt-4 text-[0.86rem] leading-relaxed text-background/65">
-            Recursos prácticos para ayudarte a aplicar el Método Reconexión en el día a día.
-          </p>
           <div className="mt-auto pt-7">
             <div className="flex flex-wrap items-end gap-3">
               <span className="text-background/55 line-through">{FULL_BUNDLE_OLD_PRICE}</span>
