@@ -16,11 +16,12 @@ type Offer = "method" | "full";
 
 const offers: Record<
   Offer,
-  { price: string; oldPrice: string; label: string; desc: string; cta: string; href: string }
+  { price: string; oldPrice: string; discount: string; label: string; desc: string; cta: string; href: string }
 > = {
   method: {
     price: METHOD_PRICE,
     oldPrice: OLD_PRICE,
+    discount: METHOD_DISCOUNT,
     label: "MÉTODO",
     desc: "Método Reconexión",
     cta: "QUIERO EL MÉTODO →",
@@ -29,6 +30,7 @@ const offers: Record<
   full: {
     price: FULL_BUNDLE_PRICE,
     oldPrice: FULL_BUNDLE_OLD_PRICE,
+    discount: FULL_BUNDLE_DISCOUNT,
     label: "COMPLETA",
     desc: "Método + Caja de Herramientas",
     cta: "QUIERO LA RECONEXIÓN COMPLETA →",
