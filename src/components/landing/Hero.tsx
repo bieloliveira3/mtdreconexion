@@ -16,7 +16,7 @@ export function Hero() {
       />
       {/* Overlay escuro para garantir legibilidade */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-[#1a1a1d]/92 via-[#1a1a1d]/75 to-[#1a1a1d]/55"
+        className="absolute inset-0 bg-gradient-to-r from-[#2E2422]/94 via-[#2E2422]/78 to-[#2E2422]/45"
         aria-hidden="true"
       />
 
