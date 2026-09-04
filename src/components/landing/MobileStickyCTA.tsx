@@ -21,7 +21,8 @@ export function MobileStickyCTA() {
       <div className="flex items-center gap-3">
         <div className="min-w-0">
           <p className="font-display text-[1.15rem] leading-none text-primary">{PRICE}</p>
-          <p className="truncate text-[0.7rem] text-muted-foreground">Pago único</p>
+          <p className="truncate text-[0.65rem] text-muted-foreground">Pago único</p>
+          <p className="truncate text-[0.6rem] text-muted-foreground/80">Se convertirá a tu moneda local</p>
         </div>
         <a
           href={CHECKOUT_URL}

@@ -39,6 +39,9 @@ export function Hero() {
             <p className="mt-2 text-[0.85rem] text-background/75">
               Pago único • Acceso digital inmediato
             </p>
+            <p className="mt-1 text-[0.72rem] text-background/55">
+              En la pantalla de pago se mostrará convertido a tu moneda local.
+            </p>
             <div className="mt-5">
               <CTA event="click_offer" className="w-full ring-1 ring-gold/35">
                 QUIERO EMPEZAR MI RECONEXIÓN →

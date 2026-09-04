@@ -82,6 +82,9 @@ export function OfferSection() {
           <p className="mt-2 text-[0.85rem] text-background/70">
             Pago único. No es una suscripción.
           </p>
+          <p className="mt-1 text-[0.75rem] text-background/55">
+            En la pantalla de pago se mostrará convertido a tu moneda local.
+          </p>
           <p className="mt-1 text-[0.9rem] font-medium text-gold">
             Ahorras US$ 8,00 comparado con el precio normal
           </p>
