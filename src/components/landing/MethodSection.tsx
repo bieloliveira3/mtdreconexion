@@ -23,17 +23,24 @@ export function MethodSection() {
         </p>
       </div>
 
-      <ol className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+      <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {phases.map(([n, title, desc]) => (
-          <li key={n} className="bg-card px-6 py-7">
-            <span className="font-display text-[1.1rem] text-gold">{n}</span>
+          <li
+            key={n}
+            className="group relative rounded-2xl border border-border/70 bg-card px-6 py-7 shadow-soft transition-colors duration-300 hover:border-primary/30"
+          >
+            <span
+              aria-hidden
+              className="absolute top-7 left-0 h-6 w-px bg-primary/40 transition-all duration-300 group-hover:h-10"
+            />
+            <span className="font-display text-[1.05rem] tracking-[0.08em] text-gold">{n}</span>
             <h3 className="mt-2 text-[0.78rem] font-semibold tracking-[0.16em] text-primary uppercase">
               {title}
             </h3>
-            <p className="mt-2 text-[0.9rem] leading-relaxed text-muted-foreground">{desc}</p>
+            <p className="mt-3 text-[0.92rem] leading-relaxed text-muted-foreground">{desc}</p>
           </li>
         ))}
-        <li className="hidden bg-surface px-6 py-7 lg:block">
+        <li className="hidden rounded-2xl border border-border/70 bg-surface px-6 py-7 lg:block">
           <p className="font-display text-[1.15rem] leading-snug text-primary-dark">
             La mayoría de las parejas no se rompen por falta de amor, sino por falta de método.
           </p>
