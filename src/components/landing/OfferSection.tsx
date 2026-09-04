@@ -82,6 +82,8 @@ export function OfferSection() {
                 <video
                   src={EBOOK_VIDEO_URL}
                   controls
+                  autoPlay
+                  muted
                   playsInline
                   preload="metadata"
                   className="aspect-[9/16] w-full object-cover"
