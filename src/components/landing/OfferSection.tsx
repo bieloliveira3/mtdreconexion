@@ -1,5 +1,6 @@
 import { BookMockup, CTA, Section } from "./shared";
 import {
+  EBOOK_VIDEO_URL,
   GUARANTEE_ENABLED,
   GUARANTEE_TEXT,
   OLD_PRICE,

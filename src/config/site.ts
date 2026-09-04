@@ -17,6 +17,9 @@ export const COUNTDOWN_DURATION = 10; // 00:10:00
 export const GUARANTEE_ENABLED = false;
 export const GUARANTEE_TEXT = "";
 
+/** Vídeo vertical (gravação de tela do eBook). Vazio = não exibe a área de vídeo. */
+export const EBOOK_VIDEO_URL = "";
+
 export const BUSINESS_NAME = "Gabriel";
 export const BUSINESS_EMAIL = "mtdreconexion@gmail.com";
 export const BUSINESS_ADDRESS = "[BUSINESS_ADDRESS]";
