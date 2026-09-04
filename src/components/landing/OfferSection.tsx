@@ -3,7 +3,6 @@ import { BookMockup, CTA, Section } from "./shared";
 import page1 from "@/assets/ebook-page-1.jpg.asset.json";
 import page2 from "@/assets/ebook-page-2.jpg.asset.json";
 import page3 from "@/assets/ebook-page-3.jpg.asset.json";
-import ebookMockup from "@/assets/ebook-mockup-editorial.jpg.asset.json";
 import reconexionCompletaPack from "@/assets/reconexion-completa-pack.jpg.asset.json";
 import toolboxCover from "@/assets/caja-herramientas-cover.jpg.asset.json";
 import toolboxPage1 from "@/assets/caja-herramientas-page-1.jpg.asset.json";
@@ -15,14 +14,10 @@ import {
   FULL_BUNDLE_DISCOUNT,
   FULL_BUNDLE_OLD_PRICE,
   FULL_BUNDLE_PRICE,
-  GUARANTEE_ENABLED,
-  GUARANTEE_TEXT,
   METHOD_CHECKOUT_URL,
   METHOD_DISCOUNT,
   METHOD_PRICE,
   OLD_PRICE,
-  PRODUCT_NAME,
-  PRODUCT_SUBTITLE,
   TOOLBOX_PRICE,
 } from "@/config/site";
 
