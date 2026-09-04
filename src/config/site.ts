@@ -17,7 +17,7 @@ export const COUNTDOWN_DURATION = 8 * 60 + 42; // 08:42:00
 export const GUARANTEE_ENABLED = false;
 export const GUARANTEE_TEXT = "";
 
-export const BUSINESS_NAME = "[BUSINESS_NAME]";
+export const BUSINESS_NAME = "Gabriel";
 export const BUSINESS_EMAIL = "mtdreconexion@gmail.com";
 export const BUSINESS_ADDRESS = "[BUSINESS_ADDRESS]";
 export const BUSINESS_COUNTRY = "[BUSINESS_COUNTRY]";
