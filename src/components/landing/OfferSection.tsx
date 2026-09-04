@@ -224,6 +224,47 @@ function PagesMarquee() {
   );
 }
 
+const toolboxPages = [
+  { src: toolboxCover.url, alt: "Portada de la Caja de Herramientas de Reconexión" },
+  { src: toolboxPage1.url, alt: "Cómo usar esta caja de herramientas" },
+  { src: toolboxPage2.url, alt: "Guiones y situaciones prácticas para reconectar" },
+];
+
+function ToolboxMarquee() {
+  return (
+    <div
+      className="relative mt-6 overflow-hidden"
+      role="region"
+      aria-label="Páginas de la Caja de Herramientas"
+    >
+      <div
+        className="flex w-max [animation:mr-marquee_14s_linear_infinite]"
+        style={{ willChange: "transform", transform: "translateZ(0)" }}
+      >
+        {[0, 1].map((copy) => (
+          <div key={copy} className="flex shrink-0 gap-4 pr-4">
+            {toolboxPages.map((p, i) => (
+              <img
+                key={i}
+                src={p.src}
+                alt={copy === 0 ? p.alt : ""}
+                aria-hidden={copy === 1}
+                loading="eager"
+                decoding="async"
+                draggable={false}
+                className="h-[200px] w-auto shrink-0 rounded-xl border border-background/15 object-contain shadow-soft sm:h-[260px]"
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-primary-dark to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-primary-dark to-transparent" />
+    </div>
+  );
+}
+
 
 function OfferChoice() {
   return (
