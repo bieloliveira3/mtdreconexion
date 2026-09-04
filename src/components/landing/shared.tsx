@@ -74,8 +74,8 @@ export function BookMockup({ size = "lg" }: { size?: "sm" | "md" | "lg" }) {
       <img
         src={bookMockup}
         alt={`Portada del eBook ${PRODUCT_NAME}: ${PRODUCT_SUBTITLE}`}
-        width={649}
-        height={1194}
+        width={648}
+        height={1192}
         loading={size === "lg" ? "eager" : "lazy"}
         draggable={false}
         className="relative w-full rotate-[-2deg] drop-shadow-[0_25px_35px_rgba(32,32,30,0.35)] transition-transform duration-500 ease-out group-hover:rotate-0 group-hover:scale-[1.03]"
