@@ -26,7 +26,7 @@ import {
 } from "@/config/site";
 
 
-const DISCOUNT = "-53%";
+
 
 const includes = [
   "eBook digital completo",
