@@ -22,7 +22,7 @@ export function CTA({
         track("checkout_click");
       }}
       className={cn(
-        "inline-flex w-full items-center justify-center rounded-xl bg-primary text-center font-semibold tracking-wide text-primary-foreground shadow-soft transition-all duration-300 hover:bg-primary-dark hover:shadow-lift focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto",
+        "inline-flex w-full items-center justify-center rounded-xl bg-cta text-center font-semibold tracking-wide text-cta-foreground shadow-soft transition-all duration-300 hover:bg-cta-dark hover:shadow-lift focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto",
         size === "lg" ? "px-8 py-4 text-[0.95rem]" : "px-5 py-2.5 text-[0.8rem]",
         className,
       )}
