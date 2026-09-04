@@ -1,5 +1,6 @@
 import { BookMockup, CTA, Section } from "./shared";
 import {
+  EBOOK_VIDEO_URL,
   GUARANTEE_ENABLED,
   GUARANTEE_TEXT,
   OLD_PRICE,
@@ -68,6 +69,30 @@ export function OfferSection() {
           ) : null}
         </div>
       </div>
+
+      {EBOOK_VIDEO_URL ? (
+        <div className="mt-14 text-center">
+          <p className="eyebrow text-gold">Mira por dentro</p>
+          <h3 className="mt-3 font-display text-[1.5rem] leading-tight text-background sm:text-[1.9rem]">
+            Esto es lo que recibirás al instante
+          </h3>
+          <div className="mx-auto mt-8 w-full max-w-[280px] sm:max-w-[320px]">
+            <div className="rounded-[2.2rem] border border-background/20 bg-background/5 p-2 shadow-soft">
+              <div className="overflow-hidden rounded-[1.8rem] bg-primary-dark">
+                <video
+                  src={EBOOK_VIDEO_URL}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="aspect-[9/16] w-full object-cover"
+                >
+                  Tu navegador no puede reproducir este video.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <p className="mx-auto mt-10 max-w-2xl text-center text-[0.82rem] leading-relaxed text-background/55">
         El método sintetiza herramientas y aportaciones del campo de las relaciones de pareja,
