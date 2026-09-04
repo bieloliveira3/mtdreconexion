@@ -333,8 +333,6 @@ function OfferChoice() {
           <p className="mt-2 text-[0.9rem] leading-relaxed text-background/70">
             Método Reconexión + Caja de Herramientas
           </p>
-          <p className="eyebrow mt-6 text-gold">Dentro de la Caja de Herramientas</p>
-          <ToolboxMarquee />
           <ul className="mt-6 grid gap-2 text-[0.92rem] text-background/85">
             <li>✓ Todo el Método Reconexión</li>
             <li>✓ Caja de Herramientas de Reconexión</li>
