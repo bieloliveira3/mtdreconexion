@@ -1,5 +1,6 @@
 import { BookMockup, CTA, Section } from "./shared";
 import {
+  EBOOK_VIDEO_POSTER_URL,
   EBOOK_VIDEO_URL,
   GUARANTEE_ENABLED,
   GUARANTEE_TEXT,
@@ -81,7 +82,10 @@ export function OfferSection() {
               <div className="overflow-hidden rounded-[1.8rem] bg-primary-dark">
                 <video
                   src={EBOOK_VIDEO_URL}
+                  poster={EBOOK_VIDEO_POSTER_URL}
                   controls
+                  autoPlay
+                  muted
                   playsInline
                   preload="metadata"
                   className="aspect-[9/16] w-full object-cover"
