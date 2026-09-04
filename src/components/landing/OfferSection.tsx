@@ -41,6 +41,20 @@ export function OfferSection() {
         </div>
       </div>
 
+      <div className="mx-auto mt-8 flex w-fit max-w-full flex-col items-center gap-2 rounded-3xl border-2 border-dashed border-cta bg-cta/10 px-8 py-5 text-center sm:flex-row sm:gap-6">
+        <span className="font-display text-[3.2rem] leading-none text-cta sm:text-[4.5rem]">
+          {DISCOUNT}
+        </span>
+        <div className="flex flex-col items-center sm:items-start">
+          <span className="text-[1.1rem] font-semibold text-background sm:text-[1.25rem]">
+            DE DESCUENTO HOY
+          </span>
+          <span className="text-[0.95rem] text-background/80">
+            Ahorras US$ 18,00 en tu inscripción
+          </span>
+        </div>
+      </div>
+
       <div className="mt-12 grid items-center gap-10 rounded-2xl bg-background/5 p-6 sm:p-10 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="flex justify-center">
           <BookMockup />
@@ -61,12 +75,15 @@ export function OfferSection() {
           <div className="mt-8 flex flex-wrap items-end gap-3">
             <span className="text-background/60 line-through">{OLD_PRICE}</span>
             <span className="font-display text-[2.6rem] leading-none text-cta">{PRICE}</span>
-            <span className="rounded-full bg-cta px-3 py-1 text-[0.8rem] font-bold text-cta-foreground">
+            <span className="rounded-full bg-cta px-4 py-1.5 text-[1rem] font-bold text-cta-foreground">
               {DISCOUNT} HOY
             </span>
           </div>
           <p className="mt-2 text-[0.85rem] text-background/70">
             Pago único. No es una suscripción.
+          </p>
+          <p className="mt-1 text-[0.9rem] font-medium text-cta">
+            Ahorras US$ 18,00 comparado con el precio normal
           </p>
 
           <div className="mt-6">
