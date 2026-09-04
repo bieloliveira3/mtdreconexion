@@ -11,14 +11,13 @@ const links = [
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur">
-      <div className="mx-auto grid max-w-5xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 sm:px-8">
+      <div className="mx-auto grid max-w-5xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:gap-4 sm:px-8">
         <a href="#top" className="min-w-0">
-          <span className="block truncate font-display text-[0.8rem] tracking-[0.08em] text-foreground uppercase sm:text-base sm:tracking-[0.14em]">
+          <span className="block whitespace-nowrap font-display text-[0.65rem] tracking-[0.04em] text-foreground uppercase sm:text-base sm:tracking-[0.14em]">
             {PRODUCT_NAME}
           </span>
-
         </a>
-        <div className="flex shrink-0 items-center gap-7">
+        <div className="flex shrink-0 items-center gap-4 sm:gap-7">
           <nav className="hidden items-center gap-7 md:flex">
             {links.map((l) => (
               <a
@@ -30,8 +29,9 @@ export function Header() {
               </a>
             ))}
           </nav>
-          <CTA size="sm" className="w-auto">
-            QUIERO RECONEXIÓN →
+          <CTA size="sm" className="w-auto px-2.5 py-1.5 text-[0.7rem] sm:px-4 sm:py-2 sm:text-sm">
+            <span className="sm:hidden">COMPRAR →</span>
+            <span className="hidden sm:inline">QUIERO RECONEXIÓN →</span>
           </CTA>
         </div>
       </div>
