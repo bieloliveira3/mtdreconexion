@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import {
   FULL_BUNDLE_CHECKOUT_URL,
+  FULL_BUNDLE_DISCOUNT,
   FULL_BUNDLE_OLD_PRICE,
   FULL_BUNDLE_PRICE,
   METHOD_CHECKOUT_URL,
+  METHOD_DISCOUNT,
   METHOD_PRICE,
   OLD_PRICE,
 } from "@/config/site";
