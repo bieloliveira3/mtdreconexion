@@ -25,7 +25,7 @@ export const BUSINESS_TAX_ID = "[BUSINESS_TAX_ID]";
 
 export const REFUND_POLICY_ENABLED = false;
 export const REFUND_PERIOD_DAYS = "";
-export const REFUND_EMAIL = "[REFUND_EMAIL]";
+export const REFUND_EMAIL = "mtdreconexion@gmail.com";
 export const REFUND_PROCESS = "[REFUND_PROCESS]";
 
 export const ANALYTICS_ENABLED = false;
