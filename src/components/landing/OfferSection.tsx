@@ -41,8 +41,8 @@ export function OfferSection() {
         </div>
       </div>
 
-      <div className="mx-auto mt-8 flex w-fit max-w-full flex-col items-center gap-2 rounded-3xl border-2 border-dashed border-cta bg-cta/10 px-8 py-5 text-center sm:flex-row sm:gap-6">
-        <span className="font-display text-[3.2rem] leading-none text-cta sm:text-[4.5rem]">
+      <div className="mx-auto mt-8 flex w-fit max-w-full flex-col items-center gap-2 rounded-3xl border border-dashed border-gold/45 bg-gold/10 px-8 py-5 text-center sm:flex-row sm:gap-6">
+        <span className="font-display text-[3.2rem] leading-none text-gold sm:text-[4.5rem]">
           {DISCOUNT}
         </span>
         <div className="flex flex-col items-center sm:items-start">
@@ -74,20 +74,20 @@ export function OfferSection() {
 
           <div className="mt-8 flex flex-wrap items-end gap-3">
             <span className="text-background/60 line-through">{OLD_PRICE}</span>
-            <span className="font-display text-[2.6rem] leading-none text-cta">{PRICE}</span>
-            <span className="rounded-full bg-cta px-4 py-1.5 text-[1rem] font-bold text-cta-foreground">
+            <span className="font-display text-[2.6rem] leading-none text-gold">{PRICE}</span>
+            <span className="rounded-full bg-gold px-4 py-1.5 text-[0.95rem] font-semibold text-primary-dark">
               {DISCOUNT} HOY
             </span>
           </div>
           <p className="mt-2 text-[0.85rem] text-background/70">
             Pago único. No es una suscripción.
           </p>
-          <p className="mt-1 text-[0.9rem] font-medium text-cta">
+          <p className="mt-1 text-[0.9rem] font-medium text-gold">
             Ahorras US$ 18,00 comparado con el precio normal
           </p>
 
           <div className="mt-6">
-            <CTA event="click_offer" className="w-full">
+            <CTA event="click_offer" className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface">
               QUIERO EL MÉTODO RECONEXIÓN →
             </CTA>
           </div>
