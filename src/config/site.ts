@@ -10,6 +10,15 @@ export const PRICE = "US$ 6,99";
 export const OLD_PRICE = "US$ 14,99";
 export const CHECKOUT_URL = "https://pay.hotmart.com/Q107464781E";
 
+// ── Ofertas ──────────────────────────────────────────────
+export const METHOD_PRICE = PRICE; // US$ 6,99
+export const TOOLBOX_PRICE = "US$ 4,99";
+export const FULL_BUNDLE_PRICE = "US$ 11,98";
+
+export const METHOD_CHECKOUT_URL = CHECKOUT_URL;
+/** TODO: pegar aqui o link de checkout específico da "Reconexión Completa". Vazio = botón deshabilitado. */
+export const FULL_BUNDLE_CHECKOUT_URL = "";
+
 export const COUNTDOWN_ENABLED = true;
 /** Duración de la oferta en minutos (configurable). */
 export const COUNTDOWN_DURATION = 10; // 00:10:00
