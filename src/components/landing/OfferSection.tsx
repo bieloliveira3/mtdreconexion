@@ -33,6 +33,12 @@ export function OfferSection() {
         <h2 className="mt-6 font-display text-[1.9rem] leading-tight text-background sm:text-[2.5rem]">
           Empieza hoy tu proceso de Reconexión
         </h2>
+        <div className="mx-auto mt-6 inline-flex flex-col items-center gap-2 rounded-2xl border border-gold/30 bg-gold/10 px-6 py-4">
+          <span className="eyebrow text-gold">
+            Oferta por tiempo limitado • {DISCOUNT} de descuento
+          </span>
+          {COUNTDOWN_ENABLED ? <OfferCountdown /> : null}
+        </div>
       </div>
 
       <div className="mt-12 grid items-center gap-10 rounded-2xl bg-background/5 p-6 sm:p-10 lg:grid-cols-[0.85fr_1.15fr]">
