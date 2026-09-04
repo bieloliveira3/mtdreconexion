@@ -3,8 +3,10 @@ import {
   FULL_BUNDLE_CHECKOUT_URL,
   FULL_BUNDLE_OLD_PRICE,
   FULL_BUNDLE_PRICE,
+  FULL_BUNDLE_PRICE_COP,
   METHOD_CHECKOUT_URL,
   METHOD_PRICE,
+  METHOD_PRICE_COP,
   OLD_PRICE,
 } from "@/config/site";
 import { track } from "@/lib/analytics";
@@ -14,10 +16,11 @@ type Offer = "method" | "full";
 
 const offers: Record<
   Offer,
-  { price: string; oldPrice: string; label: string; desc: string; cta: string; href: string }
+  { price: string; priceCOP: string; oldPrice: string; label: string; desc: string; cta: string; href: string }
 > = {
   method: {
     price: METHOD_PRICE,
+    priceCOP: METHOD_PRICE_COP,
     oldPrice: OLD_PRICE,
     label: "MÉTODO",
     desc: "Método Reconexión",
@@ -26,6 +29,7 @@ const offers: Record<
   },
   full: {
     price: FULL_BUNDLE_PRICE,
+    priceCOP: FULL_BUNDLE_PRICE_COP,
     oldPrice: FULL_BUNDLE_OLD_PRICE,
     label: "COMPLETA",
     desc: "Método + Caja de Herramientas",
