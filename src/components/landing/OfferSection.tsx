@@ -4,6 +4,7 @@ import page1 from "@/assets/ebook-page-1.jpg.asset.json";
 import page2 from "@/assets/ebook-page-2.jpg.asset.json";
 import page3 from "@/assets/ebook-page-3.jpg.asset.json";
 import ebookMockup from "@/assets/ebook-mockup-editorial.jpg.asset.json";
+import reconexionCompletaPack from "@/assets/reconexion-completa-pack.jpg.asset.json";
 import {
   COUNTDOWN_DURATION,
   COUNTDOWN_ENABLED,
@@ -274,6 +275,16 @@ function OfferChoice() {
           <span className="absolute -top-3 left-6 rounded-full border border-gold/50 bg-primary-dark px-3 py-1 text-[0.68rem] font-semibold tracking-[0.14em] text-gold">
             RECOMENDADA
           </span>
+          <div className="mx-auto mb-6 flex justify-center">
+            <img
+              src={reconexionCompletaPack.url}
+              alt="Pack Dúo: Método Reconexión + Caja de Herramientas de Reconexión"
+              loading="eager"
+              decoding="async"
+              draggable={false}
+              className="w-full max-w-[220px] rounded-xl object-contain shadow-soft sm:max-w-[260px]"
+            />
+          </div>
           <h3 className="font-display text-[1.5rem] text-background">RECONEXIÓN COMPLETA</h3>
           <p className="mt-2 text-[0.9rem] leading-relaxed text-background/70">
             Método Reconexión + Caja de Herramientas
