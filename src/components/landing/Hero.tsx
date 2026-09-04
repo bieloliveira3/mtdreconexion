@@ -49,9 +49,10 @@ export function Hero() {
             alt="Pareja sentada conversando con calma en casa"
             className="hidden aspect-[4/5] w-full rounded-2xl object-cover shadow-soft lg:block"
           />
-          <div className="lg:absolute lg:-bottom-8 lg:-left-8">
+          <div className="lg:absolute lg:-bottom-10 lg:-left-16 lg:scale-90">
             <BookMockup />
           </div>
+
         </div>
       </div>
     </section>

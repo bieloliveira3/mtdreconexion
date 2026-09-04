@@ -13,9 +13,10 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur">
       <div className="mx-auto grid max-w-5xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 sm:px-8">
         <a href="#top" className="min-w-0">
-          <span className="block truncate font-display text-[0.95rem] tracking-[0.14em] text-foreground uppercase sm:text-base">
+          <span className="block truncate font-display text-[0.8rem] tracking-[0.08em] text-foreground uppercase sm:text-base sm:tracking-[0.14em]">
             {PRODUCT_NAME}
           </span>
+
         </a>
         <div className="flex shrink-0 items-center gap-7">
           <nav className="hidden items-center gap-7 md:flex">
