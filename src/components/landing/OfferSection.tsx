@@ -55,36 +55,8 @@ export function OfferSection() {
 
 
 
-      <div className="mt-12 grid items-center gap-10 rounded-2xl bg-background/5 p-6 sm:p-10 lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="flex justify-center">
-          <BookMockup />
-        </div>
-        <div>
-          <h3 className="font-display text-[1.6rem] text-background">{PRODUCT_NAME}</h3>
-          <p className="mt-2 text-[0.95rem] leading-relaxed text-background/70">
-            {PRODUCT_SUBTITLE}
-          </p>
-
-          <p className="eyebrow mt-7 text-gold">Incluye</p>
-          <ul className="mt-3 grid gap-2 text-[0.95rem] text-background/85">
-            {includes.map((i) => (
-              <li key={i}>✓ {i}</li>
-            ))}
-          </ul>
-
-          <p className="mt-7 text-[0.95rem] leading-relaxed text-background/70">
-            Y si quieres llevar el método a la práctica, la Caja de Herramientas de Reconexión
-            reúne recursos prácticos para aplicar lo aprendido en tu día a día.
-          </p>
-          {GUARANTEE_ENABLED && GUARANTEE_TEXT ? (
-            <p className="mt-4 rounded-lg border border-gold/30 px-4 py-3 text-[0.85rem] text-background/80">
-              {GUARANTEE_TEXT}
-            </p>
-          ) : null}
-        </div>
-      </div>
-
       <OfferChoice />
+
 
       <div className="mt-14 text-center">
         <p className="eyebrow text-gold">Mira por dentro</p>
