@@ -158,61 +158,57 @@ function OfferChoice() {
 
       <div className="mt-8 grid gap-6">
         {/* Card 1 — Método Reconexión */}
-        <div className="relative flex flex-col rounded-2xl border border-background/15 bg-background/[0.04] p-6 sm:p-8 lg:flex-row lg:items-center lg:gap-8">
-          <div className="flex shrink-0 items-center justify-center lg:w-[260px] lg:items-center">
-            <BookMockup size="sm" />
+        <div className="relative flex flex-col rounded-2xl border border-background/15 bg-background/[0.04] p-6 sm:p-8 lg:flex-row lg:items-stretch lg:gap-8">
+          <div className="flex shrink-0 items-center justify-center lg:w-[240px] lg:items-center">
+            <BookMockup size="md" />
           </div>
           <div className="mt-5 flex flex-1 flex-col lg:mt-0">
-            <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
-              <div className="flex-1">
-                <h3 className="font-display text-[1.6rem] text-background sm:text-[1.8rem]">
-                  MÉTODO RECONEXIÓN
-                </h3>
-                <ul className="mt-4 grid gap-2 text-[0.95rem] text-background/85 sm:grid-cols-2 lg:grid-cols-1">
-                  {includes.map((i) => (
-                    <li key={i}>✓ {i}</li>
-                  ))}
-                </ul>
+            <h3 className="font-display text-[1.6rem] text-background sm:text-[1.8rem]">
+              MÉTODO RECONEXIÓN
+            </h3>
+            <ul className="mt-4 grid gap-2 text-[0.95rem] text-background/85 sm:grid-cols-2">
+              {includes.map((i) => (
+                <li key={i}>✓ {i}</li>
+              ))}
+            </ul>
+            <div className="mt-auto pt-6">
+              <div className="flex flex-wrap items-end gap-3">
+                <span className="text-background/55 line-through">{OLD_PRICE}</span>
+                <span className="font-display text-[2.4rem] leading-none text-gold">
+                  {METHOD_PRICE}
+                </span>
+                <span className="mb-1.5 rounded-md bg-cta px-2 py-0.5 text-[0.75rem] font-semibold text-cta-foreground">
+                  {METHOD_DISCOUNT}
+                </span>
               </div>
-              <div className="shrink-0 lg:w-[240px] lg:text-right">
-                <div className="flex flex-wrap items-end gap-3 lg:justify-end">
-                  <span className="text-background/55 line-through">{OLD_PRICE}</span>
-                  <span className="font-display text-[2.4rem] leading-none text-gold">
-                    {METHOD_PRICE}
-                  </span>
-                  <span className="mb-1.5 rounded-md bg-cta px-2 py-0.5 text-[0.75rem] font-semibold text-cta-foreground">
-                    {METHOD_DISCOUNT}
-                  </span>
-                </div>
-                <p className="mt-1 font-display text-[1.1rem] leading-none text-gold/90">
-                  {METHOD_PRICE_COP}
-                </p>
-                <p className="mt-2 text-[0.8rem] text-background/60">
-                  Pago único. No es una suscripción.
-                </p>
-                <p className="mt-1 text-[0.72rem] text-background/50">
-                  En la pantalla de pago se mostrará convertido a tu moneda local.
-                </p>
+              <p className="mt-1 font-display text-[1.1rem] leading-none text-gold/90">
+                {METHOD_PRICE_COP}
+              </p>
+              <p className="mt-2 text-[0.8rem] text-background/60">
+                Pago único. No es una suscripción.
+              </p>
+              <p className="mt-1 text-[0.72rem] text-background/50">
+                En la pantalla de pago se mostrará convertido a tu moneda local.
+              </p>
+              <div className="mt-5">
+                <CTA
+                  event="click_offer"
+                  href={METHOD_CHECKOUT_URL}
+                  className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface sm:w-auto"
+                >
+                  QUIERO EL MÉTODO RECONEXIÓN →
+                </CTA>
               </div>
-            </div>
-            <div className="mt-6 lg:mt-5">
-              <CTA
-                event="click_offer"
-                href={METHOD_CHECKOUT_URL}
-                className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface lg:w-auto lg:self-end"
-              >
-                QUIERO EL MÉTODO RECONEXIÓN →
-              </CTA>
             </div>
           </div>
         </div>
 
         {/* Card 2 — Reconexión Completa */}
-        <div className="relative flex flex-col rounded-2xl border border-gold/45 bg-background/[0.07] p-6 sm:p-8 lg:flex-row lg:items-center lg:gap-8">
+        <div className="relative flex flex-col rounded-2xl border border-gold/45 bg-background/[0.07] p-6 sm:p-8 lg:flex-row lg:items-stretch lg:gap-8">
           <span className="absolute -top-3 left-6 rounded-full border border-gold/50 bg-primary-dark px-3 py-1 text-[0.68rem] font-semibold tracking-[0.14em] text-gold">
             RECOMENDADA
           </span>
-          <div className="flex shrink-0 items-center justify-center lg:w-[260px] lg:items-center">
+          <div className="flex shrink-0 items-center justify-center lg:w-[240px] lg:items-center">
             <img
               src={reconexionCompletaPack.url}
               alt="Pack Dúo: Método Reconexión + Caja de Herramientas de Reconexión"
@@ -223,72 +219,68 @@ function OfferChoice() {
             />
           </div>
           <div className="mt-5 flex flex-1 flex-col lg:mt-0">
-            <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
-              <div className="flex-1">
-                <h3 className="font-display text-[1.6rem] text-background sm:text-[1.8rem]">
-                  RECONEXIÓN COMPLETA
-                </h3>
-                <p className="mt-1 text-[0.95rem] leading-relaxed text-background/70">
-                  Método Reconexión + Caja de Herramientas
-                </p>
-                <ul className="mt-4 grid gap-x-4 gap-y-2 text-[0.9rem] text-background/85 sm:grid-cols-2">
-                  <li>✓ Todo el Método Reconexión</li>
-                  <li>✓ Caja de Herramientas de Reconexión</li>
-                  <li>✓ 30 preguntas para volver a conversar</li>
-                  <li>✓ 20 mensajes para conversas difíciles</li>
-                  <li>✓ Guión de pedido de disculpas</li>
-                  <li>✓ Guión para expresar necesidades</li>
-                  <li>✓ Ejercicios rápidos solo/a</li>
-                  <li>✓ Ejercicios para hacer en pareja</li>
-                  <li>✓ Qué decir cuando tu pareja se cierra</li>
-                  <li>✓ Qué hacer después de una discusión</li>
-                  <li>✓ Checklist semanal de reconexión</li>
-                  <li>✓ Calendario de 30 días de acciones</li>
-                </ul>
+            <h3 className="font-display text-[1.6rem] text-background sm:text-[1.8rem]">
+              RECONEXIÓN COMPLETA
+            </h3>
+            <p className="mt-1 text-[0.95rem] leading-relaxed text-background/70">
+              Método Reconexión + Caja de Herramientas
+            </p>
+            <ul className="mt-4 grid gap-x-4 gap-y-2 text-[0.9rem] text-background/85 sm:grid-cols-2">
+              <li>✓ Todo el Método Reconexión</li>
+              <li>✓ Caja de Herramientas de Reconexión</li>
+              <li>✓ 30 preguntas para volver a conversar</li>
+              <li>✓ 20 mensajes para conversas difíciles</li>
+              <li>✓ Guión de pedido de disculpas</li>
+              <li>✓ Guión para expresar necesidades</li>
+              <li>✓ Ejercicios rápidos solo/a</li>
+              <li>✓ Ejercicios para hacer en pareja</li>
+              <li>✓ Qué decir cuando tu pareja se cierra</li>
+              <li>✓ Qué hacer después de una discusión</li>
+              <li>✓ Checklist semanal de reconexión</li>
+              <li>✓ Calendario de 30 días de acciones</li>
+            </ul>
+            <div className="mt-auto pt-6">
+              <div className="flex flex-wrap items-end gap-3">
+                <span className="text-background/55 line-through">{FULL_BUNDLE_OLD_PRICE}</span>
+                <span className="font-display text-[2.6rem] leading-none text-gold">
+                  {FULL_BUNDLE_PRICE}
+                </span>
+                <span className="mb-1.5 rounded-md bg-cta px-2 py-0.5 text-[0.75rem] font-semibold text-cta-foreground">
+                  {FULL_BUNDLE_DISCOUNT}
+                </span>
               </div>
-              <div className="shrink-0 lg:w-[240px] lg:text-right">
-                <div className="flex flex-wrap items-end gap-3 lg:justify-end">
-                  <span className="text-background/55 line-through">{FULL_BUNDLE_OLD_PRICE}</span>
-                  <span className="font-display text-[2.6rem] leading-none text-gold">
-                    {FULL_BUNDLE_PRICE}
-                  </span>
-                  <span className="mb-1.5 rounded-md bg-cta px-2 py-0.5 text-[0.75rem] font-semibold text-cta-foreground">
-                    {FULL_BUNDLE_DISCOUNT}
-                  </span>
-                </div>
-                <p className="mt-1 font-display text-[1.15rem] leading-none text-gold/90">
-                  {FULL_BUNDLE_PRICE_COP}
-                </p>
-                <p className="mt-2 text-[0.8rem] text-background/65">
-                  Método {METHOD_PRICE} + Caja de Herramientas {TOOLBOX_PRICE}. Pago único.
-                </p>
-                <p className="mt-1 text-[0.72rem] text-background/50">
-                  En la pantalla de pago se mostrará convertido a tu moneda local.
-                </p>
-              </div>
-            </div>
-            <div className="mt-6 lg:mt-5">
-              {FULL_BUNDLE_CHECKOUT_URL ? (
-                <CTA
-                  event="click_offer"
-                  href={FULL_BUNDLE_CHECKOUT_URL}
-                  className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface lg:w-auto lg:self-end"
-                >
-                  QUIERO LA RECONEXIÓN COMPLETA →
-                </CTA>
-              ) : (
-                <>
-                  <span
-                    aria-disabled="true"
-                    className="inline-flex w-full cursor-not-allowed items-center justify-center rounded-xl border border-background/25 bg-background/10 px-8 py-4 text-center text-[0.95rem] font-semibold tracking-wide text-background/60 lg:w-auto"
+              <p className="mt-1 font-display text-[1.15rem] leading-none text-gold/90">
+                {FULL_BUNDLE_PRICE_COP}
+              </p>
+              <p className="mt-2 text-[0.8rem] text-background/65">
+                Método {METHOD_PRICE} + Caja de Herramientas {TOOLBOX_PRICE}. Pago único.
+              </p>
+              <p className="mt-1 text-[0.72rem] text-background/50">
+                En la pantalla de pago se mostrará convertido a tu moneda local.
+              </p>
+              <div className="mt-5">
+                {FULL_BUNDLE_CHECKOUT_URL ? (
+                  <CTA
+                    event="click_offer"
+                    href={FULL_BUNDLE_CHECKOUT_URL}
+                    className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface sm:w-auto"
                   >
                     QUIERO LA RECONEXIÓN COMPLETA →
-                  </span>
-                  <p className="mt-2 text-[0.72rem] text-background/50">
-                    [PENDIENTE: enlace de checkout de Reconexión Completa]
-                  </p>
-                </>
-              )}
+                  </CTA>
+                ) : (
+                  <>
+                    <span
+                      aria-disabled="true"
+                      className="inline-flex w-full cursor-not-allowed items-center justify-center rounded-xl border border-background/25 bg-background/10 px-8 py-4 text-center text-[0.95rem] font-semibold tracking-wide text-background/60 sm:w-auto"
+                    >
+                      QUIERO LA RECONEXIÓN COMPLETA →
+                    </span>
+                    <p className="mt-2 text-[0.72rem] text-background/50">
+                      [PENDIENTE: enlace de checkout de Reconexión Completa]
+                    </p>
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
