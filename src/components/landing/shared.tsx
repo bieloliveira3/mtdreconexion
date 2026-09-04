@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { CHECKOUT_URL, PRODUCT_NAME, PRODUCT_SUBTITLE } from "@/config/site";
 import { track, type AnalyticsEvent } from "@/lib/analytics";
+import bookMockup from "@/assets/book-mockup.png";
 
 export function CTA({
   children,
