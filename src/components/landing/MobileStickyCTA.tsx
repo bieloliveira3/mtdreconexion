@@ -120,9 +120,14 @@ export function MobileStickyCTA() {
         <div className="flex items-center justify-between gap-3">
           {Selector}
           <div className="min-w-0 text-right">
-            <p className="font-display text-[1.1rem] leading-none text-primary">
-              {current.price}
-            </p>
+            <div className="flex items-baseline justify-end gap-1.5">
+              <span className="text-[0.7rem] text-muted-foreground line-through">
+                {current.oldPrice}
+              </span>
+              <span className="font-display text-[1.1rem] leading-none text-primary">
+                {current.price}
+              </span>
+            </div>
             <p className="truncate text-[0.65rem] text-muted-foreground">
               {current.desc}
             </p>
