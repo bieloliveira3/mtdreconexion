@@ -7,12 +7,16 @@ import ebookMockup from "@/assets/ebook-mockup-editorial.jpg.asset.json";
 import {
   COUNTDOWN_DURATION,
   COUNTDOWN_ENABLED,
+  FULL_BUNDLE_CHECKOUT_URL,
+  FULL_BUNDLE_PRICE,
   GUARANTEE_ENABLED,
   GUARANTEE_TEXT,
+  METHOD_CHECKOUT_URL,
+  METHOD_PRICE,
   OLD_PRICE,
-  PRICE,
   PRODUCT_NAME,
   PRODUCT_SUBTITLE,
+  TOOLBOX_PRICE,
 } from "@/config/site";
 
 
@@ -75,30 +79,9 @@ export function OfferSection() {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-wrap items-end gap-3">
-            <span className="text-background/60 line-through">{OLD_PRICE}</span>
-            <span className="font-display text-[2.6rem] leading-none text-gold">{PRICE}</span>
-            <span className="rounded-full bg-gold px-4 py-1.5 text-[0.95rem] font-semibold text-primary-dark">
-              {DISCOUNT} HOY
-            </span>
-          </div>
-          <p className="mt-2 text-[0.85rem] text-background/70">
-            Pago único. No es una suscripción.
-          </p>
-          <p className="mt-1 text-[0.75rem] text-background/55">
-            En la pantalla de pago se mostrará convertido a tu moneda local.
-          </p>
-          <p className="mt-1 text-[0.9rem] font-medium text-gold">
-            Ahorras US$ 8,00 comparado con el precio normal
-          </p>
-
-          <div className="mt-6">
-            <CTA event="click_offer" className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface">
-              QUIERO EL MÉTODO RECONEXIÓN →
-            </CTA>
-          </div>
-          <p className="mt-3 text-[0.78rem] text-background/60">
-            Acceso digital después de la compra.
+          <p className="mt-7 text-[0.95rem] leading-relaxed text-background/70">
+            Y si quieres llevar el método a la práctica, la Caja de Herramientas de Reconexión
+            reúne recursos prácticos para aplicar lo aprendido en tu día a día.
           </p>
           {GUARANTEE_ENABLED && GUARANTEE_TEXT ? (
             <p className="mt-4 rounded-lg border border-gold/30 px-4 py-3 text-[0.85rem] text-background/80">
@@ -107,6 +90,8 @@ export function OfferSection() {
           ) : null}
         </div>
       </div>
+
+      <OfferChoice />
 
       <div className="mt-14 text-center">
         <p className="eyebrow text-gold">Mira por dentro</p>
@@ -235,3 +220,109 @@ function PagesMarquee() {
   );
 }
 
+
+function OfferChoice() {
+  return (
+    <div className="mt-14">
+      <div className="text-center">
+        <p className="eyebrow text-gold">Elige cómo quieres empezar</p>
+        <p className="mx-auto mt-3 max-w-2xl text-[0.95rem] leading-relaxed text-background/70">
+          El Método es tu mapa para entender y reconstruir la conexión. La Caja de Herramientas
+          reúne recursos prácticos para llevarlo a la acción.
+        </p>
+      </div>
+
+      <div className="mt-8 grid gap-6 lg:grid-cols-2">
+        {/* Card 1 — Método Reconexión */}
+        <div className="flex flex-col rounded-2xl border border-background/15 bg-background/[0.04] p-6 sm:p-8">
+          <h3 className="font-display text-[1.5rem] text-background">MÉTODO RECONEXIÓN</h3>
+          <p className="mt-2 text-[0.9rem] leading-relaxed text-background/65">
+            Tu mapa para entender y reconstruir la conexión.
+          </p>
+          <ul className="mt-6 grid gap-2 text-[0.92rem] text-background/85">
+            {includes.map((i) => (
+              <li key={i}>✓ {i}</li>
+            ))}
+          </ul>
+          <div className="mt-auto pt-7">
+            <div className="flex flex-wrap items-end gap-3">
+              <span className="text-background/55 line-through">{OLD_PRICE}</span>
+              <span className="font-display text-[2.3rem] leading-none text-gold">
+                {METHOD_PRICE}
+              </span>
+            </div>
+            <p className="mt-2 text-[0.8rem] text-background/60">
+              Pago único. No es una suscripción.
+            </p>
+            <p className="mt-1 text-[0.72rem] text-background/50">
+              En la pantalla de pago se mostrará convertido a tu moneda local.
+            </p>
+            <div className="mt-5">
+              <CTA
+                event="click_offer"
+                href={METHOD_CHECKOUT_URL}
+                className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface"
+              >
+                QUIERO EL MÉTODO RECONEXIÓN →
+              </CTA>
+            </div>
+          </div>
+        </div>
+
+        {/* Card 2 — Reconexión Completa */}
+        <div className="relative flex flex-col rounded-2xl border border-gold/45 bg-background/[0.07] p-6 sm:p-8">
+          <span className="absolute -top-3 left-6 rounded-full border border-gold/50 bg-primary-dark px-3 py-1 text-[0.68rem] font-semibold tracking-[0.14em] text-gold">
+            RECOMENDADA
+          </span>
+          <h3 className="font-display text-[1.5rem] text-background">RECONEXIÓN COMPLETA</h3>
+          <p className="mt-2 text-[0.9rem] leading-relaxed text-background/70">
+            Método Reconexión + Caja de Herramientas
+          </p>
+          <ul className="mt-6 grid gap-2 text-[0.92rem] text-background/85">
+            <li>✓ Todo el Método Reconexión</li>
+            <li>✓ Caja de Herramientas de Reconexión</li>
+          </ul>
+          <p className="mt-4 text-[0.86rem] leading-relaxed text-background/65">
+            Recursos prácticos para ayudarte a aplicar el Método Reconexión en el día a día.
+          </p>
+          <div className="mt-auto pt-7">
+            <div className="flex flex-wrap items-end gap-3">
+              <span className="font-display text-[2.6rem] leading-none text-gold">
+                {FULL_BUNDLE_PRICE}
+              </span>
+            </div>
+            <p className="mt-2 text-[0.8rem] text-background/65">
+              Método {METHOD_PRICE} + Caja de Herramientas {TOOLBOX_PRICE}. Pago único.
+            </p>
+            <p className="mt-1 text-[0.72rem] text-background/50">
+              En la pantalla de pago se mostrará convertido a tu moneda local.
+            </p>
+            <div className="mt-5">
+              {FULL_BUNDLE_CHECKOUT_URL ? (
+                <CTA
+                  event="click_offer"
+                  href={FULL_BUNDLE_CHECKOUT_URL}
+                  className="w-full ring-1 ring-gold/40"
+                >
+                  QUIERO LA RECONEXIÓN COMPLETA →
+                </CTA>
+              ) : (
+                <>
+                  <span
+                    aria-disabled="true"
+                    className="inline-flex w-full cursor-not-allowed items-center justify-center rounded-xl border border-background/25 bg-background/10 px-8 py-4 text-center text-[0.95rem] font-semibold tracking-wide text-background/60"
+                  >
+                    QUIERO LA RECONEXIÓN COMPLETA →
+                  </span>
+                  <p className="mt-2 text-[0.72rem] text-background/50">
+                    [PENDIENTE: enlace de checkout de Reconexión Completa]
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
