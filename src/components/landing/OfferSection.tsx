@@ -201,7 +201,6 @@ const pages = [
 ];
 
 function PagesMarquee() {
-  const loop = [...pages, ...pages];
   return (
     <div
       className="relative mt-8 overflow-hidden"
@@ -209,21 +208,27 @@ function PagesMarquee() {
       aria-label="Páginas del eBook"
     >
       <div
-        className="flex w-max gap-5 motion-safe:[animation:mr-marquee_32s_linear_infinite] hover:[animation-play-state:paused]"
-        style={{ willChange: "transform" }}
+        className="flex w-max [animation:mr-marquee_14s_linear_infinite] hover:[animation-play-state:paused]"
+        style={{ willChange: "transform", transform: "translateZ(0)" }}
       >
-        {loop.map((p, i) => (
-          <img
-            key={i}
-            src={p.src}
-            alt={i < pages.length ? p.alt : ""}
-            aria-hidden={i >= pages.length}
-            loading="lazy"
-            draggable={false}
-            className="h-[260px] w-auto shrink-0 rounded-xl border border-background/15 object-contain shadow-soft sm:h-[340px]"
-          />
+        {[0, 1].map((copy) => (
+          <div key={copy} className="flex shrink-0 gap-5 pr-5">
+            {pages.map((p, i) => (
+              <img
+                key={i}
+                src={p.src}
+                alt={copy === 0 ? p.alt : ""}
+                aria-hidden={copy === 1}
+                loading="eager"
+                decoding="async"
+                draggable={false}
+                className="h-[260px] w-auto shrink-0 rounded-xl border border-background/15 object-contain shadow-soft sm:h-[340px]"
+              />
+            ))}
+          </div>
         ))}
       </div>
+
       <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-primary-dark to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-primary-dark to-transparent" />
     </div>
