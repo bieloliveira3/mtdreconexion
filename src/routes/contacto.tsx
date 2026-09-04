@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 import { LegalLayout } from "@/components/landing/LegalLayout";
 import { BUSINESS_EMAIL } from "@/config/site";
 
@@ -21,13 +20,11 @@ export const Route = createFileRoute("/contacto")({
 });
 
 function ContactPage() {
-  const [sent, setSent] = useState(false);
-
   return (
     <LegalLayout title="Contacto" showNote={false}>
       <p>
-        ¿Tienes alguna pregunta sobre tu compra o sobre el acceso al producto? Estamos aquí para
-        ayudarte.
+        ¿Tienes alguna pregunta sobre tu compra o sobre el acceso al producto? Escríbenos por
+        WhatsApp o envíanos un correo.
       </p>
 
       <div className="grid gap-4 rounded-2xl border border-border bg-surface p-6">
@@ -61,70 +58,6 @@ function ContactPage() {
           </a>
         </p>
       </div>
-
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t border-border" />
-        </div>
-        <div className="relative flex justify-center text-[0.75rem] uppercase tracking-wider text-muted-foreground">
-          <span className="bg-background px-3">O completa el formulario</span>
-        </div>
-      </div>
-
-      <form
-        className="grid gap-4"
-        onSubmit={(e) => {
-          e.preventDefault();
-          setSent(true);
-        }}
-      >
-        <Field label="Nombre" name="nombre" />
-        <Field label="Email" name="email" type="email" />
-        <Field label="Asunto" name="asunto" />
-        <label className="grid gap-1.5">
-          <span className="text-[0.82rem] font-medium text-foreground">Mensaje</span>
-          <textarea
-            name="mensaje"
-            rows={5}
-            required
-            className="rounded-xl border border-border bg-card px-4 py-3 text-[0.9rem] text-foreground outline-none focus:border-primary"
-          />
-        </label>
-        <button
-          type="submit"
-          className="justify-self-start rounded-xl bg-primary px-6 py-3 text-[0.85rem] font-semibold text-primary-foreground transition-colors hover:bg-primary-dark"
-        >
-          Enviar mensaje
-        </button>
-      </form>
-
-      {sent && (
-        <p className="rounded-xl border border-border bg-surface px-5 py-4 text-[0.88rem]">
-          Este formulario todavía no tiene un servicio de envío configurado, por lo que tu mensaje
-          no ha sido enviado. Te recomendamos contactarnos por WhatsApp o escribirnos a{" "}
-          <a
-            href={`mailto:${BUSINESS_EMAIL}`}
-            className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
-          >
-            {BUSINESS_EMAIL}
-          </a>
-          .
-        </p>
-      )}
     </LegalLayout>
-  );
-}
-
-function Field({ label, name, type = "text" }: { label: string; name: string; type?: string }) {
-  return (
-    <label className="grid gap-1.5">
-      <span className="text-[0.82rem] font-medium text-foreground">{label}</span>
-      <input
-        name={name}
-        type={type}
-        required
-        className="rounded-xl border border-border bg-card px-4 py-3 text-[0.9rem] text-foreground outline-none focus:border-primary"
-      />
-    </label>
   );
 }
