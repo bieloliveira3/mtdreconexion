@@ -101,6 +101,9 @@ export function MobileStickyCTA() {
             <span className="font-display text-[1.25rem] leading-none text-primary">
               {current.price}
             </span>
+            <span className="rounded-md bg-cta px-1.5 py-0.5 text-[0.65rem] font-semibold text-cta-foreground">
+              {current.discount}
+            </span>
           </div>
           <p className="truncate text-[0.75rem] text-muted-foreground">
             {current.desc}
