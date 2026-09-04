@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { BookMockup, CTA, Section } from "./shared";
+import page1 from "@/assets/ebook-page-1.jpg.asset.json";
+import page2 from "@/assets/ebook-page-2.jpg.asset.json";
+import page3 from "@/assets/ebook-page-3.jpg.asset.json";
 import {
   COUNTDOWN_DURATION,
   COUNTDOWN_ENABLED,
-  EBOOK_VIDEO_POSTER_URL,
-  EBOOK_VIDEO_URL,
   GUARANTEE_ENABLED,
   GUARANTEE_TEXT,
   OLD_PRICE,
@@ -12,6 +13,7 @@ import {
   PRODUCT_NAME,
   PRODUCT_SUBTITLE,
 } from "@/config/site";
+
 
 const DISCOUNT = "-53%";
 
@@ -105,24 +107,14 @@ export function OfferSection() {
         </div>
       </div>
 
-      {EBOOK_VIDEO_URL ? (
-        <div className="mt-14 text-center">
-          <p className="eyebrow text-gold">Mira por dentro</p>
-          <h3 className="mt-3 font-display text-[1.5rem] leading-tight text-background sm:text-[1.9rem]">
-            Esto es lo que recibirás al instante
-          </h3>
-          <div className="mx-auto mt-8 w-full max-w-[280px] sm:max-w-[320px]">
-            <div className="rounded-[2.2rem] border border-background/20 bg-background/5 p-2 shadow-soft">
-              <div className="relative overflow-hidden rounded-[1.8rem] bg-primary-dark">
-                <VideoPlayer
-                  src={EBOOK_VIDEO_URL}
-                  poster={EBOOK_VIDEO_POSTER_URL}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : null}
+      <div className="mt-14 text-center">
+        <p className="eyebrow text-gold">Mira por dentro</p>
+        <h3 className="mt-3 font-display text-[1.5rem] leading-tight text-background sm:text-[1.9rem]">
+          Esto es lo que recibirás al instante
+        </h3>
+        <PagesMarquee />
+      </div>
+
 
       <p className="mx-auto mt-10 max-w-2xl text-center text-[0.82rem] leading-relaxed text-background/55">
         El método sintetiza herramientas y aportaciones del campo de las relaciones de pareja,
@@ -162,66 +154,39 @@ function OfferCountdown() {
   );
 }
 
-function VideoPlayer({ src, poster }: { src: string; poster: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+const pages = [
+  { src: page1.url, alt: "Portada del eBook Método Reconexión" },
+  { src: page2.url, alt: "Capítulo 11: Cuando solo uno quiere" },
+  { src: page3.url, alt: "Capítulo 12: El plan de 90 días" },
+];
 
-  const togglePlay = async () => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    try {
-      if (video.paused) {
-        await video.play();
-        setIsPlaying(true);
-      } else {
-        video.pause();
-        setIsPlaying(false);
-      }
-    } catch {
-      setIsPlaying(false);
-    }
-  };
-
-  const handleEnded = () => setIsPlaying(false);
-
+function PagesMarquee() {
+  const loop = [...pages, ...pages];
   return (
-    <button
-      type="button"
-      onClick={togglePlay}
-      onContextMenu={(e) => e.preventDefault()}
-      className="group relative block aspect-[9/16] w-full cursor-pointer focus:outline-none"
-      aria-label={isPlaying ? "Pausar video" : "Reproducir video"}
+    <div
+      className="relative mt-8 overflow-hidden"
+      role="region"
+      aria-label="Páginas del eBook"
     >
-      <video
-        ref={videoRef}
-        src={src}
-        poster={poster}
-        muted
-        playsInline
-        preload="metadata"
-        controlsList="nodownload"
-        onEnded={handleEnded}
-        className="pointer-events-none h-full w-full object-cover"
+      <div
+        className="flex w-max gap-5 motion-safe:[animation:mr-marquee_32s_linear_infinite] hover:[animation-play-state:paused]"
+        style={{ willChange: "transform" }}
       >
-        Tu navegador no puede reproducir este video.
-      </video>
-
-      {!isPlaying && (
-        <span className="absolute inset-0 flex items-center justify-center bg-primary-dark/30 transition-colors group-hover:bg-primary-dark/40">
-          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-background/90 text-primary shadow-lg backdrop-blur-sm transition-transform group-hover:scale-105">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="h-6 w-6"
-              aria-hidden="true"
-            >
-              <path d="M8 5v14l11-7L8 5z" />
-            </svg>
-          </span>
-        </span>
-      )}
-    </button>
+        {loop.map((p, i) => (
+          <img
+            key={i}
+            src={p.src}
+            alt={i < pages.length ? p.alt : ""}
+            aria-hidden={i >= pages.length}
+            loading="lazy"
+            draggable={false}
+            className="h-[260px] w-auto shrink-0 rounded-xl border border-background/15 object-contain shadow-soft sm:h-[340px]"
+          />
+        ))}
+      </div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-primary-dark to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-primary-dark to-transparent" />
+    </div>
   );
 }
+

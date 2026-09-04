@@ -132,6 +132,16 @@
   }
 }
 
+@keyframes mr-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
 @utility rise {
   animation: mr-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
