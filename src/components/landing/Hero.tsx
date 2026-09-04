@@ -34,7 +34,7 @@ export function Hero() {
           <div className="mt-8 rounded-2xl border border-background/15 bg-background/10 p-6 shadow-soft backdrop-blur-md">
             <div className="flex flex-wrap items-end gap-3">
               <span className="text-[1rem] text-background/70 line-through">{OLD_PRICE}</span>
-              <span className="font-display text-[2.5rem] leading-none text-gold">{PRICE}</span>
+              <span className="font-display text-[2.5rem] leading-none text-cta">{PRICE}</span>
             </div>
             <p className="mt-2 text-[0.85rem] text-background/75">
               Pago único • Acceso digital inmediato
