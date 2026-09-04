@@ -1,6 +1,8 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BookMockup, CTA, Section } from "./shared";
 import {
+  COUNTDOWN_DURATION,
+  COUNTDOWN_ENABLED,
   EBOOK_VIDEO_POSTER_URL,
   EBOOK_VIDEO_URL,
   GUARANTEE_ENABLED,
@@ -10,6 +12,8 @@ import {
   PRODUCT_NAME,
   PRODUCT_SUBTITLE,
 } from "@/config/site";
+
+const DISCOUNT = "-72%";
 
 const includes = [
   "eBook digital completo",
@@ -29,6 +33,12 @@ export function OfferSection() {
         <h2 className="mt-6 font-display text-[1.9rem] leading-tight text-background sm:text-[2.5rem]">
           Empieza hoy tu proceso de Reconexión
         </h2>
+        <div className="mx-auto mt-6 inline-flex flex-col items-center gap-2 rounded-2xl border border-gold/30 bg-gold/10 px-6 py-4">
+          <span className="eyebrow text-gold">
+            Oferta por tiempo limitado • {DISCOUNT} de descuento
+          </span>
+          {COUNTDOWN_ENABLED ? <OfferCountdown /> : null}
+        </div>
       </div>
 
       <div className="mt-12 grid items-center gap-10 rounded-2xl bg-background/5 p-6 sm:p-10 lg:grid-cols-[0.85fr_1.15fr]">
@@ -51,6 +61,9 @@ export function OfferSection() {
           <div className="mt-8 flex flex-wrap items-end gap-3">
             <span className="text-background/60 line-through">{OLD_PRICE}</span>
             <span className="font-display text-[2.6rem] leading-none text-cta">{PRICE}</span>
+            <span className="rounded-full bg-cta px-3 py-1 text-[0.8rem] font-bold text-cta-foreground">
+              {DISCOUNT} HOY
+            </span>
           </div>
           <p className="mt-2 text-[0.85rem] text-background/70">
             Pago único. No es una suscripción.
@@ -96,6 +109,36 @@ export function OfferSection() {
         incluyendo trabajos asociados a John y Julie Gottman, Sue Johnson y Marshall Rosenberg.
       </p>
     </Section>
+  );
+}
+
+function pad(n: number) {
+  return String(Math.max(0, n)).padStart(2, "0");
+}
+
+function OfferCountdown() {
+  const [left, setLeft] = useState<number | null>(null);
+
+  useEffect(() => {
+    const deadline = Date.now() + COUNTDOWN_DURATION * 60 * 1000;
+    const tick = () => setLeft(Math.max(0, deadline - Date.now()));
+    tick();
+    const id = window.setInterval(tick, 1000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const s = Math.floor((left ?? COUNTDOWN_DURATION * 60 * 1000) / 1000);
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+
+  return (
+    <span
+      className="font-mono text-[1.15rem] tracking-[0.15em] text-gold tabular-nums"
+      aria-live="off"
+    >
+      {pad(h)} : {pad(m)} : {pad(sec)}
+    </span>
   );
 }
 
