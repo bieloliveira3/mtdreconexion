@@ -103,6 +103,9 @@ export function OfferSection() {
           Esto es lo que recibirás al instante
         </h3>
         <PagesMarquee />
+
+        <p className="eyebrow mt-12 text-gold">Dentro de la Caja de Herramientas</p>
+        <ToolboxMarquee />
       </div>
 
       <div className="mt-16 grid items-center gap-10 rounded-2xl border border-background/10 bg-background/[0.03] p-6 sm:p-10 lg:grid-cols-[1fr_1fr]">
