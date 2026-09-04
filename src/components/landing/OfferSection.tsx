@@ -199,11 +199,11 @@ function OfferChoice() {
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
         {/* Card 1 — Método Reconexión */}
         <div className="flex flex-col rounded-2xl border border-background/15 bg-background/[0.04] p-6 sm:p-8">
+          <div className="mx-auto mb-4 flex justify-center">
+            <BookMockup className="max-h-[180px] w-auto sm:max-h-[220px]" />
+          </div>
           <h3 className="font-display text-[1.5rem] text-background">MÉTODO RECONEXIÓN</h3>
-          <p className="mt-2 text-[0.9rem] leading-relaxed text-background/65">
-            Tu mapa para entender y reconstruir la conexión.
-          </p>
-          <ul className="mt-6 grid gap-2 text-[0.92rem] text-background/85">
+          <ul className="mt-4 grid gap-1.5 text-[0.9rem] text-background/85">
             {includes.map((i) => (
               <li key={i}>✓ {i}</li>
             ))}
