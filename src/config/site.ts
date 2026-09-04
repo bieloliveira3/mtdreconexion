@@ -18,7 +18,7 @@ export const GUARANTEE_ENABLED = false;
 export const GUARANTEE_TEXT = "";
 
 export const BUSINESS_NAME = "[BUSINESS_NAME]";
-export const BUSINESS_EMAIL = "[BUSINESS_EMAIL]";
+export const BUSINESS_EMAIL = "mtdreconexion@gmail.com";
 export const BUSINESS_ADDRESS = "[BUSINESS_ADDRESS]";
 export const BUSINESS_COUNTRY = "[BUSINESS_COUNTRY]";
 export const BUSINESS_TAX_ID = "[BUSINESS_TAX_ID]";
