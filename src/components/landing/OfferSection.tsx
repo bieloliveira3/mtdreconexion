@@ -247,7 +247,7 @@ function OfferChoice() {
           <div className="mt-auto pt-7">
             <div className="flex flex-wrap items-end gap-3">
               <span className="text-background/55 line-through">{OLD_PRICE}</span>
-              <span className="font-display text-[2.3rem] leading-none text-cta">
+              <span className="font-display text-[2.3rem] leading-none text-gold">
                 {METHOD_PRICE}
               </span>
             </div>
@@ -287,7 +287,7 @@ function OfferChoice() {
           </p>
           <div className="mt-auto pt-7">
             <div className="flex flex-wrap items-end gap-3">
-              <span className="font-display text-[2.6rem] leading-none text-cta">
+              <span className="font-display text-[2.6rem] leading-none text-gold">
                 {FULL_BUNDLE_PRICE}
               </span>
             </div>
@@ -310,7 +310,7 @@ function OfferChoice() {
                 <>
                   <span
                     aria-disabled="true"
-                    className="inline-flex w-full cursor-not-allowed items-center justify-center rounded-xl bg-cta/50 px-8 py-4 text-center text-[0.95rem] font-semibold tracking-wide text-cta-foreground/80"
+                    className="inline-flex w-full cursor-not-allowed items-center justify-center rounded-xl border border-background/25 bg-background/10 px-8 py-4 text-center text-[0.95rem] font-semibold tracking-wide text-background/60"
                   >
                     QUIERO LA RECONEXIÓN COMPLETA →
                   </span>
