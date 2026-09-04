@@ -1,6 +1,8 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BookMockup, CTA, Section } from "./shared";
 import {
+  COUNTDOWN_DURATION,
+  COUNTDOWN_ENABLED,
   EBOOK_VIDEO_POSTER_URL,
   EBOOK_VIDEO_URL,
   GUARANTEE_ENABLED,
@@ -10,6 +12,8 @@ import {
   PRODUCT_NAME,
   PRODUCT_SUBTITLE,
 } from "@/config/site";
+
+const DISCOUNT = "-72%";
 
 const includes = [
   "eBook digital completo",
