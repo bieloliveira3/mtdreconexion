@@ -215,6 +215,9 @@ function OfferChoice() {
                 {METHOD_DISCOUNT}
               </span>
             </div>
+            <p className="mt-1 font-display text-[1.05rem] leading-none text-gold/90">
+              {METHOD_PRICE_COP}
+            </p>
             <p className="mt-2 text-[0.8rem] text-background/60">
               Pago único. No es una suscripción.
             </p>
@@ -276,6 +279,9 @@ function OfferChoice() {
                 {FULL_BUNDLE_DISCOUNT}
               </span>
             </div>
+            <p className="mt-1 font-display text-[1.1rem] leading-none text-gold/90">
+              {FULL_BUNDLE_PRICE_COP}
+            </p>
             <p className="mt-2 text-[0.8rem] text-background/65">
               Método {METHOD_PRICE} + Caja de Herramientas {TOOLBOX_PRICE}. Pago único.
             </p>

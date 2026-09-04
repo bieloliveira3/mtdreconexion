@@ -102,6 +102,9 @@ export function MobileStickyCTA() {
               {current.price}
             </span>
           </div>
+          <p className="font-display text-[0.85rem] leading-none text-gold">
+            {current.priceCOP}
+          </p>
           <p className="truncate text-[0.75rem] text-muted-foreground">
             {current.desc}
           </p>
@@ -132,6 +135,9 @@ export function MobileStickyCTA() {
                 {current.price}
               </span>
             </div>
+            <p className="font-display text-[0.78rem] leading-none text-gold">
+              {current.priceCOP}
+            </p>
             <p className="truncate text-[0.65rem] text-muted-foreground">
               {current.desc}
             </p>
