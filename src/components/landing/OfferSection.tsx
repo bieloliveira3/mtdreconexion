@@ -82,6 +82,7 @@ export function OfferSection() {
               <div className="overflow-hidden rounded-[1.8rem] bg-primary-dark">
                 <video
                   src={EBOOK_VIDEO_URL}
+                  poster={EBOOK_VIDEO_POSTER_URL}
                   controls
                   autoPlay
                   muted
