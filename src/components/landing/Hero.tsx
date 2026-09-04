@@ -1,6 +1,6 @@
 import { BookMockup, CTA } from "./shared";
 import { OLD_PRICE, PRICE } from "@/config/site";
-import heroCover from "@/assets/hero-cover.jpg.asset.json";
+import heroCover from "@/assets/hero-cover-new.jpg.asset.json";
 
 export function Hero() {
   return (
