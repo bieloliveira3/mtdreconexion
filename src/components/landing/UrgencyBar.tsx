@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { COUNTDOWN_DURATION, COUNTDOWN_ENABLED } from "@/config/site";
 
-const KEY = "mr_offer_deadline";
-
 function pad(n: number) {
   return String(Math.max(0, n)).padStart(2, "0");
 }
@@ -12,11 +10,7 @@ export function UrgencyBar() {
 
   useEffect(() => {
     if (!COUNTDOWN_ENABLED) return;
-    let deadline = Number(window.localStorage.getItem(KEY));
-    if (!deadline || Number.isNaN(deadline) || deadline < Date.now()) {
-      deadline = Date.now() + COUNTDOWN_DURATION * 60 * 1000;
-      window.localStorage.setItem(KEY, String(deadline));
-    }
+    const deadline = Date.now() + COUNTDOWN_DURATION * 60 * 1000;
     const tick = () => setLeft(Math.max(0, deadline - Date.now()));
     tick();
     const id = window.setInterval(tick, 1000);
@@ -46,3 +40,4 @@ export function UrgencyBar() {
     </div>
   );
 }
+

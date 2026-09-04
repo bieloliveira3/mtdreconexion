@@ -12,7 +12,7 @@ export const CHECKOUT_URL = "https://pay.hotmart.com/Q107464781E";
 
 export const COUNTDOWN_ENABLED = true;
 /** Duración de la oferta en minutos (configurable). */
-export const COUNTDOWN_DURATION = 8 * 60 + 42; // 08:42:00
+export const COUNTDOWN_DURATION = 10; // 00:10:00
 
 export const GUARANTEE_ENABLED = false;
 export const GUARANTEE_TEXT = "";
