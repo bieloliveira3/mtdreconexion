@@ -80,19 +80,11 @@ export function OfferSection() {
           </h3>
           <div className="mx-auto mt-8 w-full max-w-[280px] sm:max-w-[320px]">
             <div className="rounded-[2.2rem] border border-background/20 bg-background/5 p-2 shadow-soft">
-              <div className="overflow-hidden rounded-[1.8rem] bg-primary-dark">
-                <video
+              <div className="relative overflow-hidden rounded-[1.8rem] bg-primary-dark">
+                <VideoPlayer
                   src={EBOOK_VIDEO_URL}
                   poster={EBOOK_VIDEO_POSTER_URL}
-                  controls
-                  autoPlay
-                  muted
-                  playsInline
-                  preload="metadata"
-                  className="aspect-[9/16] w-full object-cover"
-                >
-                  Tu navegador no puede reproducir este video.
-                </video>
+                />
               </div>
             </div>
           </div>
