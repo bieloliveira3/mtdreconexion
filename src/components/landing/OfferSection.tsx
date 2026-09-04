@@ -7,12 +7,16 @@ import ebookMockup from "@/assets/ebook-mockup-editorial.jpg.asset.json";
 import {
   COUNTDOWN_DURATION,
   COUNTDOWN_ENABLED,
+  FULL_BUNDLE_CHECKOUT_URL,
+  FULL_BUNDLE_PRICE,
   GUARANTEE_ENABLED,
   GUARANTEE_TEXT,
+  METHOD_CHECKOUT_URL,
+  METHOD_PRICE,
   OLD_PRICE,
-  PRICE,
   PRODUCT_NAME,
   PRODUCT_SUBTITLE,
+  TOOLBOX_PRICE,
 } from "@/config/site";
 
 
