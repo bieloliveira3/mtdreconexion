@@ -58,58 +58,13 @@ export function OfferSection() {
       <OfferChoice />
 
 
-      <div className="mt-14 text-center">
+      <div className="mt-10 text-center">
         <p className="eyebrow text-gold">Mira por dentro</p>
-        <h3 className="mt-3 font-display text-[1.5rem] leading-tight text-background sm:text-[1.9rem]">
-          Esto es lo que recibirás al instante
-        </h3>
         <PagesMarquee />
-
-        <p className="eyebrow mt-12 text-gold">Dentro de la Caja de Herramientas</p>
         <ToolboxMarquee />
       </div>
 
-      <div className="mt-16 grid items-center gap-10 rounded-2xl border border-background/10 bg-background/[0.03] p-6 sm:p-10 lg:grid-cols-[1fr_1fr]">
-        <div className="flex justify-center">
-          <img
-            src={ebookMockup.url}
-            alt="Mockup editorial del eBook Método Reconexión en libro, tablet y celular"
-            loading="lazy"
-            draggable={false}
-            className="w-full max-w-md rounded-xl object-contain shadow-soft"
-          />
-        </div>
-        <div className="text-center lg:text-left">
-          <p className="eyebrow text-gold">Tu guía completa</p>
-          <h3 className="mt-3 font-display text-[1.5rem] leading-tight text-background sm:text-[1.9rem]">
-            Todo lo que incluye el Método Reconexión
-          </h3>
-          <p className="mt-4 text-[0.95rem] leading-relaxed text-background/75">
-            Un material pensado para aplicar desde el primer día, con estructura clara y pasos concretos que puedes seguir en pareja.
-          </p>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {[
-              { value: "49", label: "Páginas de contenido práctico" },
-              { value: "12", label: "Capítulos organizados paso a paso" },
-              { value: "7", label: "Fases del método de reconexión" },
-              { value: "90", label: "Días de plan de acompañamiento" },
-              { value: "∞", label: "Acceso de por vida al eBook" },
-              { value: "1", label: "Pago único, sin suscripciones" },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="rounded-xl border border-background/10 bg-background/[0.05] p-4 text-center transition-colors hover:bg-background/[0.08]"
-              >
-                <span className="font-display text-[2rem] leading-none text-gold">{item.value}</span>
-                <p className="mt-2 text-[0.85rem] leading-snug text-background/80">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <p className="mx-auto mt-10 max-w-2xl text-center text-[0.82rem] leading-relaxed text-background/55">
+      <p className="mx-auto mt-8 max-w-2xl text-center text-[0.82rem] leading-relaxed text-background/55">
         El método sintetiza herramientas y aportaciones del campo de las relaciones de pareja,
         incluyendo trabajos asociados a John y Julie Gottman, Sue Johnson y Marshall Rosenberg.
       </p>
