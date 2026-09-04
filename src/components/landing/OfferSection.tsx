@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { BookMockup, CTA, Section } from "./shared";
+import page1 from "@/assets/ebook-page-1.jpg.asset.json";
+import page2 from "@/assets/ebook-page-2.jpg.asset.json";
+import page3 from "@/assets/ebook-page-3.jpg.asset.json";
 import {
   COUNTDOWN_DURATION,
   COUNTDOWN_ENABLED,
-  EBOOK_VIDEO_POSTER_URL,
-  EBOOK_VIDEO_URL,
   GUARANTEE_ENABLED,
   GUARANTEE_TEXT,
   OLD_PRICE,
@@ -12,6 +13,7 @@ import {
   PRODUCT_NAME,
   PRODUCT_SUBTITLE,
 } from "@/config/site";
+
 
 const DISCOUNT = "-53%";
 
