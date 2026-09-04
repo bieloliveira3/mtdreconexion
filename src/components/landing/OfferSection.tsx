@@ -75,30 +75,9 @@ export function OfferSection() {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-wrap items-end gap-3">
-            <span className="text-background/60 line-through">{OLD_PRICE}</span>
-            <span className="font-display text-[2.6rem] leading-none text-gold">{PRICE}</span>
-            <span className="rounded-full bg-gold px-4 py-1.5 text-[0.95rem] font-semibold text-primary-dark">
-              {DISCOUNT} HOY
-            </span>
-          </div>
-          <p className="mt-2 text-[0.85rem] text-background/70">
-            Pago único. No es una suscripción.
-          </p>
-          <p className="mt-1 text-[0.75rem] text-background/55">
-            En la pantalla de pago se mostrará convertido a tu moneda local.
-          </p>
-          <p className="mt-1 text-[0.9rem] font-medium text-gold">
-            Ahorras US$ 8,00 comparado con el precio normal
-          </p>
-
-          <div className="mt-6">
-            <CTA event="click_offer" className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface">
-              QUIERO EL MÉTODO RECONEXIÓN →
-            </CTA>
-          </div>
-          <p className="mt-3 text-[0.78rem] text-background/60">
-            Acceso digital después de la compra.
+          <p className="mt-7 text-[0.95rem] leading-relaxed text-background/70">
+            Y si quieres llevar el método a la práctica, la Caja de Herramientas de Reconexión
+            reúne recursos prácticos para aplicar lo aprendido en tu día a día.
           </p>
           {GUARANTEE_ENABLED && GUARANTEE_TEXT ? (
             <p className="mt-4 rounded-lg border border-gold/30 px-4 py-3 text-[0.85rem] text-background/80">
@@ -107,6 +86,8 @@ export function OfferSection() {
           ) : null}
         </div>
       </div>
+
+      <OfferChoice />
 
       <div className="mt-14 text-center">
         <p className="eyebrow text-gold">Mira por dentro</p>
