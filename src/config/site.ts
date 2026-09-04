@@ -8,7 +8,7 @@ export const PRODUCT_SUBTITLE =
 
 export const PRICE = "US$ 6,99";
 export const OLD_PRICE = "US$ 24,99";
-export const CHECKOUT_URL = "[PEGAR CHECKOUT AQUÍ]";
+export const CHECKOUT_URL = "https://pay.hotmart.com/Q107464781E";
 
 export const COUNTDOWN_ENABLED = true;
 /** Duración de la oferta en minutos (configurable). */
