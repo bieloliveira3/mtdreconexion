@@ -33,7 +33,7 @@ const includes = [
 
 export function OfferSection() {
   return (
-    <Section id="oferta" tone="dark">
+    <Section id="oferta" tone="dark" className="pb-28 sm:pb-32">
       <div className="text-center">
         <span className="eyebrow inline-block rounded-full border border-gold/40 px-4 py-1.5 text-gold">
           Acceso digital inmediato
@@ -46,10 +46,7 @@ export function OfferSection() {
         </div>
       </div>
 
-
-
       <OfferChoice />
-
 
       <div className="mt-10 text-center">
         <p className="eyebrow text-gold">Mira por dentro</p>
