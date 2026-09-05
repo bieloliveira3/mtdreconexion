@@ -2,29 +2,22 @@ import { useEffect, useRef } from "react";
 import { BookMockup, CTA, Section } from "./shared";
 import { GuaranteeBadge } from "./GuaranteeBadge";
 import { trackViewContent } from "@/lib/meta-pixel";
-import page1 from "@/assets/ebook-page-1.jpg.asset.json";
-import page2 from "@/assets/ebook-page-2.jpg.asset.json";
-import page3 from "@/assets/ebook-page-3.jpg.asset.json";
-import reconexionCompletaPack from "@/assets/reconexion-completa-pack.jpg.asset.json";
-import toolboxCover from "@/assets/caja-herramientas-cover.jpg.asset.json";
-import toolboxPage1 from "@/assets/caja-herramientas-page-1.jpg.asset.json";
-import toolboxPage2 from "@/assets/caja-herramientas-page-2.jpg.asset.json";
-import {
-  FULL_BUNDLE_CHECKOUT_URL,
-  FULL_BUNDLE_PRICE,
-  FULL_BUNDLE_PRICE_COP,
-  METHOD_CHECKOUT_URL,
-  METHOD_PRICE,
-  METHOD_PRICE_COP,
-  TOOLBOX_PRICE,
-} from "@/config/site";
+import { METHOD_CHECKOUT_URL, METHOD_PRICE, METHOD_PRICE_COP } from "@/config/site";
 
 const includes = [
-  "eBook digital completo",
-  "Método de 7 fases",
-  "Ejercicios prácticos",
-  "Herramientas de conversación",
-  "Plan de 90 días",
+  "eBook digital completo, 53 páginas, en español",
+  "El método de 7 fases explicado paso por paso",
+  "Ejercicios prácticos en cada fase, la mayoría de veinte minutos o menos",
+  "Guiones de conversación para los temas que siempre terminan mal",
+  "Técnicas de desescalada para frenar la pelea antes de que se salga de control",
+  "La fórmula para pedir algo sin que suene a reproche",
+  "Qué hacer con las heridas que quedaron sin cerrar",
+  "Cómo recuperar la amistad y la intimidad, en ese orden",
+  "Qué hacer con el conflicto que se repite hace años",
+  "Un capítulo entero para cuando solo uno de los dos quiere intentarlo",
+  "El plan de 90 días, mes por mes",
+  "Acceso inmediato. Lo lees en el celular, la tablet o la computadora",
+  "Es tuyo para siempre. Sin suscripción, sin renovación",
 ];
 
 export function OfferSection() {
@@ -48,248 +41,92 @@ export function OfferSection() {
   return (
     <Section id="oferta" tone="dark" className="pb-44 sm:pb-48">
       <div ref={ref} aria-hidden className="h-px w-full" />
-      <div className="text-center">
-        <span className="eyebrow inline-block rounded-full border border-gold/40 px-4 py-1.5 text-gold">
-          Acceso digital inmediato
-        </span>
-        <h2 className="mt-6 font-display text-[1.9rem] leading-tight text-background sm:text-[2.5rem]">
-          Empieza hoy tu proceso de Reconexión
-        </h2>
-        <div className="mx-auto mt-6 inline-flex flex-col items-center gap-2 rounded-2xl border border-gold/30 bg-gold/10 px-6 py-4">
-          <span className="eyebrow text-gold">Precio especial por poco tiempo</span>
+
+      <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-12">
+        <div className="flex flex-col items-center gap-6">
+          <BookMockup size="md" />
+          <GuaranteeBadge variant="full" onDark className="w-full" />
         </div>
-      </div>
 
-      <OfferChoice />
+        <div>
+          <p className="eyebrow text-background/85">Acceso digital inmediato</p>
+          <h2 className="mt-3 max-w-[24ch] font-display text-[1.625rem] leading-[1.18] font-semibold tracking-[-0.015em] text-background sm:text-[2.25rem] sm:leading-[1.14]">
+            Empieza hoy, por menos de lo que gastan en una salida
+          </h2>
 
-      <div className="mt-10 text-center">
-        <p className="eyebrow text-gold">Mira por dentro</p>
-        <PagesMarquee />
-        <ToolboxMarquee />
-      </div>
-
-      <p className="mx-auto mt-8 max-w-2xl text-center text-[0.82rem] leading-relaxed text-background/55">
-        El método sintetiza herramientas y aportaciones del campo de las relaciones de pareja,
-        incluyendo trabajos asociados a John y Julie Gottman, Sue Johnson y Marshall Rosenberg.
-      </p>
-    </Section>
-  );
-}
-
-const pages = [
-  { src: page1.url, alt: "Portada del eBook Método Reconexión" },
-  { src: page2.url, alt: "Capítulo 11: Cuando solo uno quiere" },
-  { src: page3.url, alt: "Capítulo 12: El plan de 90 días" },
-];
-
-function PagesMarquee() {
-  return (
-    <div className="relative mt-8 overflow-hidden" role="region" aria-label="Páginas del eBook">
-      <div
-        className="flex w-max [animation:mr-marquee_14s_linear_infinite]"
-        style={{ willChange: "transform", transform: "translateZ(0)" }}
-      >
-        {[0, 1].map((copy) => (
-          <div key={copy} className="flex shrink-0 gap-5 pr-5">
-            {pages.map((p, i) => (
-              <img
-                key={i}
-                src={p.src}
-                alt={copy === 0 ? p.alt : ""}
-                aria-hidden={copy === 1}
-                loading="eager"
-                decoding="async"
-                draggable={false}
-                className="h-[260px] w-auto shrink-0 rounded-xl border border-background/15 object-contain shadow-soft sm:h-[340px]"
-              />
-            ))}
+          <div className="mt-4 grid max-w-[65ch] gap-4 text-[1.0625rem] leading-[1.62] text-background/85">
+            <p>
+              Una sesión de terapia de pareja en tu ciudad cuesta entre 40 y 120 dólares. La
+              primera. Y hay que ir dos.
+            </p>
+            <p>
+              El Método Reconexión cuesta {METHOD_PRICE}. Una sola vez. Es menos que dos cafés,
+              menos que un domicilio, menos que la mitad de una entrada de cine.
+            </p>
+            <p>
+              No te estoy diciendo que esto valga lo mismo que un profesional, porque no es lo mismo
+              y ya lo dije. Te estoy diciendo que si hoy no vas a ir a terapia, esto es lo que sí
+              puedes empezar esta noche.
+            </p>
           </div>
-        ))}
-      </div>
 
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-primary-dark to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-primary-dark to-transparent" />
-    </div>
-  );
-}
-
-const toolboxPages = [
-  { src: toolboxCover.url, alt: "Portada de la Caja de Herramientas de Reconexión" },
-  { src: toolboxPage1.url, alt: "Cómo usar esta caja de herramientas" },
-  { src: toolboxPage2.url, alt: "Guiones y situaciones prácticas para reconectar" },
-];
-
-function ToolboxMarquee() {
-  return (
-    <div
-      className="relative mt-6 overflow-hidden"
-      role="region"
-      aria-label="Páginas de la Caja de Herramientas"
-    >
-      <div
-        className="flex w-max [animation:mr-marquee_14s_linear_infinite]"
-        style={{ willChange: "transform", transform: "translateZ(0)" }}
-      >
-        {[0, 1].map((copy) => (
-          <div key={copy} className="flex shrink-0 gap-4 pr-4">
-            {toolboxPages.map((p, i) => (
-              <img
-                key={i}
-                src={p.src}
-                alt={copy === 0 ? p.alt : ""}
-                aria-hidden={copy === 1}
-                loading="eager"
-                decoding="async"
-                draggable={false}
-                className="h-[200px] w-auto shrink-0 rounded-xl border border-background/15 object-contain shadow-soft sm:h-[260px]"
-              />
-            ))}
-          </div>
-        ))}
-      </div>
-
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-primary-dark to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-primary-dark to-transparent" />
-    </div>
-  );
-}
-
-function OfferChoice() {
-  return (
-    <div className="mt-14">
-      <div className="text-center">
-        <p className="eyebrow text-gold">Elige cómo quieres empezar</p>
-        <p className="mx-auto mt-3 max-w-2xl text-[0.95rem] leading-relaxed text-background/70">
-          El Método es tu mapa para entender y reconstruir la conexión. La Caja de Herramientas
-          reúne recursos prácticos para llevarlo a la acción.
-        </p>
-      </div>
-
-      <div className="mt-8 grid gap-6">
-        {/* Card 1 — Método Reconexión */}
-        <div className="relative flex flex-col rounded-2xl border border-background/15 bg-background/[0.04] p-6 sm:p-8 lg:flex-row lg:items-stretch lg:gap-8">
-          <div className="flex shrink-0 items-center justify-center lg:w-[240px] lg:items-center">
-            <BookMockup size="md" />
-          </div>
-          <div className="mt-5 flex flex-1 flex-col lg:mt-0">
-            <h3 className="font-display text-[1.6rem] text-background sm:text-[1.8rem]">
-              MÉTODO RECONEXIÓN
+          <div id="incluye" className="mt-8 scroll-mt-24">
+            <h3 className="text-[1.125rem] leading-[1.3] font-semibold tracking-[-0.01em] text-background sm:text-[1.25rem]">
+              Lo que recibes
             </h3>
-            <ul className="mt-4 grid gap-2 text-[0.95rem] text-background/85 sm:grid-cols-2">
+            <ul className="mt-4 grid gap-x-6 gap-y-2 sm:grid-cols-2">
               {includes.map((i) => (
-                <li key={i}>✓ {i}</li>
+                <li
+                  key={i}
+                  className="flex items-start gap-2.5 text-[0.9375rem] leading-[1.6] text-background/90"
+                >
+                  <span aria-hidden className="mt-[2px] shrink-0 text-gold">
+                    ✓
+                  </span>
+                  <span>{i}</span>
+                </li>
               ))}
             </ul>
-            <div className="mt-auto pt-6">
-              <div className="flex flex-wrap items-end gap-3">
-                <span className="font-display text-[2.4rem] leading-none text-gold">
-                  {METHOD_PRICE}
-                </span>
-              </div>
-              <p className="mt-1 font-display text-[1.1rem] leading-none text-gold/90">
-                {METHOD_PRICE_COP}
-              </p>
-              <p className="mt-2 text-[0.8rem] text-background/60">
-                Pago único. No es una suscripción.
-              </p>
-              <p className="mt-1 text-[0.72rem] text-background/50">
-                En la pantalla de pago se mostrará convertido a tu moneda local.
-              </p>
-              <div className="mt-5">
-                <CTA
-                  event="click_offer"
-                  href={METHOD_CHECKOUT_URL}
-                  className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface sm:w-auto"
-                >
-                  QUIERO EL MÉTODO RECONEXIÓN →
-                </CTA>
-                <GuaranteeBadge variant="inline" className="mt-3 text-background/70" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Card 2 — Reconexión Completa */}
-        <div className="relative flex flex-col rounded-2xl border border-gold/45 bg-background/[0.07] p-6 sm:p-8 lg:flex-row lg:items-stretch lg:gap-8">
-          <span className="absolute -top-3 left-6 rounded-full border border-gold/50 bg-primary-dark px-3 py-1 text-[0.68rem] font-semibold tracking-[0.14em] text-gold">
-            RECOMENDADA
-          </span>
-          <div className="flex shrink-0 items-center justify-center lg:w-[240px] lg:items-center">
-            <img
-              src={reconexionCompletaPack.url}
-              alt="Pack Dúo: Método Reconexión + Caja de Herramientas de Reconexión"
-              loading="eager"
-              decoding="async"
-              draggable={false}
-              className="w-full max-w-[220px] rounded-xl object-contain shadow-soft sm:max-w-[260px] lg:max-w-[240px]"
-            />
-          </div>
-          <div className="mt-5 flex flex-1 flex-col lg:mt-0">
-            <h3 className="font-display text-[1.6rem] text-background sm:text-[1.8rem]">
-              RECONEXIÓN COMPLETA
-            </h3>
-            <p className="mt-1 text-[0.95rem] leading-relaxed text-background/70">
-              Método Reconexión + Caja de Herramientas
+            <p className="mt-4 max-w-[65ch] text-[0.8125rem] leading-[1.5] text-background/75">
+              Puedes leerlo sin que nadie se entere. Llega a tu correo, se abre en tu celular, y no
+              aparece en ninguna parte hasta que tú decidas contarlo.
             </p>
-            <ul className="mt-4 grid gap-x-4 gap-y-2 text-[0.9rem] text-background/85 sm:grid-cols-2">
-              <li>✓ Todo el Método Reconexión</li>
-              <li>✓ Caja de Herramientas de Reconexión</li>
-              <li>✓ 30 preguntas para volver a conversar</li>
-              <li>✓ 20 mensajes para conversaciones difíciles</li>
-              <li>✓ Guión de pedido de disculpas</li>
-              <li>✓ Guión para expresar necesidades</li>
-              <li>✓ Ejercicios rápidos solo/a</li>
-              <li>✓ Ejercicios para hacer en pareja</li>
-              <li>✓ Qué decir cuando tu pareja se cierra</li>
-              <li>✓ Qué hacer después de una discusión</li>
-              <li>✓ Checklist semanal de reconexión</li>
-              <li>✓ Calendario de 30 días de acciones</li>
-            </ul>
-            <div className="mt-auto pt-6">
-              <div className="flex flex-wrap items-end gap-3">
-                <span className="font-display text-[2.6rem] leading-none text-gold">
-                  {FULL_BUNDLE_PRICE}
-                </span>
-              </div>
-              <p className="mt-1 font-display text-[1.15rem] leading-none text-gold/90">
-                {FULL_BUNDLE_PRICE_COP}
-              </p>
-              <p className="mt-2 text-[0.8rem] text-background/65">
-                Método {METHOD_PRICE} + Caja de Herramientas {TOOLBOX_PRICE}. Pago único.
-              </p>
-              <p className="mt-1 text-[0.72rem] text-background/50">
-                En la pantalla de pago se mostrará convertido a tu moneda local.
-              </p>
-              <div className="mt-5">
-                {FULL_BUNDLE_CHECKOUT_URL ? (
-                  <>
-                    <CTA
-                      event="click_offer"
-                      href={FULL_BUNDLE_CHECKOUT_URL}
-                      className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface sm:w-auto"
-                    >
-                      QUIERO LA RECONEXIÓN COMPLETA →
-                    </CTA>
-                    <GuaranteeBadge variant="inline" className="mt-3 text-background/70" />
-                  </>
-                ) : (
-                  <>
-                    <span
-                      aria-disabled="true"
-                      className="inline-flex w-full cursor-not-allowed items-center justify-center rounded-xl border border-background/25 bg-background/10 px-8 py-4 text-center text-[0.95rem] font-semibold tracking-wide text-background/60 sm:w-auto"
-                    >
-                      QUIERO LA RECONEXIÓN COMPLETA →
-                    </span>
-                    <p className="mt-2 text-[0.72rem] text-background/50">
-                      [PENDIENTE: enlace de checkout de Reconexión Completa]
-                    </p>
-                  </>
-                )}
-              </div>
-            </div>
+          </div>
+
+          <div className="mt-8 rounded-2xl border border-gold/30 bg-background/[0.06] p-6">
+            <p className="font-display text-[3rem] leading-none font-semibold tracking-[-0.02em] text-gold sm:text-[3.5rem]">
+              {METHOD_PRICE}
+            </p>
+            <p className="mt-2 font-display text-[1.25rem] leading-none font-semibold text-gold">
+              Cerca de {METHOD_PRICE_COP}
+            </p>
+            <p className="mt-3 text-[0.8125rem] leading-[1.5] text-background/85">Pago único</p>
+          </div>
+
+          <div className="mt-6">
+            <CTA
+              event="click_offer"
+              href={METHOD_CHECKOUT_URL}
+              className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface focus-visible:outline-gold"
+            >
+              Quiero el Método Reconexión por {METHOD_PRICE} →
+            </CTA>
+            <GuaranteeBadge variant="inline" className="mt-2 text-background/85" />
+            <p className="mt-3 text-center text-[0.8125rem] leading-[1.5] text-background/85">
+              Pago procesado por Hotmart. No es suscripción, no se renueva, no se cobra nada más.
+            </p>
+            <p className="mt-2 text-center text-[0.8125rem] leading-[1.5] text-background/75">
+              En el checkout se convierte a tu moneda local.
+            </p>
           </div>
         </div>
       </div>
-    </div>
+
+      <p className="mx-auto mt-10 max-w-[65ch] text-center text-[0.8125rem] leading-[1.5] text-background/75">
+        El método sintetiza herramientas y aportes del campo de las relaciones de pareja, incluidos
+        trabajos asociados a John y Julie Gottman, Sue Johnson y Marshall Rosenberg. No es terapia
+        ni sustituye atención psicológica profesional.
+      </p>
+    </Section>
   );
 }

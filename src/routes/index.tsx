@@ -19,9 +19,9 @@ import { track } from "@/lib/analytics";
 import { SITE_URL } from "@/config/site";
 import ogImage from "@/assets/metodo-3d-900.webp";
 
-const TITLE = "Método Reconexión | Guía práctica para reconstruir tu relación";
+const TITLE = "Método Reconexión | Guía práctica de 7 fases para parejas distanciadas";
 const DESC =
-  "Descubre una guía práctica de 7 fases con ejercicios, herramientas de conversación y un plan de 90 días para trabajar la conexión en pareja.";
+  "eBook de 53 páginas con 7 fases, ejercicios, guiones de conversación y un plan de 90 días para parejas que dejaron de entenderse. Pago único de US$ 6,99, acceso inmediato y garantía de 7 días. No sustituye atención psicológica.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

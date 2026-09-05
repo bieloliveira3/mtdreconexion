@@ -29,14 +29,16 @@ export const FULL_BUNDLE_CHECKOUT_URL = "https://pay.hotmart.com/U107470501S";
 /** Preco cheio quando a janela de lancamento expira. */
 export const EXPIRED_PRICE = "US$ 14,99";
 
-export const COUNTDOWN_ENABLED = true;
+export const COUNTDOWN_ENABLED = false;
 /** Duración de la oferta en minutos (configurable). */
 export const COUNTDOWN_DURATION = 20; // 00:20:00
 
 export const GUARANTEE_ENABLED = true;
 export const GUARANTEE_DAYS = 7;
+/** Versión corta, para usar al lado de los botones. */
+export const GUARANTEE_SHORT = "Garantía de 7 días. Devolución del 100%, sin preguntas.";
 export const GUARANTEE_TEXT =
-  "Si en 7 días sientes que no es para ti, escribes un correo y te devolvemos el 100%. Sin preguntas.";
+  "Lo lees, haces los primeros ejercicios y decides. Si sientes que no es para ti, escribes un correo a mtdreconexion@gmail.com y te devolvemos los US$ 6,99 completos. No pedimos explicaciones, no te ofrecemos nada a cambio, no hay letra chica. El riesgo lo asumimos nosotros.";
 
 /** Vídeo vertical (gravação de tela do eBook). Vazio = não exibe a área de vídeo. */
 export const EBOOK_VIDEO_URL =
@@ -75,4 +77,4 @@ export const LEGAL_NOTE = "";
 
 // ── Quién está detrás ────────────────────────────────────────
 export const AUTHOR_NAME = "Renata Ramírez";
-export const AUTHOR_ROLE = "Método Reconexión";
+export const AUTHOR_ROLE = "Reunió y ordenó el Método Reconexión";

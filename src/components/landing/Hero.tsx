@@ -1,13 +1,18 @@
 import { BookMockup, CTA } from "./shared";
-import { GuaranteeBadge } from "./GuaranteeBadge";
-import { PRICE, METHOD_PRICE_COP } from "@/config/site";
+import { GUARANTEE_DAYS, PRICE } from "@/config/site";
 import heroCover from "@/assets/hero-cover-new.jpg.asset.json";
+
+const bullets = [
+  "7 fases en orden, para saber qué hacer primero y qué dejar para después",
+  "Ejercicios y guiones de conversación que caben en veinte minutos",
+  "Un plan de 90 días para no intentar arreglarlo todo en una sola noche",
+];
 
 export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[84vh] items-center overflow-hidden px-5 py-16 sm:px-8 sm:py-20"
+      className="relative flex min-h-[84vh] items-center overflow-hidden px-5 py-12 sm:px-8 sm:py-20"
     >
       {/* Imagem de capa em tamanho apresentativo */}
       <div
@@ -23,44 +28,40 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto grid w-full max-w-5xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="rise max-w-2xl">
-          <p className="eyebrow text-gold">Guía práctica • 7 fases • Plan de 90 días</p>
-          <h1 className="mt-5 font-display text-[2.1rem] leading-[1.1] text-background sm:text-[3rem] lg:text-[3.4rem]">
-            ¿Sientes que todavía hay amor… pero ya no saben cómo volver a encontrarse?
+          <p className="eyebrow text-background/85">Guía práctica · 7 fases · Plan de 90 días</p>
+          <h1 className="mt-4 max-w-[20ch] font-display text-[2rem] leading-[1.12] font-semibold tracking-[-0.02em] text-background sm:text-[3.25rem] sm:leading-[1.06]">
+            Se quieren. Duermen en la misma cama. Y hace meses que no se dicen nada de verdad.
           </h1>
-          <p className="mt-5 max-w-xl text-[1.05rem] leading-relaxed text-background/85">
-            Descubre una ruta práctica para dejar de repetir las mismas discusiones, volver a hablar
-            sin hacerse daño y empezar a reconstruir la conexión.
+          <p className="mt-5 max-w-xl text-[1.0625rem] leading-[1.55] text-background/85 sm:text-[1.25rem]">
+            Método Reconexión es una guía práctica de 53 páginas. Siete fases, ejercicios cortos y
+            guiones de conversación para salir del ciclo de siempre y volver a entenderse. No es
+            terapia y no promete milagros. Es un método para trabajar, paso por paso.
           </p>
 
-          <div className="mt-8 rounded-2xl border border-gold/25 bg-[#2E2422]/55 p-6 shadow-soft backdrop-blur-md">
-            <div className="flex flex-wrap items-end gap-3">
-              <span className="font-display text-[2.6rem] leading-none text-gold">{PRICE}</span>
-            </div>
-            <p className="mt-1 font-display text-[1.05rem] leading-none text-gold/90">
-              {METHOD_PRICE_COP}
-            </p>
-            <p className="mt-2 text-[0.85rem] text-background/75">
-              Pago único • Acceso digital inmediato
-            </p>
-            <p className="mt-1 text-[0.72rem] text-background/55">
-              En la pantalla de pago se mostrará convertido a tu moneda local.
-            </p>
-            <div className="mt-5">
-              <CTA event="click_offer" className="w-full ring-1 ring-gold/35">
-                QUIERO EMPEZAR MI RECONEXIÓN →
-              </CTA>
-            </div>
-            <p className="mt-3 text-center text-[0.78rem] text-background/65">
-              Acceso digital inmediato. No es una suscripción.
-            </p>
-            <GuaranteeBadge variant="inline" className="mt-2 text-gold/90" />
-          </div>
-
-          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[0.85rem] text-background/80">
-            <li>✓ 7 fases prácticas</li>
-            <li>✓ Ejercicios y herramientas de conversación</li>
-            <li>✓ Plan de 90 días</li>
+          <ul className="mt-6 grid max-w-xl gap-2 text-[0.9375rem] leading-[1.6] text-background/85">
+            {bullets.map((b) => (
+              <li key={b} className="flex items-start gap-2.5">
+                <span aria-hidden className="mt-[2px] shrink-0 text-gold">
+                  ✓
+                </span>
+                <span>{b}</span>
+              </li>
+            ))}
           </ul>
+
+          <div className="mt-8">
+            <CTA event="click_offer" className="ring-1 ring-gold/35">
+              Quiero empezar el método →
+            </CTA>
+            <p className="mt-3 max-w-md text-[0.8125rem] leading-[1.5] text-background/85">
+              Pago único de {PRICE}. No es suscripción. Recibes el acceso en tu correo apenas
+              termina el pago.
+            </p>
+            <p className="mt-2 max-w-md text-[0.8125rem] leading-[1.5] text-background/85">
+              Si en {GUARANTEE_DAYS} días sientes que no es para ti, te devolvemos el 100%. Sin
+              preguntas.
+            </p>
+          </div>
         </div>
 
         <div className="relative hidden justify-center lg:flex">
