@@ -33,7 +33,7 @@ export function MethodSection() {
               aria-hidden
               className="absolute top-7 left-0 h-6 w-px bg-primary/40 transition-all duration-300 group-hover:h-10"
             />
-            <span className="font-display text-[1.05rem] tracking-[0.08em] text-gold">{n}</span>
+            <span className="font-display text-[1.05rem] tracking-[0.08em] text-gold-ink">{n}</span>
             <h3 className="mt-2 text-[0.78rem] font-semibold tracking-[0.16em] text-primary uppercase">
               {title}
             </h3>

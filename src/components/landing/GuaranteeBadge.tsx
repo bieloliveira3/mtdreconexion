@@ -31,7 +31,7 @@ export function GuaranteeBadge({
         className,
       )}
     >
-      <ShieldIcon className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+      <ShieldIcon className="mt-0.5 h-5 w-5 shrink-0 text-gold-ink" />
       <div>
         <p className="text-[0.85rem] font-semibold">
           Garantía incondicional de {GUARANTEE_DAYS} días

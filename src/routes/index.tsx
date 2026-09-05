@@ -15,7 +15,6 @@ const carouselImages = [
   { src: carousel2.url, alt: "Pareja conversando con calma: escucha sin defensas" },
   { src: carousel3.url, alt: "Pareja reconectada: de la distancia al abrazo" },
 ];
-import { InsideBookSection } from "@/components/landing/InsideBookSection";
 import { AuthorSection } from "@/components/landing/AuthorSection";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { NinetyDaySection } from "@/components/landing/NinetyDaySection";
@@ -81,7 +80,6 @@ function Landing() {
         <ProblemSection />
         <GalleryCarousel images={carouselImages} />
         <MethodSection />
-        <InsideBookSection />
         <AuthorSection />
         <TestimonialsSection />
         <NinetyDaySection />

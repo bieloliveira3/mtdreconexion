@@ -11,7 +11,7 @@ export const PRODUCT_SUBTITLE =
 
 export const PRICE = "US$ 6,99";
 export const OLD_PRICE = "US$ 14,99";
-export const CHECKOUT_URL = "https://pay.hotmart.com/Q107464781E";
+export const CHECKOUT_URL = "https://pay.hotmart.com/Q107464781E?checkoutMode=10";
 
 // ── Ofertas ──────────────────────────────────────────────
 export const METHOD_PRICE = "US$ 6,99";
@@ -23,7 +23,7 @@ export const FULL_BUNDLE_PRICE_COP = "39.822 COP";
 export const FULL_BUNDLE_OLD_PRICE = "US$ 21,99";
 export const FULL_BUNDLE_DISCOUNT = "-45%";
 
-export const METHOD_CHECKOUT_URL = "https://pay.hotmart.com/Q107464781E";
+export const METHOD_CHECKOUT_URL = "https://pay.hotmart.com/Q107464781E?checkoutMode=10";
 export const FULL_BUNDLE_CHECKOUT_URL = "https://pay.hotmart.com/U107470501S";
 
 /** Preco cheio quando a janela de lancamento expira. */
