@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { PRODUCT_NAME } from "@/config/site";
+import logoFull480 from "@/assets/logo-full-480.webp";
+import logoFull960 from "@/assets/logo-full-960.webp";
 
 const links = [
   { to: "/privacidad", label: "Política de Privacidad" },
@@ -13,8 +15,18 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-background px-5 py-12 sm:px-8">
       <div className="mx-auto max-w-5xl">
-        <Link to="/" className="font-display text-[0.95rem] tracking-[0.14em] uppercase">
-          {PRODUCT_NAME}
+        <Link to="/" className="inline-block" aria-label={PRODUCT_NAME}>
+          <img
+            src={logoFull480}
+            srcSet={`${logoFull480} 480w, ${logoFull960} 960w`}
+            sizes="240px"
+            alt={`${PRODUCT_NAME} por Renata Ramírez`}
+            width={480}
+            height={159}
+            loading="lazy"
+            decoding="async"
+            className="h-14 w-auto"
+          />
         </Link>
         <nav className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
           {links.map((l) => (
