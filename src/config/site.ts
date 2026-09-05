@@ -40,12 +40,6 @@ export const GUARANTEE_SHORT = "Garantía de 7 días. Devolución del 100%, sin 
 export const GUARANTEE_TEXT =
   "Lo lees, haces los primeros ejercicios y decides. Si sientes que no es para ti, escribes un correo a mtdreconexion@gmail.com y te devolvemos los US$ 6,99 completos. No pedimos explicaciones, no te ofrecemos nada a cambio, no hay letra chica. El riesgo lo asumimos nosotros.";
 
-/** Vídeo vertical (gravação de tela do eBook). Vazio = não exibe a área de vídeo. */
-export const EBOOK_VIDEO_URL =
-  "/__l5e/assets-v1/2539a132-5ef7-44c8-beef-82d4831229c0/ebook-preview.mp4";
-export const EBOOK_VIDEO_POSTER_URL =
-  "/__l5e/assets-v1/af749c47-3f98-4f49-8129-671f795c094a/ebook-poster.jpg";
-
 export const BUSINESS_NAME = "Gabriel";
 export const BUSINESS_EMAIL = "mtdreconexion@gmail.com";
 export const BUSINESS_ADDRESS = "[BUSINESS_ADDRESS]";
