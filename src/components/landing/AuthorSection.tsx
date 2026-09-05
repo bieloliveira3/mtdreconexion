@@ -36,24 +36,23 @@ export function AuthorSection() {
 
           <div className="mt-6 space-y-4 text-[0.98rem] leading-relaxed text-foreground">
             <p>
-              Este libro no es terapia y yo no soy terapeuta. Soy quien reunió, ordenó y
-              puso a prueba este método.
+              Este libro no es terapia y yo no soy terapeuta. Soy quien reunió, ordenó y puso a
+              prueba este método.
             </p>
             <p>
-              Durante años leí todo lo que encontré sobre por qué dos personas que se
-              quieren dejan de entenderse: la investigación de John y Julie Gottman sobre
-              qué predice que una pareja siga junta, la Terapia Focalizada en las Emociones
-              de Sue Johnson y la Comunicación No Violenta de Marshall Rosenberg. Encontré
-              mucha teoría buena y casi nada que una pareja pudiera aplicar un martes por
-              la noche.
+              Durante años leí todo lo que encontré sobre por qué dos personas que se quieren dejan
+              de entenderse: la investigación de John y Julie Gottman sobre qué predice que una
+              pareja siga junta, la Terapia Focalizada en las Emociones de Sue Johnson y la
+              Comunicación No Violenta de Marshall Rosenberg. Encontré mucha teoría buena y casi
+              nada que una pareja pudiera aplicar un martes por la noche.
             </p>
             <p>
-              Método Reconexión es la parte aplicable: siete fases y ejercicios que caben
-              en veinte minutos.
+              Método Reconexión es la parte aplicable: siete fases y ejercicios que caben en veinte
+              minutos.
             </p>
             <p className="border-l-2 border-gold pl-4 text-muted-foreground">
-              Si tu relación necesita acompañamiento profesional, búscalo. Esto no lo
-              sustituye — pero puede ser el primer paso.
+              Si tu relación necesita acompañamiento profesional, búscalo. Esto no lo sustituye —
+              pero puede ser el primer paso.
             </p>
           </div>
         </div>

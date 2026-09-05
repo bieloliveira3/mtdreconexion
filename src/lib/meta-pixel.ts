@@ -42,13 +42,7 @@ export function trackInitiateCheckout(params?: Record<string, unknown>) {
 
 // ── Atribuição ────────────────────────────────────────────────────────
 const UTM_KEY = "mr_utm";
-const UTM_FIELDS = [
-  "utm_source",
-  "utm_medium",
-  "utm_campaign",
-  "utm_content",
-  "utm_term",
-] as const;
+const UTM_FIELDS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
 
 type Utm = Partial<Record<(typeof UTM_FIELDS)[number], string>>;
 

@@ -11,20 +11,13 @@ import toolboxPage1 from "@/assets/caja-herramientas-page-1.jpg.asset.json";
 import toolboxPage2 from "@/assets/caja-herramientas-page-2.jpg.asset.json";
 import {
   FULL_BUNDLE_CHECKOUT_URL,
-  FULL_BUNDLE_DISCOUNT,
-  FULL_BUNDLE_OLD_PRICE,
   FULL_BUNDLE_PRICE,
   FULL_BUNDLE_PRICE_COP,
   METHOD_CHECKOUT_URL,
-  METHOD_DISCOUNT,
   METHOD_PRICE,
   METHOD_PRICE_COP,
-  OLD_PRICE,
   TOOLBOX_PRICE,
 } from "@/config/site";
-
-
-
 
 const includes = [
   "eBook digital completo",
@@ -91,11 +84,7 @@ const pages = [
 
 function PagesMarquee() {
   return (
-    <div
-      className="relative mt-8 overflow-hidden"
-      role="region"
-      aria-label="Páginas del eBook"
-    >
+    <div className="relative mt-8 overflow-hidden" role="region" aria-label="Páginas del eBook">
       <div
         className="flex w-max [animation:mr-marquee_14s_linear_infinite]"
         style={{ willChange: "transform", transform: "translateZ(0)" }}
@@ -165,7 +154,6 @@ function ToolboxMarquee() {
   );
 }
 
-
 function OfferChoice() {
   return (
     <div className="mt-14">
@@ -194,12 +182,8 @@ function OfferChoice() {
             </ul>
             <div className="mt-auto pt-6">
               <div className="flex flex-wrap items-end gap-3">
-                <span className="text-background/55 line-through">{OLD_PRICE}</span>
                 <span className="font-display text-[2.4rem] leading-none text-gold">
                   {METHOD_PRICE}
-                </span>
-                <span className="mb-1.5 rounded-md bg-cta px-2 py-0.5 text-[0.75rem] font-semibold text-cta-foreground">
-                  {METHOD_DISCOUNT}
                 </span>
               </div>
               <p className="mt-1 font-display text-[1.1rem] leading-none text-gold/90">
@@ -263,12 +247,8 @@ function OfferChoice() {
             </ul>
             <div className="mt-auto pt-6">
               <div className="flex flex-wrap items-end gap-3">
-                <span className="text-background/55 line-through">{FULL_BUNDLE_OLD_PRICE}</span>
                 <span className="font-display text-[2.6rem] leading-none text-gold">
                   {FULL_BUNDLE_PRICE}
-                </span>
-                <span className="mb-1.5 rounded-md bg-cta px-2 py-0.5 text-[0.75rem] font-semibold text-cta-foreground">
-                  {FULL_BUNDLE_DISCOUNT}
                 </span>
               </div>
               <p className="mt-1 font-display text-[1.15rem] leading-none text-gold/90">

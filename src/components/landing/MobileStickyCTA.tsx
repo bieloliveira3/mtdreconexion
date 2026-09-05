@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import {
   FULL_BUNDLE_CHECKOUT_URL,
-  FULL_BUNDLE_OLD_PRICE,
   FULL_BUNDLE_PRICE,
   FULL_BUNDLE_PRICE_COP,
   METHOD_CHECKOUT_URL,
   METHOD_PRICE,
   METHOD_PRICE_COP,
-  OLD_PRICE,
 } from "@/config/site";
 import { track } from "@/lib/analytics";
 import { withAttribution, trackInitiateCheckout } from "@/lib/meta-pixel";
@@ -18,12 +16,11 @@ type Offer = "method" | "full";
 
 const offers: Record<
   Offer,
-  { price: string; priceCOP: string; oldPrice: string; label: string; desc: string; cta: string; href: string }
+  { price: string; priceCOP: string; label: string; desc: string; cta: string; href: string }
 > = {
   method: {
     price: METHOD_PRICE,
     priceCOP: METHOD_PRICE_COP,
-    oldPrice: OLD_PRICE,
     label: "MÉTODO",
     desc: "Método Reconexión",
     cta: "QUIERO EL MÉTODO →",
@@ -32,7 +29,6 @@ const offers: Record<
   full: {
     price: FULL_BUNDLE_PRICE,
     priceCOP: FULL_BUNDLE_PRICE_COP,
-    oldPrice: FULL_BUNDLE_OLD_PRICE,
     label: "COMPLETA",
     desc: "Método + Caja de Herramientas",
     cta: "QUIERO LA RECONEXIÓN COMPLETA →",
@@ -97,9 +93,6 @@ export function MobileStickyCTA() {
 
         <div className="flex min-w-0 flex-col justify-center">
           <div className="flex items-baseline gap-2">
-            <span className="text-[0.85rem] text-muted-foreground line-through">
-              {current.oldPrice}
-            </span>
             <span className="font-display text-[1.25rem] leading-none text-primary">
               {current.price}
             </span>
@@ -107,9 +100,7 @@ export function MobileStickyCTA() {
           <p className="font-display text-[0.85rem] leading-none text-gold-ink">
             {current.priceCOP}
           </p>
-          <p className="truncate text-[0.75rem] text-muted-foreground">
-            {current.desc}
-          </p>
+          <p className="truncate text-[0.75rem] text-muted-foreground">{current.desc}</p>
         </div>
 
         <a
@@ -133,9 +124,6 @@ export function MobileStickyCTA() {
           {Selector}
           <div className="min-w-0 text-right">
             <div className="flex items-baseline justify-end gap-1.5">
-              <span className="text-[0.7rem] text-muted-foreground line-through">
-                {current.oldPrice}
-              </span>
               <span className="font-display text-[1.1rem] leading-none text-primary">
                 {current.price}
               </span>
@@ -143,9 +131,7 @@ export function MobileStickyCTA() {
             <p className="font-display text-[0.78rem] leading-none text-gold-ink">
               {current.priceCOP}
             </p>
-            <p className="truncate text-[0.65rem] text-muted-foreground">
-              {current.desc}
-            </p>
+            <p className="truncate text-[0.65rem] text-muted-foreground">{current.desc}</p>
           </div>
         </div>
         <a

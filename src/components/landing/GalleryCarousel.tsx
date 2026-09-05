@@ -9,10 +9,7 @@ export function GalleryCarousel({ images }: { images: CarouselImage[] }) {
   const touchStartX = useRef<number | null>(null);
   const count = images.length;
 
-  const go = useCallback(
-    (dir: number) => setIndex((i) => (i + dir + count) % count),
-    [count],
-  );
+  const go = useCallback((dir: number) => setIndex((i) => (i + dir + count) % count), [count]);
 
   const resetAutoplay = useCallback(() => {
     if (timer.current) clearInterval(timer.current);
@@ -82,7 +79,14 @@ export function GalleryCarousel({ images }: { images: CarouselImage[] }) {
           aria-label="Imagen anterior"
           className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-primary-dark/60 p-2 text-background backdrop-blur transition-colors hover:bg-primary-dark/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-5 w-5" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            className="h-5 w-5"
+            aria-hidden="true"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
@@ -95,7 +99,14 @@ export function GalleryCarousel({ images }: { images: CarouselImage[] }) {
           aria-label="Imagen siguiente"
           className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-primary-dark/60 p-2 text-background backdrop-blur transition-colors hover:bg-primary-dark/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-5 w-5" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            className="h-5 w-5"
+            aria-hidden="true"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>

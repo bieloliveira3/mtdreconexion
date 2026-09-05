@@ -44,10 +44,18 @@ export function GuaranteeBadge({
 
 function ShieldIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
-         className={className} aria-hidden="true">
-      <path d="M12 2.6 4.5 5.8v5.3c0 4.6 3.2 8.8 7.5 10.3 4.3-1.5 7.5-5.7 7.5-10.3V5.8L12 2.6Z"
-            strokeLinejoin="round" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M12 2.6 4.5 5.8v5.3c0 4.6 3.2 8.8 7.5 10.3 4.3-1.5 7.5-5.7 7.5-10.3V5.8L12 2.6Z"
+        strokeLinejoin="round"
+      />
       <path d="m8.8 11.9 2.2 2.2 4.2-4.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );

@@ -7,20 +7,17 @@ const testimonials = [
   {
     name: "Ana y Diego",
     photo: testimonial1.url,
-    text:
-      "Pensamos que ya no había nada que hacer. En solo tres semanas de aplicar el método, volvimos a hablarnos sin terminar gritando. Hoy nos sentimos un equipo de nuevo.",
+    text: "Pensamos que ya no había nada que hacer. En solo tres semanas de aplicar el método, volvimos a hablarnos sin terminar gritando. Hoy nos sentimos un equipo de nuevo.",
   },
   {
     name: "Ricardo M.",
     photo: testimonial2.url,
-    text:
-      "Mi pareja no quería leer nada, así que empecé solo. Cambié mi forma de pedir y de escuchar. Al mes, ella notó la diferencia y ahora lo hacemos juntos.",
+    text: "Mi pareja no quería leer nada, así que empecé solo. Cambié mi forma de pedir y de escuchar. Al mes, ella notó la diferencia y ahora lo hacemos juntos.",
   },
   {
     name: "Sofía y Mateo",
     photo: testimonial3.url,
-    text:
-      "Llevábamos años repitiendo la misma discusión. La ruta de 7 fases nos dio un mapa claro. Por fin entendemos de dónde venía el daño y cómo repararlo.",
+    text: "Llevábamos años repitiendo la misma discusión. La ruta de 7 fases nos dio un mapa claro. Por fin entendemos de dónde venía el daño y cómo repararlo.",
   },
 ];
 
@@ -59,10 +56,7 @@ export function TestimonialsSection() {
 
       <div className="mt-10 grid gap-5 md:grid-cols-3">
         {testimonials.map((t) => (
-          <div
-            key={t.name}
-            className="rounded-2xl border border-border bg-card p-6 shadow-soft"
-          >
+          <div key={t.name} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
             <div className="flex items-center gap-3">
               <img
                 src={t.photo}
@@ -70,15 +64,11 @@ export function TestimonialsSection() {
                 className="h-12 w-12 rounded-full object-cover ring-2 ring-border"
               />
               <div>
-                <p className="text-[0.9rem] font-semibold text-primary-dark">
-                  {t.name}
-                </p>
+                <p className="text-[0.9rem] font-semibold text-primary-dark">{t.name}</p>
                 <Stars />
               </div>
             </div>
-            <p className="mt-4 text-[0.95rem] leading-relaxed text-foreground">
-              “{t.text}”
-            </p>
+            <p className="mt-4 text-[0.95rem] leading-relaxed text-foreground">“{t.text}”</p>
           </div>
         ))}
       </div>

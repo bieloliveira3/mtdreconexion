@@ -4,17 +4,7 @@ import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { ProblemSection } from "@/components/landing/ProblemSection";
-import { GalleryCarousel } from "@/components/landing/GalleryCarousel";
 import { MethodSection } from "@/components/landing/MethodSection";
-import carousel1 from "@/assets/casal-briga.jpg.asset.json";
-import carousel2 from "@/assets/pareja-conversando.png.asset.json";
-import carousel3 from "@/assets/pareja-reconectada.png.asset.json";
-
-const carouselImages = [
-  { src: carousel1.url, alt: "Pareja distante en la cama: el silencio antes de la reconexión" },
-  { src: carousel2.url, alt: "Pareja conversando con calma: escucha sin defensas" },
-  { src: carousel3.url, alt: "Pareja reconectada: de la distancia al abrazo" },
-];
 import { AuthorSection } from "@/components/landing/AuthorSection";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { NinetyDaySection } from "@/components/landing/NinetyDaySection";
@@ -56,8 +46,7 @@ function Landing() {
     track("view_page");
     const seen = new Set<string>();
     const onScroll = () => {
-      const p =
-        (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+      const p = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
       if (p >= 0.5 && !seen.has("50")) {
         seen.add("50");
         track("scroll_50");
@@ -78,7 +67,6 @@ function Landing() {
       <main>
         <Hero />
         <ProblemSection />
-        <GalleryCarousel images={carouselImages} />
         <MethodSection />
         <AuthorSection />
         <TestimonialsSection />

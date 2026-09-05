@@ -1,6 +1,6 @@
 import { BookMockup, CTA } from "./shared";
 import { GuaranteeBadge } from "./GuaranteeBadge";
-import { OLD_PRICE, PRICE, METHOD_PRICE_COP } from "@/config/site";
+import { PRICE, METHOD_PRICE_COP } from "@/config/site";
 import heroCover from "@/assets/hero-cover-new.jpg.asset.json";
 
 export function Hero() {
@@ -34,7 +34,6 @@ export function Hero() {
 
           <div className="mt-8 rounded-2xl border border-gold/25 bg-[#2E2422]/55 p-6 shadow-soft backdrop-blur-md">
             <div className="flex flex-wrap items-end gap-3">
-              <span className="text-[1rem] text-background/70 line-through">{OLD_PRICE}</span>
               <span className="font-display text-[2.6rem] leading-none text-gold">{PRICE}</span>
             </div>
             <p className="mt-1 font-display text-[1.05rem] leading-none text-gold/90">

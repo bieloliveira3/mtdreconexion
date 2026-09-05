@@ -73,9 +73,7 @@ function CookiesPage() {
       </LegalBlock>
 
       <LegalBlock title="Cambios">
-        <p>
-          Esta política puede actualizarse. Para cualquier consulta: {BUSINESS_EMAIL}.
-        </p>
+        <p>Esta política puede actualizarse. Para cualquier consulta: {BUSINESS_EMAIL}.</p>
       </LegalBlock>
     </LegalLayout>
   );

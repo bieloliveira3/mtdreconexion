@@ -80,14 +80,11 @@ export function BookMockup({
   size?: "sm" | "md" | "lg";
   book?: "metodo" | "caja";
 }) {
-  const w =
-    size === "lg" ? "w-[250px] sm:w-[320px]" : size === "md" ? "w-[210px]" : "w-[160px]";
+  const w = size === "lg" ? "w-[250px] sm:w-[320px]" : size === "md" ? "w-[210px]" : "w-[160px]";
   const src = book === "caja" ? caja3d600 : metodo3d600;
   const src2x = book === "caja" ? caja3d900 : metodo3d900;
   const label =
-    book === "caja"
-      ? "Caja de Herramientas de Reconexión"
-      : `${PRODUCT_NAME}: ${PRODUCT_SUBTITLE}`;
+    book === "caja" ? "Caja de Herramientas de Reconexión" : `${PRODUCT_NAME}: ${PRODUCT_SUBTITLE}`;
   return (
     <div className={cn("group relative select-none", w)}>
       <div
