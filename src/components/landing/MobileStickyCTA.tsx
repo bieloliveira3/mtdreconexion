@@ -10,6 +10,8 @@ import {
   OLD_PRICE,
 } from "@/config/site";
 import { track } from "@/lib/analytics";
+import { withAttribution, trackInitiateCheckout } from "@/lib/meta-pixel";
+import { GuaranteeBadge } from "./GuaranteeBadge";
 import { cn } from "@/lib/utils";
 
 type Offer = "method" | "full";
@@ -56,7 +58,7 @@ export function MobileStickyCTA() {
         type="button"
         onClick={() => setSelected("method")}
         className={cn(
-          "rounded-full px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide transition-colors duration-200",
+          "min-h-[38px] rounded-full px-4 py-2 text-[0.72rem] font-semibold tracking-wide transition-colors duration-200",
           selected === "method"
             ? "bg-primary-dark text-background"
             : "text-primary hover:bg-muted/50",
@@ -69,7 +71,7 @@ export function MobileStickyCTA() {
         type="button"
         onClick={() => setSelected("full")}
         className={cn(
-          "flex items-center gap-1 rounded-full px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide transition-colors duration-200",
+          "flex min-h-[38px] items-center gap-1 rounded-full px-4 py-2 text-[0.72rem] font-semibold tracking-wide transition-colors duration-200",
           selected === "full"
             ? "bg-primary-dark text-background"
             : "text-primary hover:bg-muted/50",
@@ -112,14 +114,17 @@ export function MobileStickyCTA() {
 
         <a
           href={current.href}
-          onClick={() => {
+          onClick={(e) => {
             track("click_cta");
             track("checkout_click");
+            trackInitiateCheckout({ content_name: current.desc });
+            e.currentTarget.href = withAttribution(current.href);
           }}
           className="ml-auto shrink-0 rounded-xl bg-cta px-6 py-3 text-[0.85rem] font-semibold text-cta-foreground transition-colors hover:bg-cta-dark"
         >
           {current.cta}
         </a>
+        <GuaranteeBadge variant="inline" className="shrink-0 text-muted-foreground" />
       </div>
 
       {/* Mobile — duas linhas compactas */}
@@ -145,14 +150,17 @@ export function MobileStickyCTA() {
         </div>
         <a
           href={current.href}
-          onClick={() => {
+          onClick={(e) => {
             track("click_cta");
             track("checkout_click");
+            trackInitiateCheckout({ content_name: current.desc });
+            e.currentTarget.href = withAttribution(current.href);
           }}
           className="w-full rounded-xl bg-cta py-3 text-center text-[0.82rem] font-semibold text-cta-foreground transition-colors hover:bg-cta-dark"
         >
           {current.cta}
         </a>
+        <GuaranteeBadge variant="inline" className="text-muted-foreground" />
       </div>
     </div>
   );

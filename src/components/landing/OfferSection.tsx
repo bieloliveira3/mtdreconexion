@@ -1,4 +1,7 @@
+import { useEffect, useRef } from "react";
 import { BookMockup, CTA, Section } from "./shared";
+import { GuaranteeBadge } from "./GuaranteeBadge";
+import { trackViewContent } from "@/lib/meta-pixel";
 import page1 from "@/assets/ebook-page-1.jpg.asset.json";
 import page2 from "@/assets/ebook-page-2.jpg.asset.json";
 import page3 from "@/assets/ebook-page-3.jpg.asset.json";
@@ -32,8 +35,26 @@ const includes = [
 ];
 
 export function OfferSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          trackViewContent({ content_name: "Oferta Método Reconexión" });
+          io.disconnect();
+        }
+      },
+      { threshold: 0.3 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <Section id="oferta" tone="dark" className="pb-44 sm:pb-48">
+      <div ref={ref} aria-hidden className="h-px w-full" />
       <div className="text-center">
         <span className="eyebrow inline-block rounded-full border border-gold/40 px-4 py-1.5 text-gold">
           Acceso digital inmediato
@@ -198,6 +219,7 @@ function OfferChoice() {
                 >
                   QUIERO EL MÉTODO RECONEXIÓN →
                 </CTA>
+                <GuaranteeBadge variant="inline" className="mt-3 text-background/70" />
               </div>
             </div>
           </div>
@@ -260,13 +282,16 @@ function OfferChoice() {
               </p>
               <div className="mt-5">
                 {FULL_BUNDLE_CHECKOUT_URL ? (
-                  <CTA
-                    event="click_offer"
-                    href={FULL_BUNDLE_CHECKOUT_URL}
-                    className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface sm:w-auto"
-                  >
-                    QUIERO LA RECONEXIÓN COMPLETA →
-                  </CTA>
+                  <>
+                    <CTA
+                      event="click_offer"
+                      href={FULL_BUNDLE_CHECKOUT_URL}
+                      className="w-full bg-background text-primary-dark ring-1 ring-gold/40 hover:bg-surface sm:w-auto"
+                    >
+                      QUIERO LA RECONEXIÓN COMPLETA →
+                    </CTA>
+                    <GuaranteeBadge variant="inline" className="mt-3 text-background/70" />
+                  </>
                 ) : (
                   <>
                     <span

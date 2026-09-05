@@ -1,4 +1,5 @@
 import { BookMockup, CTA } from "./shared";
+import { GuaranteeBadge } from "./GuaranteeBadge";
 import { OLD_PRICE, PRICE, METHOD_PRICE_COP } from "@/config/site";
 import heroCover from "@/assets/hero-cover-new.jpg.asset.json";
 
@@ -53,6 +54,7 @@ export function Hero() {
             <p className="mt-3 text-center text-[0.78rem] text-background/65">
               Acceso digital inmediato. No es una suscripción.
             </p>
+            <GuaranteeBadge variant="inline" className="mt-2 text-gold/90" />
           </div>
 
           <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[0.85rem] text-background/80">
