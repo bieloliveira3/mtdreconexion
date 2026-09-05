@@ -2,6 +2,9 @@
 // CONFIGURACIÓN CENTRAL — edita solo este archivo
 // ─────────────────────────────────────────────────────────────
 
+/** Dominio absoluto. TROCAR ao migrar para o dominio proprio. */
+export const SITE_URL = "https://mtdreconexion.lovable.app";
+
 export const PRODUCT_NAME = "Método Reconexión";
 export const PRODUCT_SUBTITLE =
   "La guía práctica para reparar, reconstruir y reencender tu relación de pareja";
@@ -23,12 +26,17 @@ export const FULL_BUNDLE_DISCOUNT = "-45%";
 export const METHOD_CHECKOUT_URL = "https://pay.hotmart.com/Q107464781E";
 export const FULL_BUNDLE_CHECKOUT_URL = "https://pay.hotmart.com/U107470501S";
 
+/** Preco cheio quando a janela de lancamento expira. */
+export const EXPIRED_PRICE = "US$ 14,99";
+
 export const COUNTDOWN_ENABLED = true;
 /** Duración de la oferta en minutos (configurable). */
-export const COUNTDOWN_DURATION = 10; // 00:10:00
+export const COUNTDOWN_DURATION = 20; // 00:20:00
 
-export const GUARANTEE_ENABLED = false;
-export const GUARANTEE_TEXT = "";
+export const GUARANTEE_ENABLED = true;
+export const GUARANTEE_DAYS = 7;
+export const GUARANTEE_TEXT =
+  "Si en 7 días sientes que no es para ti, escribes un correo y te devolvemos el 100%. Sin preguntas.";
 
 /** Vídeo vertical (gravação de tela do eBook). Vazio = não exibe a área de vídeo. */
 export const EBOOK_VIDEO_URL =
@@ -42,12 +50,13 @@ export const BUSINESS_ADDRESS = "[BUSINESS_ADDRESS]";
 export const BUSINESS_COUNTRY = "[BUSINESS_COUNTRY]";
 export const BUSINESS_TAX_ID = "[BUSINESS_TAX_ID]";
 
-export const REFUND_POLICY_ENABLED = false;
-export const REFUND_PERIOD_DAYS = "";
+export const REFUND_POLICY_ENABLED = true;
+export const REFUND_PERIOD_DAYS = "7";
 export const REFUND_EMAIL = "mtdreconexion@gmail.com";
-export const REFUND_PROCESS = "[REFUND_PROCESS]";
+export const REFUND_PROCESS =
+  "Escribe a nuestro correo de soporte indicando el correo con el que hiciste la compra. Procesamos la devolución íntegra dentro de los 7 días siguientes a la compra, sin pedir explicaciones.";
 
-export const ANALYTICS_ENABLED = false;
+export const ANALYTICS_ENABLED = true;
 export const MARKETING_COOKIES_ENABLED = false;
 export const COOKIE_BANNER_ENABLED = true;
 
@@ -62,5 +71,8 @@ export const CONTACT_URL = "/contacto";
 /** Testimonios reales. Vacío = no se muestra la sección. */
 export const TESTIMONIALS: { name: string; text: string }[] = [];
 
-export const LEGAL_NOTE =
-  "Estas páginas contienen información general sobre las condiciones de uso del sitio y del producto. Deben revisarse y adaptarse a la legislación aplicable antes de utilizarse como versión legal definitiva.";
+export const LEGAL_NOTE = "";
+
+// ── Quién está detrás ────────────────────────────────────────
+export const AUTHOR_NAME = "Renata Ramírez";
+export const AUTHOR_ROLE = "Método Reconexión";

@@ -229,7 +229,7 @@ function OfferChoice() {
               <li>✓ Todo el Método Reconexión</li>
               <li>✓ Caja de Herramientas de Reconexión</li>
               <li>✓ 30 preguntas para volver a conversar</li>
-              <li>✓ 20 mensajes para conversas difíciles</li>
+              <li>✓ 20 mensajes para conversaciones difíciles</li>
               <li>✓ Guión de pedido de disculpas</li>
               <li>✓ Guión para expresar necesidades</li>
               <li>✓ Ejercicios rápidos solo/a</li>

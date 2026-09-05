@@ -1,7 +1,11 @@
 import { cn } from "@/lib/utils";
 import { CHECKOUT_URL, PRODUCT_NAME, PRODUCT_SUBTITLE } from "@/config/site";
 import { track, type AnalyticsEvent } from "@/lib/analytics";
-import bookMockup from "@/assets/book-mockup.png";
+import { withAttribution, trackInitiateCheckout } from "@/lib/meta-pixel";
+import metodo3d600 from "@/assets/metodo-3d-600.webp";
+import metodo3d900 from "@/assets/metodo-3d-900.webp";
+import caja3d600 from "@/assets/caja-3d-600.webp";
+import caja3d900 from "@/assets/caja-3d-900.webp";
 
 export function CTA({
   children,
@@ -19,9 +23,13 @@ export function CTA({
   return (
     <a
       href={href}
-      onClick={() => {
+      onClick={(e) => {
         track(event);
         track("checkout_click");
+        trackInitiateCheckout({ content_name: PRODUCT_NAME });
+        // a origem vai junto para o checkout: sem isso a Hotmart nao sabe
+        // qual anuncio gerou a venda
+        e.currentTarget.href = withAttribution(href);
       }}
       className={cn(
         "inline-flex w-full items-center justify-center rounded-xl bg-cta text-center font-semibold tracking-wide text-cta-foreground shadow-soft transition-all duration-300 hover:bg-cta-dark hover:shadow-lift focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto",
@@ -64,9 +72,22 @@ export function Eyebrow({ children }: { children: React.ReactNode }) {
   return <p className="eyebrow text-primary">{children}</p>;
 }
 
-/** Mockup real del eBook (PNG con fondo transparente), con efecto hover. */
-export function BookMockup({ size = "lg" }: { size?: "sm" | "md" | "lg" }) {
-  const w = size === "lg" ? "w-[240px] sm:w-[300px]" : size === "md" ? "w-[200px]" : "w-[150px]";
+/** Mockup 3D do eBook (WebP com transparencia), responsivo. */
+export function BookMockup({
+  size = "lg",
+  book = "metodo",
+}: {
+  size?: "sm" | "md" | "lg";
+  book?: "metodo" | "caja";
+}) {
+  const w =
+    size === "lg" ? "w-[250px] sm:w-[320px]" : size === "md" ? "w-[210px]" : "w-[160px]";
+  const src = book === "caja" ? caja3d600 : metodo3d600;
+  const src2x = book === "caja" ? caja3d900 : metodo3d900;
+  const label =
+    book === "caja"
+      ? "Caja de Herramientas de Reconexión"
+      : `${PRODUCT_NAME}: ${PRODUCT_SUBTITLE}`;
   return (
     <div className={cn("group relative select-none", w)}>
       <div
@@ -74,13 +95,16 @@ export function BookMockup({ size = "lg" }: { size?: "sm" | "md" | "lg" }) {
         className="absolute -inset-6 rounded-full bg-gold/25 blur-3xl transition-opacity duration-500 group-hover:opacity-80"
       />
       <img
-        src={bookMockup}
-        alt={`Portada del eBook ${PRODUCT_NAME}: ${PRODUCT_SUBTITLE}`}
-        width={648}
-        height={1192}
+        src={src}
+        srcSet={`${src} 600w, ${src2x} 900w`}
+        sizes="(min-width: 640px) 320px, 250px"
+        alt={`Portada del eBook ${label}`}
+        width={600}
+        height={749}
         loading={size === "lg" ? "eager" : "lazy"}
+        decoding="async"
         draggable={false}
-        className="relative w-full rotate-[-2deg] drop-shadow-[0_25px_35px_rgba(32,32,30,0.35)] transition-transform duration-500 ease-out group-hover:rotate-0 group-hover:scale-[1.03]"
+        className="relative w-full drop-shadow-[0_28px_38px_rgba(32,32,30,0.38)] transition-transform duration-500 ease-out group-hover:scale-[1.03]"
       />
     </div>
   );

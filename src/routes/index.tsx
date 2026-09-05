@@ -16,6 +16,7 @@ const carouselImages = [
   { src: carousel3.url, alt: "Pareja reconectada: de la distancia al abrazo" },
 ];
 import { InsideBookSection } from "@/components/landing/InsideBookSection";
+import { AuthorSection } from "@/components/landing/AuthorSection";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { NinetyDaySection } from "@/components/landing/NinetyDaySection";
 import { OnePersonSection } from "@/components/landing/OnePersonSection";
@@ -26,6 +27,8 @@ import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { MobileStickyCTA } from "@/components/landing/MobileStickyCTA";
 import { track } from "@/lib/analytics";
+import { SITE_URL } from "@/config/site";
+import ogImage from "@/assets/metodo-3d-900.webp";
 
 const TITLE = "Método Reconexión | Guía práctica para reconstruir tu relación";
 const DESC =
@@ -39,10 +42,12 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "product" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: `${SITE_URL}${ogImage}` },
+      { name: "twitter:image", content: `${SITE_URL}${ogImage}` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: SITE_URL }],
   }),
   component: Landing,
 });
@@ -77,6 +82,7 @@ function Landing() {
         <GalleryCarousel images={carouselImages} />
         <MethodSection />
         <InsideBookSection />
+        <AuthorSection />
         <TestimonialsSection />
         <NinetyDaySection />
         <OnePersonSection />

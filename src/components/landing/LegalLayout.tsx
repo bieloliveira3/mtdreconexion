@@ -24,7 +24,7 @@ export function LegalLayout({
           <div className="mt-10 space-y-8 text-[0.95rem] leading-relaxed text-muted-foreground">
             {children}
           </div>
-          {showNote ? (
+          {showNote && LEGAL_NOTE ? (
             <div className="mt-14 rounded-xl border border-border bg-surface px-6 py-5">
               <p className="eyebrow text-primary">Nota importante</p>
               <p className="mt-2 text-[0.82rem] leading-relaxed text-muted-foreground">
