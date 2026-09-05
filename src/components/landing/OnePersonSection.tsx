@@ -10,13 +10,13 @@ const items = [
 
 export function OnePersonSection() {
   return (
-    <Section tone="surface">
-      <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
-        <div className="max-w-[65ch]">
-          <h2 className="max-w-[24ch] font-display text-[1.625rem] leading-[1.18] font-semibold tracking-[-0.015em] sm:text-[2.25rem] sm:leading-[1.14]">
+    <Section>
+      <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="max-w-[62ch]">
+          <h2 className="type-h2 max-w-[22ch] text-paper">
             ¿Y si tu pareja ni siquiera sabe que estás leyendo esto?
           </h2>
-          <div className="mt-4 grid gap-4 text-[1.0625rem] leading-[1.62] text-foreground">
+          <div className="type-body mt-6 grid gap-5 text-paper/90">
             <p>
               Es lo más común. La mayoría de las personas que abren este libro lo abren solas, sin
               avisarle a nadie, con el celular boca abajo por si alguien entra.
@@ -30,13 +30,13 @@ export function OnePersonSection() {
             </p>
           </div>
         </div>
-        <div className="rounded-2xl border border-border bg-card p-5 shadow-soft sm:p-7">
-          <ul className="grid gap-3">
+        <div className="rounded-lg border border-border bg-ink-2 p-6 sm:p-8">
+          <ul className="grid gap-4 text-paper/90">
             {items.map((i) => (
               <Check key={i}>{i}</Check>
             ))}
           </ul>
-          <p className="mt-6 border-t border-border pt-5 text-[0.9375rem] leading-[1.6] text-muted-foreground">
+          <p className="mt-7 border-t border-border pt-6 text-[0.9375rem] leading-[1.6] text-mute">
             Cambiar tu parte no es cargar con toda la relación ni darle la razón. Es dejar de
             alimentar el ciclo y ver qué pasa del otro lado. A veces cambia. A veces no. Pero al
             menos deja de estar en tus manos y en tu cabeza todo el día.

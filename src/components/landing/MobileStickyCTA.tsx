@@ -21,18 +21,19 @@ export function MobileStickyCTA() {
   return (
     <div
       className={cn(
-        "fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur transition-transform duration-300",
+        "fixed inset-x-0 bottom-0 z-50 border-t border-border bg-ink/96 pb-[env(safe-area-inset-bottom)] backdrop-blur",
         show ? "translate-y-0" : "translate-y-full",
       )}
     >
-      <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-3 sm:px-6">
+      <div className="mx-auto flex max-w-5xl items-center gap-4 px-4 py-3 sm:px-6">
         <div className="min-w-0">
-          <p className="font-display text-[1.125rem] leading-none font-semibold text-primary">
+          <p className="font-display text-[1.25rem] leading-none font-semibold text-lamp">
             {METHOD_PRICE}
           </p>
-          <p className="mt-1 text-[0.8125rem] leading-none text-muted-foreground">pago único</p>
-          <p className="mt-1 text-[0.8125rem] leading-none text-muted-foreground">
-            Garantía de {GUARANTEE_DAYS} días
+          <p className="mt-1.5 text-[0.875rem] leading-[1.3] text-mute">
+            pago único
+            <br />
+            garantía de {GUARANTEE_DAYS} días
           </p>
         </div>
 
@@ -44,7 +45,7 @@ export function MobileStickyCTA() {
             trackInitiateCheckout({ content_name: PRODUCT_NAME });
             e.currentTarget.href = withAttribution(METHOD_CHECKOUT_URL);
           }}
-          className="ml-auto flex min-h-[52px] flex-1 shrink-0 items-center justify-center rounded-xl bg-cta px-6 text-center text-[0.9375rem] font-semibold tracking-wide text-cta-foreground transition-colors hover:bg-cta-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:flex-none"
+          className="ml-auto flex min-h-[52px] flex-1 shrink-0 items-center justify-center rounded-lg bg-cta px-5 whitespace-nowrap sm:px-6 text-center text-[0.9375rem] font-semibold text-cta-foreground transition-colors hover:bg-cta-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:flex-none"
         >
           Empezar ahora →
         </a>

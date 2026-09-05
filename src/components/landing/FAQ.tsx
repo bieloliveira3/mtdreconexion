@@ -8,6 +8,13 @@ import { Section } from "./shared";
 import { track } from "@/lib/analytics";
 import { GUARANTEE_DAYS, PRICE, SUPPORT_EMAIL } from "@/config/site";
 
+/**
+ * Seis preguntas, no nueve. Quedan las cuatro que deciden la compra —la
+ * pareja que no va a leer, lo que ya intentaron, qué pasa si no funciona y
+ * si esto se cobra otra vez— más la que niega la credencial clínica y la de
+ * entrega. Cae la de la crisis, que remitía a una nota de seguridad que ya
+ * no está en la página.
+ */
 const faqs = [
   [
     "Mi pareja no va a leer esto. ¿Igual me sirve?",
@@ -30,41 +37,27 @@ const faqs = [
     `No. Es un pago único de ${PRICE}. No hay renovación, no hay mensualidad, no hay cargo escondido. Pagas una vez y el eBook es tuyo para siempre.`,
   ],
   [
-    "¿Cuánto tiempo tengo que dedicarle?",
-    "Leerlo completo toma una tarde. Aplicarlo es otra cosa: la mayoría de los ejercicios están hechos para veinte minutos o menos, porque están pensados para gente cansada. El plan de 90 días reparte todo en tres meses para que no tengas que hacer nada heroico en un solo día.",
-  ],
-  [
     "¿Cómo lo recibo?",
     `Apenas se aprueba el pago te llega un correo con el acceso. Se abre en el celular, la tablet o la computadora. No hay envío físico ni espera. Si el correo no aparece, revisa spam o escribe a ${SUPPORT_EMAIL} y lo resolvemos.`,
-  ],
-  [
-    "¿Sirve si estamos en crisis, hablando de separarnos?",
-    "Puede ayudarte a ver el ciclo con claridad y a trabajar la comunicación, que suele ser lo que se rompe primero. No es un salvavidas ni te va a devolver a nadie. Y si hay violencia, amenazas o miedo en la relación, esto no es lo indicado: lee la nota de seguridad más abajo y busca ayuda profesional.",
-  ],
-  [
-    "¿Aparece algo raro en mi extracto bancario?",
-    "El cobro aparece a nombre de Hotmart, la plataforma que procesa el pago. No dice el nombre del producto.",
   ],
 ];
 
 export function FAQ() {
   return (
-    <Section id="faq">
-      <h2 className="font-display text-[1.625rem] leading-[1.18] font-semibold tracking-[-0.015em] sm:text-[2.25rem] sm:leading-[1.14]">
-        Preguntas frecuentes
-      </h2>
+    <Section id="faq" tone="surface">
+      <h2 className="type-h2 text-paper">Preguntas frecuentes</h2>
       <Accordion
         type="single"
         collapsible
-        className="mt-8"
+        className="mt-8 max-w-[70ch]"
         onValueChange={(v) => v && track("faq_open", { question: v })}
       >
         {faqs.map(([q, a], i) => (
-          <AccordionItem key={q} value={`item-${i}`}>
-            <AccordionTrigger className="min-h-12 text-left text-[1.125rem] leading-[1.3] font-semibold tracking-[-0.01em]">
+          <AccordionItem key={q} value={`item-${i}`} className="border-border">
+            <AccordionTrigger className="min-h-12 text-left text-[1.0625rem] leading-[1.35] font-semibold text-paper hover:no-underline">
               {q}
             </AccordionTrigger>
-            <AccordionContent className="text-[0.9375rem] leading-[1.6] text-muted-foreground">
+            <AccordionContent className="text-[0.9375rem] leading-[1.65] text-mute">
               {a}
             </AccordionContent>
           </AccordionItem>

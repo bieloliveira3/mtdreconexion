@@ -16,11 +16,20 @@
  * To add a new semantic color:
  * 1. Add the variable to :root (light value) and .dark (dark value)
  * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ *
+ * ── Paleta ────────────────────────────────────────────────────────────────
+ * La página es oscura por defecto: se lee de noche, a solas. Siete tokens,
+ * ni uno más. Contrastes medidos sobre --ink (WCAG AA exige 4.5:1):
+ *   --paper sobre --ink   14.83:1
+ *   --mute  sobre --ink    5.52:1
+ *   --lamp  sobre --ink    8.76:1
+ *   --ink   sobre --ember   4.50:1  (texto del botón de compra)
+ * --mute nunca va sobre --ink-3 (4.38:1). --ink-3 es solo borde y divisor.
  */
 
 @theme inline {
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -28,6 +37,17 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Paleta cruda */
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-paper: var(--paper);
+  --color-mute: var(--mute);
+  --color-lamp: var(--lamp);
+  --color-ember: var(--ember);
+
+  /* Alias semánticos */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
@@ -55,40 +75,51 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-  --shadow-soft: 0 1px 2px oklch(0.2712 0.0157 31.27 / 0.03), 0 18px 48px -24px oklch(0.2712 0.0157 31.27 / 0.10);
-  --shadow-lift: 0 26px 64px -28px oklch(0.3376 0.0976 10.62 / 0.28);
+  --shadow-soft: 0 1px 0 oklch(1 0 0 / 0.03) inset, 0 18px 44px -28px oklch(0 0 0 / 0.85);
+  --shadow-lift: 0 28px 64px -30px oklch(0 0 0 / 0.9);
 }
 
 :root {
   --radius: 0.875rem;
-  --background: oklch(0.9666 0.0086 67.72);
-  --foreground: oklch(0.2712 0.0157 31.27);
-  --surface: oklch(0.9254 0.0162 58.63);
-  --card: oklch(0.9880 0.0045 67.72);
-  --card-foreground: oklch(0.2712 0.0157 31.27);
-  --popover: oklch(0.9880 0.0045 67.72);
-  --popover-foreground: oklch(0.2712 0.0157 31.27);
-  --primary: oklch(0.4022 0.1168 11.31);
-  --primary-foreground: oklch(0.9666 0.0086 67.72);
-  --primary-dark: oklch(0.3376 0.0976 10.62);
-  --cta: oklch(0.4022 0.1168 11.31);
-  --cta-foreground: oklch(1 0 0);
-  --cta-dark: oklch(0.3376 0.0976 10.62);
-  --gold: oklch(0.7020 0.0736 78.86);
-  --gold-ink: oklch(0.5466 0.0736 78.86);
-  --secondary: oklch(0.9254 0.0162 58.63);
-  --secondary-foreground: oklch(0.3376 0.0976 10.62);
-  --muted: oklch(0.9254 0.0162 58.63);
-  --muted-foreground: oklch(0.5070 0.0185 42.25);
-  --accent: oklch(0.6615 0.0683 19.05);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.9666 0.0086 67.72);
-  --border: oklch(0.8820 0.0170 58.63);
-  --input: oklch(0.8820 0.0170 58.63);
-  --ring: oklch(0.4022 0.1168 11.31);
-}
 
+  /* Siete tokens. #14161C #1C1F27 #262A34 #EDE8E0 #8A8E99 #E8A857 #C4634A */
+  --ink: oklch(0.2008 0.0124 270.73);
+  --ink-2: oklch(0.2398 0.016 269);
+  --ink-3: oklch(0.2854 0.0192 268.01);
+  --paper: oklch(0.9327 0.012 79.78);
+  --mute: oklch(0.647 0.017 269.89);
+  --lamp: oklch(0.7768 0.1233 70.65);
+  --ember: oklch(0.6097 0.13 35.5);
+
+  --background: var(--ink);
+  --foreground: var(--paper);
+  --surface: var(--ink-2);
+  --card: var(--ink-2);
+  --card-foreground: var(--paper);
+  --popover: var(--ink-2);
+  --popover-foreground: var(--paper);
+  --primary: var(--lamp);
+  --primary-foreground: var(--ink);
+  /* Los tokens "-dark" son estados hover. Sobre fondo oscuro el hover
+     aclara: oscurecer rompería el contraste del texto del botón. */
+  --primary-dark: oklch(0.83 0.11 70.65);
+  --cta: var(--ember);
+  --cta-foreground: var(--ink);
+  --cta-dark: oklch(0.66 0.125 35.5);
+  --gold: var(--lamp);
+  --gold-ink: var(--lamp);
+  --secondary: var(--ink-2);
+  --secondary-foreground: var(--paper);
+  --muted: var(--ink-2);
+  --muted-foreground: var(--mute);
+  --accent: var(--ink-3);
+  --accent-foreground: var(--paper);
+  --destructive: oklch(0.637 0.208 25.33);
+  --destructive-foreground: var(--ink);
+  --border: var(--ink-3);
+  --input: var(--ink-3);
+  --ring: var(--lamp);
+}
 
 @layer base {
   * {
@@ -98,53 +129,175 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    color-scheme: dark;
   }
 
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  @media (min-width: 640px) {
+    body {
+      font-size: 1.125rem;
+    }
   }
 
   h1,
   h2,
   h3 {
     font-family: var(--font-display);
+    font-variation-settings:
+      "SOFT" 30,
+      "WONK" 0,
+      "opsz" 144;
+    font-weight: 600;
+  }
+
+  ::selection {
+    background-color: var(--lamp);
+    color: var(--ink);
+  }
+}
+
+@layer components {
+  /*
+   * Escala tipográfica. Piso absoluto de 0.875rem: nada más pequeño en
+   * ninguna parte de la página.
+   */
+  .type-h1 {
+    font-family: var(--font-display);
+    font-variation-settings:
+      "SOFT" 30,
+      "WONK" 0,
+      "opsz" 144;
+    font-weight: 600;
+    font-size: 2.35rem;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .type-h2 {
+    font-family: var(--font-display);
+    font-variation-settings:
+      "SOFT" 30,
+      "WONK" 0,
+      "opsz" 120;
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+
+  .type-h3 {
+    font-family: var(--font-display);
+    font-variation-settings:
+      "SOFT" 30,
+      "WONK" 0,
+      "opsz" 48;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.25;
     letter-spacing: -0.01em;
+  }
+
+  .type-body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  .type-caption {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--mute);
+  }
+
+  @media (min-width: 640px) {
+    .type-h1 {
+      font-size: 3.6rem;
+    }
+
+    .type-h2 {
+      font-size: 2.4rem;
+    }
+
+    .type-h3 {
+      font-size: 1.375rem;
+    }
+
+    .type-body {
+      font-size: 1.125rem;
+    }
+  }
+
+  /*
+   * La regla. Dos líneas de 1px en el margen izquierdo que se acercan
+   * mientras la persona baja, y llegan a la oferta convertidas en una sola,
+   * en ámbar. Es lo único que se mueve en toda la página.
+   */
+  .scroll-rule {
+    --rule-p: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 1.125rem;
+    z-index: 30;
+    width: 24px;
+    pointer-events: none;
+  }
+
+  .scroll-rule-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: color-mix(in oklab, var(--mute), var(--lamp) calc(var(--rule-p) * 100%));
+    opacity: calc(0.42 + 0.58 * var(--rule-p));
+  }
+
+  .scroll-rule-line-a {
+    transform: translateX(calc(-11px * (1 - var(--rule-p))));
+  }
+
+  .scroll-rule-line-b {
+    transform: translateX(calc(11px * (1 - var(--rule-p))));
+  }
+
+  @media (min-width: 1152px) {
+    .scroll-rule {
+      left: calc(50% - 32rem - 2.75rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-rule {
+      --rule-p: 1;
+    }
+
+    .scroll-rule-line {
+      background-color: var(--lamp);
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 
 @utility eyebrow {
-  font-size: 0.6875rem;
-  letter-spacing: 0.18em;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 600;
+  line-height: 1.4;
 }
-
-@keyframes mr-rise {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes mr-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-
-@utility rise {
-  animation: mr-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-

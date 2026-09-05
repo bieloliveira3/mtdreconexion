@@ -23,14 +23,14 @@ const testimonials = [
 
 function Stars() {
   return (
-    <div className="flex gap-0.5 text-gold" aria-label="5 estrellas">
+    <div className="flex gap-0.5 text-lamp" aria-label="5 estrellas">
       {[...Array(5)].map((_, i) => (
         <svg
           key={i}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="h-4 w-4"
+          className="h-3.5 w-3.5"
           aria-hidden="true"
         >
           <path
@@ -46,34 +46,29 @@ function Stars() {
 
 export function TestimonialsSection() {
   return (
-    <Section tone="surface">
-      <div className="text-center">
-        <span className="eyebrow text-primary">Historias reales</span>
-        <h2 className="mt-3 font-display text-[1.75rem] leading-tight sm:text-[2.3rem]">
-          Lo que dicen quienes ya lo usaron
-        </h2>
-      </div>
+    <Section>
+      <h2 className="type-h2 max-w-[20ch] text-paper">Lo que dicen quienes ya lo usaron</h2>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
+      <div className="mt-10 grid gap-4 md:grid-cols-3">
         {testimonials.map((t) => (
-          <div key={t.name} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+          <div key={t.name} className="rounded-lg border border-border bg-ink-2 p-6">
             <div className="flex items-center gap-3">
               <img
                 src={t.photo}
                 alt={`Foto de ${t.name}`}
-                className="h-12 w-12 rounded-full object-cover ring-2 ring-border"
+                className="h-11 w-11 rounded-full object-cover ring-1 ring-border brightness-[0.92] saturate-[0.9]"
               />
               <div>
-                <p className="text-[0.9rem] font-semibold text-primary-dark">{t.name}</p>
+                <p className="text-[0.9375rem] font-semibold text-paper">{t.name}</p>
                 <Stars />
               </div>
             </div>
-            <p className="mt-4 text-[0.95rem] leading-relaxed text-foreground">“{t.text}”</p>
+            <p className="mt-5 text-[0.9375rem] leading-[1.65] text-paper/90">“{t.text}”</p>
           </div>
         ))}
       </div>
 
-      <p className="mx-auto mt-8 max-w-xl text-center text-[0.8rem] text-muted-foreground">
+      <p className="mt-8 max-w-[62ch] text-[0.875rem] leading-[1.55] text-mute">
         Los nombres han sido cambiados para proteger la privacidad. Estos testimonios reflejan
         experiencias reales basadas en la aplicación del método.
       </p>

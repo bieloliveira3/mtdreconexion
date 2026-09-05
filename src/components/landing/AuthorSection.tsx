@@ -18,8 +18,14 @@ const body = [
 export function AuthorSection() {
   return (
     <Section id="autora" tone="surface">
-      <div className="grid items-center gap-9 md:grid-cols-[0.8fr_1.2fr] md:gap-12">
-        <div className="mx-auto w-full max-w-[280px] md:mx-0">
+      <div className="grid items-start gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-14">
+        {/*
+          La foto es un rectángulo con fondo de estudio gris claro: suelta
+          sobre --ink flotaría como un bloque encendido. Va con filete en
+          --ink-3, saturación bajada y un velo inferior hacia --ink para que
+          se apoye en la página en vez de recortarse contra ella.
+        */}
+        <div className="relative mx-auto w-full max-w-[280px] overflow-hidden rounded-lg ring-1 ring-border md:mx-0">
           <img
             src={renata400}
             srcSet={`${renata400} 400w, ${renata800} 800w`}
@@ -29,22 +35,24 @@ export function AuthorSection() {
             height={500}
             loading="lazy"
             decoding="async"
-            className="w-full rounded-2xl object-cover shadow-soft ring-1 ring-border"
+            className="w-full object-cover brightness-[0.88] contrast-[1.02] saturate-[0.85]"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-ink-2"
           />
         </div>
 
         <div>
           <Eyebrow>Quién está detrás</Eyebrow>
-          <h2 className="mt-3 font-display text-[1.625rem] leading-[1.18] font-semibold tracking-[-0.015em] sm:text-[2.25rem] sm:leading-[1.14]">
-            {AUTHOR_NAME}
-          </h2>
-          <p className="mt-1 text-[0.8125rem] text-muted-foreground">{AUTHOR_ROLE}</p>
+          <h2 className="type-h2 mt-4 text-paper">{AUTHOR_NAME}</h2>
+          <p className="mt-2 text-[0.875rem] text-mute">{AUTHOR_ROLE}</p>
 
-          <div className="mt-6 grid max-w-[65ch] gap-4 text-[1.0625rem] leading-[1.62] text-foreground">
+          <div className="type-body mt-7 grid max-w-[62ch] gap-5 text-paper/90">
             {body.map((p) => (
               <p key={p}>{p}</p>
             ))}
-            <p className="border-l-2 border-gold-ink pl-4 text-muted-foreground">
+            <p className="border-l border-lamp pl-5 text-[0.9375rem] leading-[1.6] text-mute">
               Lo digo dos veces dentro del libro y lo repito acá: si tu relación necesita
               acompañamiento profesional, búscalo. Esto no lo reemplaza. Para muchas personas es lo
               que se puede hacer hoy, con lo que hay hoy. A veces es el primer paso.

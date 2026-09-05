@@ -48,7 +48,7 @@ function ContactPage() {
           </svg>
           Escríbenos por WhatsApp
         </a>
-        <p className="text-[0.85rem] text-muted-foreground">
+        <p className="text-[0.875rem] text-muted-foreground">
           O envíanos un correo a{" "}
           <a
             href={`mailto:${BUSINESS_EMAIL}`}

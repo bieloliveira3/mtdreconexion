@@ -11,10 +11,10 @@ import { NinetyDaySection } from "@/components/landing/NinetyDaySection";
 import { OnePersonSection } from "@/components/landing/OnePersonSection";
 import { OfferSection } from "@/components/landing/OfferSection";
 import { FAQ } from "@/components/landing/FAQ";
-import { SafetyNote } from "@/components/landing/SafetyNote";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { MobileStickyCTA } from "@/components/landing/MobileStickyCTA";
+import { ScrollRule } from "@/components/landing/ScrollRule";
 import { track } from "@/lib/analytics";
 import { SITE_URL } from "@/config/site";
 import ogImage from "@/assets/metodo-3d-900.webp";
@@ -62,6 +62,7 @@ function Landing() {
 
   return (
     <>
+      <ScrollRule />
       <UrgencyBar />
       <Header />
       <main>
@@ -74,7 +75,6 @@ function Landing() {
         <OnePersonSection />
         <OfferSection />
         <FAQ />
-        <SafetyNote />
         <FinalCTA />
       </main>
       <Footer />

@@ -55,40 +55,29 @@ const intro = [
 export function MethodSection() {
   return (
     <Section id="metodo">
-      <div className="max-w-[65ch]">
-        <h2 className="max-w-[24ch] font-display text-[1.625rem] leading-[1.18] font-semibold tracking-[-0.015em] sm:text-[2.25rem] sm:leading-[1.14]">
+      <div className="max-w-[62ch]">
+        <h2 className="type-h2 max-w-[22ch] text-paper">
           No necesitas más consejos sueltos. Necesitas saber qué va primero.
         </h2>
-        <div className="mt-4 grid gap-4 text-[1.0625rem] leading-[1.62] text-foreground">
+        <div className="type-body mt-6 grid gap-5 text-paper/90">
           {intro.map((p) => (
             <p key={p}>{p}</p>
           ))}
         </div>
       </div>
 
-      <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ol className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
         {phases.map(([n, title, achieves, does]) => (
-          <li
-            key={n}
-            className="group relative rounded-2xl border border-border/70 bg-card px-5 py-5 shadow-soft transition-colors duration-300 hover:border-primary/30 sm:px-7 sm:py-7"
-          >
-            <span
-              aria-hidden
-              className="absolute top-7 left-0 h-6 w-px bg-primary/40 transition-all duration-300 group-hover:h-10"
-            />
-            <span className="font-display text-[1.05rem] tracking-[0.08em] text-gold-ink">{n}</span>
-            <h3 className="mt-1 text-[1.125rem] leading-[1.3] font-semibold tracking-[-0.01em] text-primary-dark sm:text-[1.25rem]">
-              {title}
-            </h3>
-            <p className="mt-2 text-[0.9375rem] leading-[1.6] text-foreground">{achieves}</p>
-            <p className="mt-1.5 text-[0.9375rem] leading-[1.6] text-muted-foreground">{does}</p>
+          <li key={n} className="bg-ink-2 px-6 py-6 sm:px-7 sm:py-7">
+            <span className="font-display text-[0.9375rem] tracking-[0.14em] text-lamp">{n}</span>
+            <h3 className="type-h3 mt-2 text-paper">{title}</h3>
+            <p className="mt-3 text-[0.9375rem] leading-[1.6] text-paper/90">{achieves}</p>
+            <p className="mt-2 text-[0.875rem] leading-[1.55] text-mute">{does}</p>
           </li>
         ))}
       </ol>
 
-      <p className="mt-8 font-display text-[1.25rem] leading-snug text-primary-dark sm:text-[1.5rem]">
-        Siete fases. En orden. Con ejercicios en cada una.
-      </p>
+      <p className="type-h3 mt-10 text-lamp">Siete fases. En orden. Con ejercicios en cada una.</p>
     </Section>
   );
 }

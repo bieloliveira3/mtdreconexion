@@ -29,7 +29,7 @@ export function CookieBanner() {
       <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-5 shadow-lift sm:p-6">
         {!panel ? (
           <>
-            <p className="text-[0.85rem] leading-relaxed text-muted-foreground">
+            <p className="text-[0.875rem] leading-relaxed text-muted-foreground">
               Utilizamos cookies para mejorar tu experiencia, analizar el uso del sitio y, cuando
               corresponda, personalizar contenido. Puedes aceptar o gestionar tus preferencias.
             </p>
@@ -38,19 +38,19 @@ export function CookieBanner() {
                 onClick={() =>
                   save({ necessary: true, analytics: true, marketing: MARKETING_COOKIES_ENABLED })
                 }
-                className="rounded-xl bg-primary px-5 py-2.5 text-[0.8rem] font-semibold text-primary-foreground transition-colors hover:bg-primary-dark"
+                className="rounded-xl bg-primary px-5 py-2.5 text-[0.875rem] font-semibold text-primary-foreground transition-colors hover:bg-primary-dark"
               >
                 Aceptar
               </button>
               <button
                 onClick={() => setPanel(true)}
-                className="rounded-xl border border-border px-5 py-2.5 text-[0.8rem] font-medium transition-colors hover:bg-surface"
+                className="rounded-xl border border-border px-5 py-2.5 text-[0.875rem] font-medium transition-colors hover:bg-surface"
               >
                 Configurar
               </button>
               <button
                 onClick={() => save({ necessary: true, analytics: false, marketing: false })}
-                className="rounded-xl px-5 py-2.5 text-[0.8rem] font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="rounded-xl px-5 py-2.5 text-[0.875rem] font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 Rechazar no esenciales
               </button>
@@ -76,7 +76,7 @@ export function CookieBanner() {
             </div>
             <button
               onClick={() => save({ necessary: true, analytics, marketing })}
-              className="mt-5 rounded-xl bg-primary px-5 py-2.5 text-[0.8rem] font-semibold text-primary-foreground transition-colors hover:bg-primary-dark"
+              className="mt-5 rounded-xl bg-primary px-5 py-2.5 text-[0.875rem] font-semibold text-primary-foreground transition-colors hover:bg-primary-dark"
             >
               Guardar preferencias
             </button>
@@ -103,8 +103,8 @@ function Row({
   return (
     <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
       <div className="min-w-0">
-        <p className="text-[0.88rem] font-medium">{label}</p>
-        <p className="text-[0.78rem] text-muted-foreground">{desc}</p>
+        <p className="text-[0.875rem] font-medium">{label}</p>
+        <p className="text-[0.875rem] text-muted-foreground">{desc}</p>
       </div>
       <Switch
         checked={checked}

@@ -6,10 +6,11 @@ import { GUARANTEE_DAYS, PRICE } from "@/config/site";
  */
 export function UrgencyBar() {
   return (
-    <div className="bg-primary-dark px-4 py-2 text-primary-foreground">
-      <p className="mx-auto max-w-5xl text-center text-[0.8125rem] leading-snug text-background/85">
+    <div className="border-b border-border bg-ink-2 px-4 py-2.5">
+      <p className="mx-auto max-w-5xl text-center text-[0.875rem] leading-[1.45] text-mute">
         <span className="hidden sm:inline">eBook digital de 53 páginas · </span>
-        Pago único de {PRICE} · Acceso inmediato · Garantía de {GUARANTEE_DAYS} días
+        <span className="text-paper">Pago único de {PRICE}</span> · Acceso inmediato · Garantía de{" "}
+        {GUARANTEE_DAYS} días
       </p>
     </div>
   );

@@ -7,6 +7,12 @@ import metodo3d900 from "@/assets/metodo-3d-900.webp";
 import caja3d600 from "@/assets/caja-3d-600.webp";
 import caja3d900 from "@/assets/caja-3d-900.webp";
 
+/**
+ * El botón de compra. Es el único lugar de la página donde aparece --ember;
+ * el texto va en --ink porque blanco sobre ember da 4.01:1 y no pasa AA,
+ * mientras que ink sobre ember da 4.50:1. El hover aclara en vez de oscurecer
+ * por la misma razón.
+ */
 export function CTA({
   children,
   event = "click_cta",
@@ -32,8 +38,8 @@ export function CTA({
         e.currentTarget.href = withAttribution(href);
       }}
       className={cn(
-        "inline-flex w-full items-center justify-center rounded-xl bg-cta text-center font-semibold tracking-wide text-cta-foreground shadow-soft transition-all duration-300 hover:bg-cta-dark hover:shadow-lift focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto",
-        size === "lg" ? "px-8 py-4 text-[0.95rem]" : "px-5 py-2.5 text-[0.8rem]",
+        "inline-flex w-full items-center justify-center rounded-lg bg-cta text-center font-semibold text-cta-foreground transition-colors duration-200 hover:bg-cta-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto",
+        size === "lg" ? "px-8 py-4 text-[1.0625rem]" : "px-5 py-2.5 text-[0.9375rem]",
         className,
       )}
     >
@@ -59,7 +65,7 @@ export function Section({
       className={cn(
         "scroll-mt-20 px-5 py-16 sm:px-8 sm:py-24",
         tone === "surface" && "bg-surface",
-        tone === "dark" && "bg-primary-dark text-background",
+        tone === "dark" && "border-y border-border bg-ink",
         className,
       )}
     >
@@ -69,7 +75,7 @@ export function Section({
 }
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
-  return <p className="eyebrow text-primary">{children}</p>;
+  return <p className="eyebrow text-lamp">{children}</p>;
 }
 
 /** Mockup 3D do eBook (WebP com transparencia), responsivo. */
@@ -86,11 +92,8 @@ export function BookMockup({
   const label =
     book === "caja" ? "Caja de Herramientas de Reconexión" : `${PRODUCT_NAME}: ${PRODUCT_SUBTITLE}`;
   return (
-    <div className={cn("group relative select-none", w)}>
-      <div
-        aria-hidden
-        className="absolute -inset-6 rounded-full bg-gold/25 blur-3xl transition-opacity duration-500 group-hover:opacity-80"
-      />
+    <div className={cn("relative select-none", w)}>
+      <div aria-hidden className="absolute -inset-8 rounded-full bg-lamp/12 blur-3xl" />
       <img
         src={src}
         srcSet={`${src} 600w, ${src2x} 900w`}
@@ -101,7 +104,7 @@ export function BookMockup({
         loading={size === "lg" ? "eager" : "lazy"}
         decoding="async"
         draggable={false}
-        className="relative w-full drop-shadow-[0_28px_38px_rgba(32,32,30,0.38)] transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+        className="relative w-full drop-shadow-[0_30px_44px_rgba(0,0,0,0.6)]"
       />
     </div>
   );
@@ -109,13 +112,8 @@ export function BookMockup({
 
 export function Check({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex items-start gap-3 text-[0.95rem] leading-relaxed">
-      <span
-        aria-hidden
-        className="mt-[3px] inline-block h-4 w-4 shrink-0 rounded-full border border-primary/30 bg-primary/10 text-center text-[0.6rem] leading-4 text-primary"
-      >
-        ✓
-      </span>
+    <li className="flex items-start gap-3 text-[0.9375rem] leading-[1.6]">
+      <span aria-hidden className="mt-[7px] h-px w-3 shrink-0 bg-lamp" />
       <span>{children}</span>
     </li>
   );

@@ -13,9 +13,11 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background px-5 py-12 sm:px-8">
+    <footer className="border-t border-border bg-ink-2 px-5 py-14 sm:px-8">
       <div className="mx-auto max-w-5xl">
         <Link to="/" className="inline-block" aria-label={PRODUCT_NAME}>
+          {/* Mismo tratamiento que en el header: silueta color papel, porque
+              el original es tinta oscura sobre transparencia. */}
           <img
             src={logoFull480}
             srcSet={`${logoFull480} 480w, ${logoFull960} 960w`}
@@ -25,24 +27,24 @@ export function Footer() {
             height={159}
             loading="lazy"
             decoding="async"
-            className="h-14 w-auto"
+            className="h-14 w-auto opacity-[0.88] [filter:brightness(0)_invert(1)]"
           />
         </Link>
-        <nav className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+        <nav className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="text-[0.85rem] text-muted-foreground transition-colors hover:text-primary"
+              className="text-[0.875rem] text-mute transition-colors hover:text-paper"
             >
               {l.label}
             </Link>
           ))}
         </nav>
-        <p className="mt-8 text-[0.78rem] text-muted-foreground">
+        <p className="mt-10 text-[0.875rem] text-mute">
           © 2026 {PRODUCT_NAME}. Todos los derechos reservados.
         </p>
-        <p className="mt-2 max-w-2xl text-[0.78rem] leading-relaxed text-muted-foreground">
+        <p className="mt-2 max-w-2xl text-[0.875rem] leading-[1.55] text-mute">
           Este contenido tiene finalidad educativa y divulgativa y no sustituye atención psicológica
           profesional.
         </p>

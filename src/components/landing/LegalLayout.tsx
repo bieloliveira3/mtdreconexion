@@ -17,7 +17,7 @@ export function LegalLayout({
       <Header />
       <main className="px-5 py-14 sm:px-8 sm:py-20">
         <article className="mx-auto max-w-3xl">
-          <Link to="/" className="text-[0.8rem] text-muted-foreground hover:text-primary">
+          <Link to="/" className="text-[0.875rem] text-muted-foreground hover:text-primary">
             ← Volver al inicio
           </Link>
           <h1 className="mt-5 font-display text-[2rem] leading-tight sm:text-[2.5rem]">{title}</h1>
@@ -27,7 +27,7 @@ export function LegalLayout({
           {showNote && LEGAL_NOTE ? (
             <div className="mt-14 rounded-xl border border-border bg-surface px-6 py-5">
               <p className="eyebrow text-primary">Nota importante</p>
-              <p className="mt-2 text-[0.82rem] leading-relaxed text-muted-foreground">
+              <p className="mt-2 text-[0.875rem] leading-relaxed text-muted-foreground">
                 {LEGAL_NOTE}
               </p>
             </div>
