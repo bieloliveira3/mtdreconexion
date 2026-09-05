@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { CTA } from "./shared";
 import { PRODUCT_NAME } from "@/config/site";
+import logo320 from "@/assets/logo-header-320.webp";
+import logo640 from "@/assets/logo-header-640.webp";
 
 const links = [
   { href: "#metodo", label: "Método" },
@@ -13,10 +15,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur">
       <div className="mx-auto grid max-w-5xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:gap-4 sm:px-8">
-        <Link to="/" hash="top" className="min-w-0">
-          <span className="block whitespace-nowrap font-display text-[0.65rem] tracking-[0.04em] text-foreground uppercase sm:text-base sm:tracking-[0.14em]">
-            {PRODUCT_NAME}
-          </span>
+        <Link to="/" hash="top" className="min-w-0" aria-label={PRODUCT_NAME}>
+          <img
+            src={logo320}
+            srcSet={`${logo320} 320w, ${logo640} 640w`}
+            sizes="(min-width: 640px) 190px, 150px"
+            alt={PRODUCT_NAME}
+            width={320}
+            height={102}
+            decoding="async"
+            className="h-8 w-auto sm:h-10"
+          />
         </Link>
         <div className="flex shrink-0 items-center gap-4 sm:gap-7">
           <nav className="hidden items-center gap-7 md:flex">
