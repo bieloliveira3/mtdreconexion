@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
 import { track } from "@/lib/analytics";
+import { cn } from "@/lib/utils";
 
 const WHATSAPP_URL = "https://wa.me/message/5OOUAWJN2Y6OI1";
 
 export function FloatingWhatsAppButton() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > window.innerHeight * 0.9);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <a
       href={WHATSAPP_URL}
@@ -10,7 +21,10 @@ export function FloatingWhatsAppButton() {
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
       onClick={() => track("click_floating_whatsapp")}
-      className="fixed bottom-32 right-5 z-[70] flex items-center gap-2.5 rounded-full bg-[#25D366] px-4 py-3 shadow-lift transition-all duration-300 hover:scale-105 hover:bg-[#128C7E] hover:shadow-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+      className={cn(
+        "fixed right-5 z-[70] flex items-center gap-2.5 rounded-full bg-[#25D366] px-4 py-3 shadow-lift transition-all duration-300 hover:scale-105 hover:bg-[#128C7E] hover:shadow-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+        show ? "bottom-32 translate-y-0 opacity-100" : "bottom-32 translate-y-full opacity-0",
+      )}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
