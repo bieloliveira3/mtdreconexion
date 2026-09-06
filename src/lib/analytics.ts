@@ -7,7 +7,9 @@ export type AnalyticsEvent =
   | "faq_open"
   | "scroll_50"
   | "scroll_75"
-  | "checkout_click";
+  | "checkout_click"
+  | "click_floating_whatsapp";
+
 
 function analyticsAllowed() {
   if (!ANALYTICS_ENABLED) return false;
