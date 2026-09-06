@@ -10,8 +10,7 @@ import renata800 from "@/assets/renata-800.webp";
  */
 const body = [
   "Empiezo por lo que no soy, porque me parece lo más honesto que puedo decirte: no soy terapeuta, no soy psicóloga, no atiendo a nadie. Este libro no es terapia.",
-  "Lo que sí soy es alguien que pasó años leyendo todo lo que encontró sobre por qué dos personas que se quieren dejan de entenderse. La investigación de John y Julie Gottman sobre qué predice que una pareja siga junta. La Terapia Focalizada en las Emociones, de Sue Johnson. La Comunicación No Violenta, de Marshall Rosenberg.",
-  "Encontré teoría excelente. Y casi nada que una pareja cansada, con hijos dormidos en el cuarto de al lado y veinte minutos libres, pudiera usar esa misma noche.",
+  "Pasé años leyendo todo lo que encontré sobre por qué dos personas que se quieren dejan de entenderse: Gottman, la Terapia Focalizada en las Emociones de Sue Johnson, la Comunicación No Violenta de Rosenberg. Encontré teoría excelente y casi nada que una pareja cansada, con veinte minutos libres, pudiera usar esa misma noche.",
   "Método Reconexión es esa parte. La aplicable. Siete fases, ejercicios cortos y palabras concretas para decir en voz alta.",
 ];
 
