@@ -5,7 +5,7 @@ import { trackViewContent } from "@/lib/meta-pixel";
 import { METHOD_CHECKOUT_URL, METHOD_PRICE, METHOD_PRICE_COP } from "@/config/site";
 
 /** Siete items, no trece: lo que contiene el libro. La entrega y la ausencia
- *  de suscripción ya se dicen al lado del botón y en la barra superior. */
+ *  de suscripción ya se dicen al lado del botón y en la barra fija. */
 const includes = [
   "eBook digital completo, 53 páginas, en español",
   "El método de 7 fases explicado paso por paso",
@@ -45,7 +45,6 @@ export function OfferSection() {
         </div>
 
         <div>
-          <p className="eyebrow text-lamp">Acceso digital inmediato</p>
           <h2 className="type-h2 mt-4 max-w-[22ch] text-paper">
             Empieza hoy, por menos de lo que gastan en una salida
           </h2>
@@ -98,7 +97,6 @@ export function OfferSection() {
             <CTA event="click_offer" href={METHOD_CHECKOUT_URL} className="w-full">
               Quiero el Método Reconexión por {METHOD_PRICE} →
             </CTA>
-            <GuaranteeBadge variant="inline" className="mt-4 text-mute" />
             <p className="mt-3 text-center text-[0.875rem] leading-[1.55] text-mute">
               Pago procesado por Hotmart. No es suscripción, no se renueva, no se cobra nada más. En
               el checkout se convierte a tu moneda local.

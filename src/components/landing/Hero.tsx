@@ -1,6 +1,5 @@
 import { BookMockup, CTA } from "./shared";
 import { GUARANTEE_DAYS, PRICE } from "@/config/site";
-import heroCover from "@/assets/hero-cover-new.jpg.asset.json";
 
 const bullets = [
   "7 fases en orden, para saber qué hacer primero y qué dejar para después",
@@ -12,24 +11,8 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[84vh] items-center overflow-hidden px-5 py-14 sm:px-8 sm:py-24"
+      className="relative flex min-h-[78vh] items-center px-5 py-16 sm:px-8 sm:py-24"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroCover.url})` }}
-        aria-hidden="true"
-      />
-      {/* La foto vive debajo de la noche: el degradado la apaga hasta que el
-          texto queda a 14:1 contra el fondo. */}
-      <div
-        className="absolute inset-0 bg-gradient-to-r from-ink from-40% via-ink/90 via-65% to-ink/50"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-ink"
-        aria-hidden="true"
-      />
-
       <div className="relative z-10 mx-auto grid w-full max-w-5xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="max-w-2xl">
           <p className="eyebrow text-lamp">Guía práctica · 7 fases · Plan de 90 días</p>
@@ -54,12 +37,8 @@ export function Hero() {
           <div className="mt-9">
             <CTA event="click_offer">Quiero empezar el método →</CTA>
             <p className="mt-4 max-w-md text-[0.875rem] leading-[1.55] text-mute">
-              Pago único de {PRICE}. No es suscripción. Recibes el acceso en tu correo apenas
-              termina el pago.
-            </p>
-            <p className="mt-2 max-w-md text-[0.875rem] leading-[1.55] text-mute">
-              Si en {GUARANTEE_DAYS} días sientes que no es para ti, te devolvemos el 100%. Sin
-              preguntas.
+              Pago único de {PRICE}. Garantía de {GUARANTEE_DAYS} días: si no es para ti, te
+              devolvemos el 100%.
             </p>
           </div>
         </div>

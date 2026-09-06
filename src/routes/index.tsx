@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { ProblemSection } from "@/components/landing/ProblemSection";
@@ -63,7 +62,6 @@ function Landing() {
   return (
     <>
       <ScrollRule />
-      <UrgencyBar />
       <Header />
       <main>
         <Hero />
