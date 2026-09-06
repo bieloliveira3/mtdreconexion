@@ -10,7 +10,7 @@ export function FloatingWhatsAppButton() {
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
       onClick={() => track("click_floating_whatsapp")}
-      className="fixed bottom-5 left-5 z-[55] flex items-center gap-2.5 rounded-full bg-[#25D366] px-4 py-3 shadow-lift transition-all duration-300 hover:scale-105 hover:bg-[#128C7E] hover:shadow-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+      className="fixed bottom-24 right-5 z-[55] flex items-center gap-2.5 rounded-full bg-[#25D366] px-4 py-3 shadow-lift transition-all duration-300 hover:scale-105 hover:bg-[#128C7E] hover:shadow-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
